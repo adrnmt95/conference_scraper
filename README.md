@@ -1,15 +1,18 @@
-# Conference Scraper
+# 📅 Conference Scraper
 
-A Python script that scrapes economics and political science conferences from [theeconomicmisfit.com](https://theeconomicmisfit.com/category/conferences/) and exports them to a formatted Excel file.
+A Python tool that scrapes academic conference listings from [theeconomicmisfit.com](https://theeconomicmisfit.com/category/conferences/), extracts key details (submission deadlines, dates, locations, speakers), and exports everything to a formatted Excel file — sorted by closest deadline so you never miss an application window.
 
-## Features
+## What it does
 
-- Automatically scrapes conference listings from multiple pages
-- Uses OpenAI API to extract structured information (deadlines, dates, location, speakers, etc.)
-- Filters conferences by relevance (excludes macro/finance/pure theory)
-- Tracks processed conferences to avoid duplicates
-- Exports to Excel with active and past conferences in separate sheets
-- Sorted by closest submission deadline
+The scraper targets conferences in **applied economics, econometrics, political economy, and political science**, automatically filtering out macro, finance, and pure economic/econometric theory. It uses **OpenAI's GPT-4o-mini** (via the API) to parse unstructured conference announcement pages into clean, structured data.
+
+On each run, the script:
+1. Paginates through all conference listing pages
+2. Skips conferences already present in the Excel file
+3. Sends new conference pages to the OpenAI API for structured extraction
+4. Filters by topic relevance using keyword-based heuristics
+5. Moves conferences with passed deadlines to a separate "Past Conferences" sheet
+6. Exports everything to `conferences.xlsx`, sorted by submission deadline
 
 ## Setup
 
@@ -18,12 +21,11 @@ A Python script that scrapes economics and political science conferences from [t
    pip install requests beautifulsoup4 openai openpyxl python-dotenv
    ```
 
-2. **Set your OpenAI API key:**
+2. **Set your OpenAI API key as an environment variable:**
    ```bash
    export OPENAI_API_KEY="your_openai_api_key_here"
    ```
-
-   To make it permanent, add the above line to your `~/.zshrc` or `~/.bash_profile`.
+   To make it permanent, add the line to your `~/.zshrc` or `~/.bash_profile`.
 
 3. **Configure the model (optional):**
    Edit `config.json` to change the OpenAI model:
@@ -35,28 +37,29 @@ A Python script that scrapes economics and political science conferences from [t
 
 ## Usage
 
-Run the scraper:
 ```bash
 python scrape_conferences.py
 ```
 
-The script will:
-1. Fetch all conference pages
-2. Process new conferences (not already in the Excel file)
-3. Extract structured information using OpenAI
-4. Filter by relevance
-5. Export to `conferences.xlsx`
-
 ## Output
 
-The Excel file contains two sheets:
-- **Conferences**: Active conferences sorted by submission deadline
-- **Past Conferences**: The 10 most recent past conferences
+The generated `conferences.xlsx` contains two sheets:
 
-## Configuration
+| Sheet | Contents |
+|---|---|
+| **Conferences** | Active conferences sorted by closest submission deadline |
+| **Past Conferences** | 10 most recently expired conferences |
 
-- **OpenAI Model**: Edit `config.json` to change the model (default: `gpt-4o-mini`)
-- **Filtering**: Modify `EXCLUDE_KEYWORDS` and `INCLUDE_KEYWORDS` in the script to customize conference filtering
+Each entry includes: title, submission deadline, conference dates, location, keynote speakers, description, topics, and source URL.
+
+## Customization
+
+The topic filtering is controlled by keyword lists in the script:
+- `INCLUDE_KEYWORDS` — topics to keep (e.g. labor, development, conflict, migration, political economy)
+- `EXCLUDE_KEYWORDS` — topics to drop (e.g. asset pricing, monetary economics, corporate finance)
+- `EXPLICIT_EXCLUDE_TITLES` — specific conference titles to always skip
+
+Edit these lists to adapt the scraper to your own research interests.
 
 ## Requirements
 
