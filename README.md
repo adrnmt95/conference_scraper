@@ -13,12 +13,13 @@ A Python tool that scrapes academic conference listings from multiple sources, d
 
 On each run, the scraper:
 
-1. **Scrapes** both sources — paginates through listing pages and fetches detail pages for each conference
+1. **Scrapes** all sources — paginates through listing pages and fetches detail pages for each conference. Uses **incremental scraping**: if `conferences.xlsx` already exists, known URLs are skipped and pagination stops early when all entries on a page are already in the file.
 2. **Deduplicates** across sources and against conferences already in the Excel file (using date + location matching and fuzzy title similarity — no OpenAI calls needed)
 3. **Classifies** only new, unique conferences via OpenAI to extract structured fields (deadline, dates, location, speakers, topics, description)
 4. **Filters** by topic relevance if `--include` / `--exclude` flags are provided
-5. **Moves** conferences with passed deadlines to a separate "Past Conferences" sheet
-6. **Writes** everything to `conferences.xlsx`, sorted by submission deadline
+5. **Cleans deadlines** — conferences with "expired", "closed", or "passed" deadlines are excluded; placeholder text like "TBA" is cleared so you can check manually
+6. **Moves** conferences with passed deadlines to a separate "Past Conferences" sheet
+7. **Writes** everything to `conferences.xlsx`, sorted by submission deadline
 
 Deduplication before classification means conferences appearing on both sites only trigger one OpenAI API call, saving costs.
 
@@ -74,6 +75,15 @@ conferences/
 python run.py
 ```
 
+**Select specific scrapers:**
+```bash
+# Only run the inomics scraper
+python run.py --scrapers inomics
+
+# Run specific scrapers (comma-separated)
+python run.py --scrapers inomics,misfit
+```
+
 **Scrape with topic filters:**
 ```bash
 # Include specific topics
@@ -101,6 +111,31 @@ The generated `conferences.xlsx` contains two sheets:
 | **Past Conferences** | 10 most recently expired conferences |
 
 Each entry includes: title, submission deadline, conference dates, location, keynote speakers, description, topics, and source URL.
+
+## Adding a new scraper
+
+Drop a new Python file in `scrapers/` with a `scrape()` function — it will be auto-discovered on the next run, no changes to `run.py` needed.
+
+```python
+# scrapers/my_source.py
+
+def scrape(session, known_urls=None):
+    """Return a list of conference dicts."""
+    known_urls = known_urls or set()
+    conferences = []
+    # ... your scraping logic ...
+    conferences.append({
+        "title": "Conference Name",
+        "conference_dates": "June 1-3, 2026",
+        "location": "Paris, France",
+        "url": "https://example.com/conf",
+        "source": "my_source",
+        "page_text": "Full text of the conference page...",
+    })
+    return conferences
+```
+
+Required dict keys: `title`, `url`, `source`, `page_text`. Optional: `conference_dates`, `location`. The `known_urls` set enables incremental scraping — skip detail fetches for URLs already in the Excel file.
 
 ## Deduplication
 

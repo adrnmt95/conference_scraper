@@ -10,6 +10,8 @@ Usage:
 """
 
 import argparse
+import importlib
+import pkgutil
 import re
 import warnings
 import time
@@ -17,7 +19,7 @@ from datetime import date
 
 import requests
 
-from scrapers import misfit, inomics
+import scrapers
 from dedup import deduplicate, normalize_title
 from classify import extract_with_openai, check_relevance
 from excel_writer import (
@@ -51,6 +53,12 @@ def parse_args():
         "--debug",
         action="store_true",
         help="Print detailed reasoning for include/exclude decisions",
+    )
+    parser.add_argument(
+        "--scrapers",
+        type=str,
+        default=None,
+        help='Comma-separated scraper names to run (e.g. "inomics,misfit"). Default: all',
     )
     return parser.parse_args()
 
@@ -109,18 +117,26 @@ def main():
 
     excluded_reasons = []
 
-    # --- Step 1: Scrape both sources ---
+    # --- Step 1: Scrape all sources (auto-discovered from scrapers/) ---
+    selected = None
+    if args.scrapers:
+        selected = {s.strip().lower() for s in args.scrapers.split(",")}
     print("\n[1/5] Scraping conferences from all sources...")
     session = _make_session()
 
-    print("\n--- theeconomicmisfit.com ---")
-    misfit_confs = misfit.scrape(session, known_urls=known_urls)
+    all_scraped = []
+    for finder, name, _ in pkgutil.iter_modules(scrapers.__path__):
+        if selected and name.lower() not in selected:
+            continue
+        mod = importlib.import_module(f"scrapers.{name}")
+        if not hasattr(mod, "scrape"):
+            continue
+        print(f"\n--- {name} ---")
+        confs = mod.scrape(session, known_urls=known_urls)
+        print(f"  {name}: {len(confs)} conferences")
+        all_scraped.extend(confs)
 
-    print("\n--- inomics.com ---")
-    inomics_confs = inomics.scrape(session, known_urls=known_urls)
-
-    all_scraped = misfit_confs + inomics_confs
-    print(f"\nTotal scraped: {len(all_scraped)} ({len(misfit_confs)} misfit + {len(inomics_confs)} inomics)")
+    print(f"\nTotal scraped: {len(all_scraped)}")
 
     # --- Step 2: Deduplicate ---
     print("\n[2/5] Deduplicating...")
