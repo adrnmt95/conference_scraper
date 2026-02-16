@@ -217,32 +217,36 @@ def fetch_page_text(url):
 
 def check_relevance(title, page_text, include_topics, exclude_topics):
     """Quick OpenAI call to decide if a conference is relevant.
-    Uses only the title and a short text snippet to save tokens.
+    Uses the title and a text snippet for context.
     Returns True (relevant) or False (exclude).
     """
-    criteria = "Relevance criteria:"
+    criteria = ""
     if include_topics:
-        criteria += f"\n- INCLUDE conferences related to: {include_topics}"
+        criteria += f"Topics to INCLUDE: {include_topics}\n"
     if exclude_topics:
-        criteria += f"\n- EXCLUDE conferences focused on: {exclude_topics}"
-    criteria += "\n- If a conference covers both included and excluded topics, mark it relevant only if its PRIMARY focus matches the include topics."
-    criteria += "\n- If unsure, lean towards marking it relevant."
+        criteria += f"Topics to EXCLUDE: {exclude_topics}\n"
 
-    prompt = f"""Is this conference relevant given the criteria below?
-Return ONLY a JSON object: {{"relevant": true}} or {{"relevant": false}}
+    prompt = f"""Decide if this academic conference is relevant for a researcher based on the topic filters below.
+Return ONLY: {{"relevant": true}} or {{"relevant": false}}
+
+{criteria}
+Rules:
+- A conference is relevant if its PRIMARY focus matches at least one include topic.
+- A conference is NOT relevant if its PRIMARY focus matches an exclude topic, even if it tangentially touches an include topic.
+  For example: a conference on "AI in finance" or "machine learning for asset pricing" is a FINANCE conference, not a machine-learning conference — exclude it.
+- However, broad conferences that accept submissions from many fields (including the include topics) ARE relevant — include them.
+- Only exclude a conference if its focus is clearly and specifically on an exclude topic.
 
 Conference title: {title}
 
-{criteria}
-
 Page text (excerpt):
-{page_text[:1000]}"""
+{page_text[:1500]}"""
 
     try:
         response = openai_client.chat.completions.create(
             model=OPENAI_MODEL,
             messages=[
-                {"role": "system", "content": "You classify conference relevance. Always respond with valid JSON only, no markdown fences."},
+                {"role": "system", "content": "You classify academic conference relevance. Respond with valid JSON only."},
                 {"role": "user", "content": prompt},
             ],
             temperature=0,
