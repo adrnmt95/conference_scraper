@@ -4,13 +4,13 @@ A Python tool that scrapes academic conference listings from [theeconomicmisfit.
 
 ## What it does
 
-The scraper targets conferences in **applied economics, econometrics, political economy, and political science**, automatically filtering out macro, finance, and pure economic/econometric theory. It uses **OpenAI's GPT-4o-mini** (via the API) to parse unstructured conference announcement pages into clean, structured data.
+The scraper collects conferences from [theeconomicmisfit.com](https://theeconomicmisfit.com/category/conferences/) with **optional topic filtering**. You can specify which topics to include or exclude via command-line arguments, or scrape all conferences without any filtering. It uses **OpenAI's GPT-4o-mini** (via the API) to parse unstructured conference announcement pages into clean, structured data.
 
 On each run, the script:
 1. Paginates through all conference listing pages
 2. Skips conferences already present in the Excel file
 3. Sends new conference pages to the OpenAI API for structured extraction
-4. Filters by topic relevance using keyword-based heuristics
+4. Optionally filters by topic relevance (if `--include` or `--exclude` flags are provided)
 5. Moves conferences with passed deadlines to a separate "Past Conferences" sheet
 6. Exports everything to `conferences.xlsx`, sorted by submission deadline
 
@@ -37,9 +37,24 @@ On each run, the script:
 
 ## Usage
 
+**Scrape all conferences (no filtering):**
 ```bash
 python scrape_conferences.py
 ```
+
+**Scrape with topic filters:**
+```bash
+# Include specific topics
+python scrape_conferences.py --include "applied econ, political economy, development"
+
+# Exclude specific topics
+python scrape_conferences.py --exclude "macro-finance, economic theory"
+
+# Combine both
+python scrape_conferences.py --include "labor economics, migration" --exclude "pure theory, asset pricing"
+```
+
+When you provide `--include` or `--exclude` flags, the script uses OpenAI to check conference relevance before extracting full details, saving API costs on irrelevant conferences.
 
 ## Output
 
@@ -54,12 +69,17 @@ Each entry includes: title, submission deadline, conference dates, location, key
 
 ## Customization
 
-The topic filtering is controlled by keyword lists in the script:
-- `INCLUDE_KEYWORDS` — topics to keep (e.g. labor, development, conflict, migration, political economy)
-- `EXCLUDE_KEYWORDS` — topics to drop (e.g. asset pricing, monetary economics, corporate finance)
-- `EXPLICIT_EXCLUDE_TITLES` — specific conference titles to always skip
+You can customize the scraper's behavior in several ways:
 
-Edit these lists to adapt the scraper to your own research interests.
+1. **Topic filtering**: Use the `--include` and `--exclude` command-line arguments to filter conferences by your research interests. No need to edit the script.
+
+2. **OpenAI model**: Edit `config.json` to change the model used for extraction:
+   ```json
+   {
+       "openai_model": "gpt-4o-mini"
+   }
+   ```
+   (You can use other models like `gpt-4o` for potentially better accuracy, but at higher cost.)
 
 ## Requirements
 

@@ -1,11 +1,17 @@
 """
 Scrape economics/political science conferences from theeconomicmisfit.com
 Uses OpenAI API to extract structured conference info from page text.
-Filters out: macroeconomics, finance, pure economic/econometric theory
 Exports to Excel sorted by closest application deadline.
 Only processes new conferences not already in the Excel file.
+
+Usage:
+  python scrape_conferences.py
+  python scrape_conferences.py --include "applied econ, political economy, development" --exclude "macro-finance, economic theory"
+
+If no --include/--exclude flags are given, all conferences are included (no topic filtering).
 """
 
+import argparse
 import requests
 from bs4 import BeautifulSoup
 import re
@@ -57,116 +63,29 @@ session.headers.update({
     "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36"
 })
 
-# Keywords that signal exclusion (macro, finance, pure theory)
-EXCLUDE_KEYWORDS = [
-    "finance phd workshop",
-    "financial market",
-    "household finance",
-    "monetary economics",
-    "monetary system",
-    "asset pricing",
-    "corporate finance",
-    "econometric society",
-    "econometrics and applied micro",
-    "game and decision theory",
-    "logic and the foundations of game",
-    "ai in finance",
-    "real estate",
-    "macroeconomics and deep learning",
-    "international monetary",
-    "central bank research",
-    "financial market research",
-    "accounting group conference",
-    "economic modeling and data science",
-    "ecomod school",
-    "ecomod2026",
-    "nordic household finance",
-]
 
-# Keywords that signal inclusion (applied micro, labor, development, political economy, etc.)
-INCLUDE_KEYWORDS = [
-    "labor", "labour",
-    "development",
-    "political economy", "political science",
-    "inequality",
-    "conflict",
-    "migration",
-    "gender",
-    "education",
-    "health economics",
-    "behavioral", "behavioural",
-    "experimental economics",
-    "urban economics",
-    "environment",
-    "energy",
-    "agriculture",
-    "public economics",
-    "public policy",
-    "policy evaluation", "policy impact",
-    "infrastructure",
-    "fragile",
-    "humanitarian",
-    "poverty",
-    "africa",
-    "latin america",
-    "europe",
-    "geopolitical",
-    "defence economics",
-    "defense economics",
-    "organized crime",
-    "philosophy, politics",
-    "housing",
-    "human capital",
-    "demographic",
-    "women",
-    "opportunity",
-    "jobs and development",
-    "applied economics",
-    "multidisciplinary",
-]
-
-# Titles to explicitly exclude
-EXPLICIT_EXCLUDE_TITLES = [
-    "9th dauphine finance",
-    "nber summer institute",
-    "pse-cepr policy forum",
-    "sgf conference",
-    "safe household finance",
-    "nber-saif conference on ai and financial markets",
-    "nordic household finance",
-    "chapel hill-copenhagen conference on macroeconomics",
-    "rcea international conference in economics, econometrics, and finance",
-    "conference on new challenges in monetary economics",
-    "11th annual meeting of the central bank research",
-    "uncertainty, economic activity, and policy",
-    "ai in finance conference",
-    "baruch-nus real estate",
-    "16th conference on logic and the foundations of game",
-    "midwest international trade and theory",
-    "third symposium on real estate",
-    "annual meeting of the swiss society for financial market",
-    "10th anniversary safe household finance",
-    "eea and the econometric society european meeting",
-    "2026 interactions conference",
-    "the first chapel hill-copenhagen",
-    "the 2026 rcea international conference",
-    "ecomod school of modeling",
-    "ecomod2026",
-    "45th rsep international multidisciplinary",
-    "gary chamberlain online seminar in econometrics",
-    "submissions for the aea annual meeting",
-    "symposium on forecasting",
-    "ermass",
-    "ersa2026 congress",
-]
+def parse_args():
+    parser = argparse.ArgumentParser(
+        description="Scrape conferences from theeconomicmisfit.com"
+    )
+    parser.add_argument(
+        "--include",
+        type=str,
+        default=None,
+        help='Comma-separated topics to actively seek (e.g. "applied econ, political economy, development")',
+    )
+    parser.add_argument(
+        "--exclude",
+        type=str,
+        default=None,
+        help='Comma-separated topics to actively exclude (e.g. "macro-finance, economic theory, econometrics")',
+    )
+    return parser.parse_args()
 
 
 def load_existing_xlsx():
     """Load conferences from existing Excel file.
     Returns (known_titles set, active_rows list, past_rows list).
-    - known_titles: normalized titles from both sheets (for skip check)
-    - active_rows: conferences from "Conferences" sheet as dicts
-    - past_rows: conferences from "Past Conferences" sheet as dicts
     """
     known_titles = set()
     active_rows = []
@@ -190,7 +109,6 @@ def load_existing_xlsx():
             for col_idx, header in enumerate(headers):
                 val = row[col_idx] if col_idx < len(row) else ""
                 row_dict[header] = str(val).strip() if val else ""
-            # Map Excel columns to internal keys
             conf = {
                 "title": row_dict.get("Title", ""),
                 "submission_deadline": row_dict.get("Submission Deadline", ""),
@@ -201,7 +119,6 @@ def load_existing_xlsx():
                 "topics": row_dict.get("Topics", ""),
                 "url": row_dict.get("URL", ""),
             }
-            # Parse the deadline string back to a date object
             conf["deadline_date"] = parse_deadline_date(conf["submission_deadline"])
             if conf["title"]:
                 known_titles.add(normalize_title(conf["title"]))
@@ -209,9 +126,6 @@ def load_existing_xlsx():
 
     wb.close()
     return known_titles, active_rows, past_rows
-
-
-
 
 
 def normalize_title(title):
@@ -301,6 +215,50 @@ def fetch_page_text(url):
     return title, full_text
 
 
+def check_relevance(title, page_text, include_topics, exclude_topics):
+    """Quick OpenAI call to decide if a conference is relevant.
+    Uses only the title and a short text snippet to save tokens.
+    Returns True (relevant) or False (exclude).
+    """
+    criteria = "Relevance criteria:"
+    if include_topics:
+        criteria += f"\n- INCLUDE conferences related to: {include_topics}"
+    if exclude_topics:
+        criteria += f"\n- EXCLUDE conferences focused on: {exclude_topics}"
+    criteria += "\n- If a conference covers both included and excluded topics, mark it relevant only if its PRIMARY focus matches the include topics."
+    criteria += "\n- If unsure, lean towards marking it relevant."
+
+    prompt = f"""Is this conference relevant given the criteria below?
+Return ONLY a JSON object: {{"relevant": true}} or {{"relevant": false}}
+
+Conference title: {title}
+
+{criteria}
+
+Page text (excerpt):
+{page_text[:1000]}"""
+
+    try:
+        response = openai_client.chat.completions.create(
+            model=OPENAI_MODEL,
+            messages=[
+                {"role": "system", "content": "You classify conference relevance. Always respond with valid JSON only, no markdown fences."},
+                {"role": "user", "content": prompt},
+            ],
+            temperature=0,
+            max_tokens=20,
+        )
+        raw = response.choices[0].message.content.strip()
+        if raw.startswith("```"):
+            raw = re.sub(r"^```(?:json)?\s*", "", raw)
+            raw = re.sub(r"\s*```$", "", raw)
+        data = json.loads(raw)
+        return bool(data.get("relevant", True))
+    except Exception as e:
+        print(f"    Relevance check error: {e}")
+        return True  # default to relevant on error
+
+
 def extract_with_openai(title, page_text):
     """Use OpenAI to extract structured conference info from page text."""
     prompt = f"""Extract the following fields from this conference announcement page.
@@ -329,7 +287,6 @@ Page text:
             temperature=0,
         )
         raw = response.choices[0].message.content.strip()
-        # Strip markdown code fences if present
         if raw.startswith("```"):
             raw = re.sub(r"^```(?:json)?\s*", "", raw)
             raw = re.sub(r"\s*```$", "", raw)
@@ -344,56 +301,16 @@ def parse_deadline_date(date_str):
     """Parse an ISO date string or common format into a date object."""
     if not date_str:
         return None
-    # Try ISO format first
     try:
         return datetime.strptime(date_str, "%Y-%m-%d").date()
     except ValueError:
         pass
-    # Try common formats
     for fmt in ["%B %d, %Y", "%d %B %Y", "%B %d %Y"]:
         try:
             return datetime.strptime(date_str.replace(",", "").strip(), fmt).date()
         except ValueError:
             continue
     return None
-
-
-def should_exclude(conf):
-    """Decide whether a conference should be excluded based on topic."""
-    title_lower = re.sub(r'["\u201c\u201d\u2018\u2019]', '', conf["title"].lower())
-    full_lower = (conf.get("full_text") or conf.get("description", "") or "").lower()
-
-    for excl in EXPLICIT_EXCLUDE_TITLES:
-        if excl.lower() in title_lower:
-            return True
-
-    for kw in EXCLUDE_KEYWORDS:
-        if kw in title_lower:
-            return True
-
-    combined = title_lower + " " + full_lower[:1500]
-    has_include = any(kw in combined for kw in INCLUDE_KEYWORDS)
-
-    strong_exclude_in_text = [
-        "monetary policy", "central bank", "asset pricing",
-        "financial econometrics", "corporate governance",
-        "financial regulation", "portfolio", "stock market",
-        "bond market", "banking regulation", "derivatives",
-        "risk management in finance", "dsge", "new keynesian",
-        "general equilibrium",
-    ]
-
-    strong_exclude_count = sum(1 for kw in strong_exclude_in_text if kw in combined)
-
-    if strong_exclude_count >= 2 and not has_include:
-        return True
-
-    finance_title_words = ["finance", "monetary", "banking", "asset", "macroeconom"]
-    title_finance_count = sum(1 for w in finance_title_words if w in title_lower)
-    if title_finance_count >= 1 and not has_include:
-        return True
-
-    return False
 
 
 def _format_deadline(conf):
@@ -459,12 +376,10 @@ def write_to_excel(active_conferences, past_conferences, filename=None):
         top=Side(style="thin"), bottom=Side(style="thin"),
     )
 
-    # Active conferences sheet
     ws_active = wb.active
     ws_active.title = "Conferences"
     _write_sheet(ws_active, active_conferences, header_fill, header_font, thin_border)
 
-    # Past conferences sheet (keep only 10 most recent by deadline)
     ws_past = wb.create_sheet("Past Conferences")
     past_header_fill = PatternFill(start_color="7F7F7F", end_color="7F7F7F", fill_type="solid")
     _write_sheet(ws_past, past_conferences, past_header_fill, header_font, thin_border)
@@ -474,14 +389,28 @@ def write_to_excel(active_conferences, past_conferences, filename=None):
 
 
 def main():
+    args = parse_args()
+    include_topics = args.include
+    exclude_topics = args.exclude
+    filtering = include_topics or exclude_topics
+
     print("=" * 60)
     print("Conference Scraper - theeconomicmisfit.com")
     print(f"Today's date: {TODAY}")
+    if include_topics:
+        print(f"Include: {include_topics}")
+    if exclude_topics:
+        print(f"Exclude: {exclude_topics}")
+    if not filtering:
+        print("No filters — all conferences will be included")
     print("=" * 60)
 
     # Load existing conferences from Excel (both active and past sheets)
     known_titles, existing_active, existing_past = load_existing_xlsx()
     print(f"\nAlready in Excel: {len(existing_active)} active, {len(existing_past)} past")
+
+    # Track exclusions across the whole run
+    excluded_reasons = []
 
     # Check existing active conferences for passed deadlines -> move to past
     still_active = []
@@ -494,19 +423,8 @@ def main():
         else:
             still_active.append(conf)
 
-    # Merge newly past with existing past, sort by deadline (most recent first), keep 10
-    all_past = existing_past + newly_past
-    # Sort: those with a parsed deadline come first (most recent first), then those without
-    all_past_with_dl = [c for c in all_past if c.get("deadline_date") and not isinstance(c["deadline_date"], str)]
-    all_past_no_dl = [c for c in all_past if not c.get("deadline_date") or isinstance(c["deadline_date"], str)]
-    all_past_with_dl.sort(key=lambda c: c["deadline_date"], reverse=True)
-    past_conferences = (all_past_with_dl + all_past_no_dl)[:10]
-
     if newly_past:
         print(f"  Moved {len(newly_past)} conferences to Past Conferences")
-
-    # Build set of known titles (active + past) for skipping
-    active_title_set = {normalize_title(c["title"]) for c in still_active}
 
     # Step 1: Collect all conference links
     print("\n[1/4] Collecting conference links from all pages...")
@@ -537,8 +455,18 @@ def main():
         if not page_text:
             continue
 
-        # New conference: call OpenAI to extract fields
-        print(f"    -> New conference, calling OpenAI...")
+        # If filtering, check relevance first (cheap call) before full extraction
+        if filtering:
+            print(f"    -> Checking relevance...")
+            relevant = check_relevance(title, page_text, include_topics, exclude_topics)
+            if not relevant:
+                print(f"    -> Not relevant, skipping extraction")
+                excluded_reasons.append((title, "not relevant per include/exclude filter"))
+                skipped_count += 1
+                continue
+
+        # Relevant (or no filter): call OpenAI to extract full fields
+        print(f"    -> Extracting conference details...")
         extracted = extract_with_openai(title, page_text)
 
         deadline_date = parse_deadline_date(extracted.get("deadline_date", ""))
@@ -560,23 +488,17 @@ def main():
 
         time.sleep(0.5)
 
-    print(f"\n  Scraped: {new_count} new, {skipped_count} skipped (already known)")
+    print(f"\n  Scraped: {new_count} new, {skipped_count} skipped")
 
-    # Step 3: Filter new conferences and merge with existing active
+    # Step 3: Filter new conferences by deadline and merge with existing active
     print("\n[3/4] Filtering conferences...")
     filtered_new = []
-    excluded_reasons = []
 
     for conf in new_conferences:
         dl = conf.get("deadline_date")
         if dl and not isinstance(dl, str) and dl < TODAY:
             excluded_reasons.append((conf["title"], "deadline passed"))
-            # Still add to past if recent enough
             newly_past.append(conf)
-            continue
-
-        if should_exclude(conf):
-            excluded_reasons.append((conf["title"], "topic excluded (macro/finance/theory)"))
             continue
 
         filtered_new.append(conf)
@@ -613,12 +535,11 @@ def main():
     with_deadline.sort(key=lambda c: c["deadline_date"])
     final_active = with_deadline + without_deadline
 
-    # Rebuild past list (in case new scraped conferences also had passed deadlines)
+    # Rebuild past list, deduplicate, keep 10 most recent
     all_past = existing_past + newly_past
     all_past_with_dl = [c for c in all_past if c.get("deadline_date") and not isinstance(c["deadline_date"], str)]
     all_past_no_dl = [c for c in all_past if not c.get("deadline_date") or isinstance(c["deadline_date"], str)]
     all_past_with_dl.sort(key=lambda c: c["deadline_date"], reverse=True)
-    # Deduplicate past by title
     seen_past = set()
     unique_past = []
     for c in all_past_with_dl + all_past_no_dl:
