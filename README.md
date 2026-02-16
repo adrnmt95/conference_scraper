@@ -51,7 +51,7 @@ python scrape_conferences.py --include "applied econ, political economy, develop
 python scrape_conferences.py --exclude "macro-finance, economic theory"
 
 # Combine both
-python scrape_conferences.py --include "labor economics, migration" --exclude "pure theory, asset pricing"
+python scrape_conferences.py --include "labor economics, migration" --exclude "economic theory, asset pricing"
 ```
 
 When you provide `--include` or `--exclude` flags, the script uses OpenAI to check conference relevance before extracting full details, saving API costs on irrelevant conferences.
