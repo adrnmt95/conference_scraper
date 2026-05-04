@@ -11,6 +11,7 @@ Usage:
 
 import argparse
 import importlib
+import os
 import pkgutil
 import re
 import warnings
@@ -31,6 +32,15 @@ from excel_writer import (
 warnings.filterwarnings("ignore", category=DeprecationWarning)
 
 TODAY = date.today()
+
+
+def _require_openai_api_key():
+    """Fail fast if the OpenAI API key is missing."""
+    if not os.environ.get("OPENAI_API_KEY", "").strip():
+        raise SystemExit(
+            "ERROR: OPENAI_API_KEY is not set. "
+            "Export it before running, e.g.: export OPENAI_API_KEY='your_key'"
+        )
 
 
 def parse_args():
@@ -79,8 +89,33 @@ def _make_session():
     return session
 
 
+def _check_openai_api():
+    """Make a minimal test call to verify the OpenAI API key is valid and working."""
+    from openai import OpenAI, AuthenticationError, RateLimitError
+    api_key = os.environ.get("OPENAI_API_KEY", "").strip()
+    try:
+        client = OpenAI(api_key=api_key)
+        client.models.list()
+    except AuthenticationError:
+        raise SystemExit(
+            "ERROR: OpenAI API key is invalid or unauthorised. "
+            "Check your OPENAI_API_KEY and try again."
+        )
+    except RateLimitError:
+        raise SystemExit(
+            "ERROR: OpenAI API rate limit exceeded. "
+            "Wait a moment and try again, or check your quota."
+        )
+    except Exception as exc:
+        raise SystemExit(f"ERROR: Could not connect to OpenAI API: {exc}")
+
+
 def main():
     args = parse_args()
+    _require_openai_api_key()
+    print("Checking OpenAI API connectivity...")
+    _check_openai_api()
+    print("OpenAI API OK")
     include_topics = args.include
     exclude_topics = args.exclude
     debug = args.debug
