@@ -1,0 +1,183 @@
+{
+  "schema_version": "1.0",
+  "run_id": "20261105T001616",
+  "started_at": "2026-11-05T00:16:16.571879+01:00",
+  "completed_at": "2026-11-04T23:16:16.596911Z",
+  "mode": "configuration_required",
+  "run_status": "configuration_required",
+  "paper": {
+    "title": "Institutional Forbearance, Political Violence and Settlement Expansion",
+    "abstract": "This illustrative research project examines government forbearance toward extremist\nviolence in the West Bank and its relationship to settlement expansion and political\naccountability. The central question is when selective non-enforcement changes the\nincentives of violent actors and the territorial consequences of their activities.\nThe proposed empirical approach uses difference-in-differences and event-study\ndesigns to study political violence, enforcement and settlement outcomes. Relevant\naudiences include political economy, conflict economics, institutional economics\nand the study of state capacity. This example describes a research topic; it makes\nno claim about empirical findings.",
+    "research_questions": [
+      "Institutional Forbearance, Political Violence and Settlement Expansion"
+    ],
+    "topics": [
+      "political violence",
+      "institutional forbearance",
+      "settlement expansion",
+      "political accountability",
+      "institutions"
+    ],
+    "methods": [
+      "difference-in-differences",
+      "causal inference"
+    ],
+    "contributions": [],
+    "fields": [
+      "economics",
+      "political science"
+    ],
+    "communities": [
+      "political economy",
+      "conflict economics",
+      "institutional economics"
+    ],
+    "analysis_mode": "heuristic"
+  },
+  "preferences": {
+    "deadline_after": "2026-11-05",
+    "deadline_before": null,
+    "event_after": "2026-11-05",
+    "event_before": "2027-08-05",
+    "regions": [
+      "europe",
+      "north-america"
+    ],
+    "fields": [],
+    "goal": "specialist feedback",
+    "researchers": []
+  },
+  "providers": [],
+  "queries": [
+    {
+      "family": "research_question",
+      "query": "political violence institutional forbearance \"call for papers\" 2026 2027"
+    },
+    {
+      "family": "discipline",
+      "query": "political economy conflict economics conference submissions 2026 2027"
+    },
+    {
+      "family": "specialist_workshop",
+      "query": "political violence institutional forbearance specialist research workshop call papers 2026 2027"
+    },
+    {
+      "family": "university",
+      "query": "political violence institutional forbearance workshop \"call for papers\" university 2026 2027"
+    },
+    {
+      "family": "researcher_discovery",
+      "query": "political violence institutional forbearance researchers workshop organisers programme"
+    },
+    {
+      "family": "recurring_series",
+      "query": "political violence institutional forbearance annual workshop conference previous editions"
+    },
+    {
+      "family": "methods",
+      "query": "difference-in-differences causal inference social science workshop CFP 2026 2027"
+    },
+    {
+      "family": "theory",
+      "query": "political accountability institutions institutions political economy workshop 2026 2027"
+    },
+    {
+      "family": "research_community",
+      "query": "site:cepr.org CEPR political economy call papers 2026 2027"
+    },
+    {
+      "family": "research_community",
+      "query": "site:eeassoc.org EEA political economy call papers 2026 2027"
+    },
+    {
+      "family": "research_community",
+      "query": "EPCS political economy call papers 2026 2027"
+    },
+    {
+      "family": "research_community",
+      "query": "site:ecpr.eu ECPR political economy call papers 2026 2027"
+    },
+    {
+      "family": "research_community",
+      "query": "site:epsanet.org EPSA political economy call papers 2026 2027"
+    },
+    {
+      "family": "research_community",
+      "query": "ESOC Empirical Studies of Conflict political economy call papers 2026 2027"
+    },
+    {
+      "family": "research_community",
+      "query": "site:cepr.org ReCIPE political economy call papers 2026 2027"
+    },
+    {
+      "family": "research_community",
+      "query": "site:nber.org NBER political economy call papers 2026 2027"
+    },
+    {
+      "family": "research_community",
+      "query": "site:cesifo.org CESifo political economy call papers 2026 2027"
+    },
+    {
+      "family": "research_community",
+      "query": "site:iza.org IZA political economy call papers 2026 2027"
+    },
+    {
+      "family": "research_community",
+      "query": "HiCN Households in Conflict Network political economy call papers 2026 2027"
+    },
+    {
+      "family": "substantive_topic",
+      "query": "institutional forbearance workshop paper submission 2026 2027"
+    },
+    {
+      "family": "substantive_topic",
+      "query": "settlement expansion workshop paper submission 2026 2027"
+    },
+    {
+      "family": "substantive_topic",
+      "query": "political accountability workshop paper submission 2026 2027"
+    },
+    {
+      "family": "substantive_topic",
+      "query": "institutions workshop paper submission 2026 2027"
+    },
+    {
+      "family": "methods",
+      "query": "difference-in-differences economics political science workshop call papers 2026 2027"
+    },
+    {
+      "family": "methods",
+      "query": "causal inference economics political science workshop call papers 2026 2027"
+    },
+    {
+      "family": "related_discipline",
+      "query": "political economy specialist workshop call papers 2026 2027"
+    },
+    {
+      "family": "related_discipline",
+      "query": "conflict economics specialist workshop call papers 2026 2027"
+    },
+    {
+      "family": "related_discipline",
+      "query": "institutional economics specialist workshop call papers 2026 2027"
+    },
+    {
+      "family": "geography",
+      "query": "political violence institutional forbearance research workshop europe 2026 2027"
+    },
+    {
+      "family": "geography",
+      "query": "political violence institutional forbearance research workshop north america 2026 2027"
+    }
+  ],
+  "candidates": [],
+  "watchlist": [],
+  "researchers": [],
+  "sources": [],
+  "memory_changes": [],
+  "issues": [
+    "No live search provider configured. Set BRAVE_SEARCH_API_KEY or TAVILY_API_KEY in .env. No internet discovery was performed and no conference results were invented.",
+    "Set both OPENAI_API_KEY and OPENAI_MODEL to enable semantic paper analysis, structured extraction and evaluation."
+  ],
+  "statistics": {}
+}

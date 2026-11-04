@@ -1,0 +1,16 @@
+[
+  {
+    "name": "Ada Mentor",
+    "connection": "Named researcher/organiser on a page with related research scope; connection is provisional.",
+    "source_url": "https://institute.demo.example/b/open/2027/",
+    "quote": "Organisers: Ada Mentor; Bruno Scholar",
+    "supplied_by_user": false
+  },
+  {
+    "name": "Bruno Scholar",
+    "connection": "Named researcher/organiser on a page with related research scope; connection is provisional.",
+    "source_url": "https://institute.demo.example/b/open/2027/",
+    "quote": "Organisers: Ada Mentor; Bruno Scholar",
+    "supplied_by_user": false
+  }
+]

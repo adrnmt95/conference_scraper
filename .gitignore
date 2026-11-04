@@ -6,3 +6,11 @@ conferences.csv
 ~$*.xlsx
 ~$*.xls
 .DS_Store
+.venv/
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+build/
+dist/
+.conference-agent/
+results/

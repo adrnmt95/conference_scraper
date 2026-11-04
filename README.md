@@ -1,166 +1,288 @@
-# Conference Scraper
+# Conference Discovery and Scraper
 
-A Python tool that scrapes academic conference listings from multiple sources, deduplicates them, extracts key details via OpenAI, and exports everything to a formatted Excel file — sorted by closest deadline so you never miss an application window.
+This repository includes the paper-driven discovery agent (`discover.py`) and the
+original conference-to-Excel scraper (`run.py`). The discovery workflow verifies
+official calls and ranks their value for a specific research paper.
 
-## Sources
+A reusable Python agent for economics, political science and computational social
+science. It discovers academic calls, retrieves original sources, applies conservative
+date and authority checks, and ranks the potential research value of presenting a
+specific paper. Specialist feedback and relevant research audiences matter alongside
+topic and methodological fit.
 
-| Source | URL |
-|---|---|
-| The Economic Misfit | [theeconomicmisfit.com/category/conferences](https://theeconomicmisfit.com/category/conferences/) |
-| INOMICS | [inomics.com/top/conferences](https://inomics.com/top/conferences) |
-
-## How it works
-
-On each run, the scraper:
-
-1. **Scrapes** all sources — paginates through listing pages and fetches detail pages for each conference. Uses **incremental scraping**: if `conferences.xlsx` already exists, known URLs are skipped and pagination stops early when all entries on a page are already in the file.
-2. **Deduplicates** across sources and against conferences already in the Excel file (using date + location matching and fuzzy title similarity — no OpenAI calls needed)
-3. **Classifies** only new, unique conferences via OpenAI to extract structured fields (deadline, dates, location, speakers, topics, description)
-4. **Filters** by topic relevance if `--include` / `--exclude` flags are provided
-5. **Cleans deadlines** — conferences with "expired", "closed", or "passed" deadlines are excluded; placeholder text like "TBA" is cleared so you can check manually
-6. **Moves** conferences with passed deadlines to a separate "Past Conferences" sheet
-7. **Writes** everything to `conferences.xlsx`, sorted by submission deadline
-
-Deduplication before classification means conferences appearing on both sites only trigger one OpenAI API call, saving costs.
-
-## Project structure
-
-```
-conferences/
-├── run.py                  # main entry point (orchestrator)
-├── config.json             # settings (OpenAI model)
-├── .env                    # API keys (not tracked in git)
-├── .gitignore              # excludes .env, .xlsx, and .DS_Store
-├── scrapers/
-│   ├── __init__.py
-│   ├── misfit.py           # scraper for theeconomicmisfit.com
-│   └── inomics.py          # scraper for inomics.com
-├── dedup.py                # cross-source deduplication logic
-├── classify.py             # OpenAI extraction and relevance checking
-├── excel_writer.py         # Excel read/write logic
-├── test_api_key.py         # diagnostic script to test OpenAI API setup
-├── conferences.xlsx        # output file (not tracked in git)
-└── old/                    # legacy single-source scripts
-    └── scrape_conferences.py
-```
+**Live search needs a configured Brave Search or Tavily API key.** Semantic paper
+analysis, structured extraction, researcher discovery and evaluation additionally
+need an OpenAI API key and a Responses API model supporting Structured Outputs.
+Without search credentials, the CLI saves a query plan and an honest empty report,
+then exits with code 2. It never substitutes invented conferences for search results.
 
 ## Setup
 
-1. **Install dependencies:**
-   ```bash
-   pip install requests beautifulsoup4 openai openpyxl python-dotenv
-   ```
+Python 3.11 or newer:
 
-2. **Set your OpenAI API key:**
-   ```bash
-   export OPENAI_API_KEY="your_openai_api_key_here"
-   ```
-   Or create a `.env` file in the project directory:
-   ```
-   OPENAI_API_KEY=your_openai_api_key_here
-   ```
-
-3. **Configure the model (optional):**
-   Edit `config.json` to change the OpenAI model:
-   ```json
-   {
-       "openai_model": "gpt-4o-mini"
-   }
-   ```
-
-## Usage
-
-**Scrape all conferences from all sources (no filtering):**
 ```bash
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install '.[dev]'
+cp -n .env.example .env
+```
+
+If `.env` already exists, add the missing settings to it. Edit `.env` locally:
+
+```dotenv
+SEARCH_PROVIDER=brave
+BRAVE_SEARCH_API_KEY=your-search-key
+OPENAI_API_KEY=your-openai-key
+OPENAI_MODEL=your-supported-model-id
+```
+
+Alternatively set `SEARCH_PROVIDER=tavily` and `TAVILY_API_KEY`. `auto` uses every
+provider with a configured key. A key's permissions and billing belong to that
+provider account; this program cannot use the chat app's web-search capability or
+subscription as an API credential. No specific model or current date is hardcoded.
+
+The `.env` file is loaded from the current directory only, or from `--env-file`.
+Existing environment values take precedence. Keys and API error bodies are excluded
+from logs and cache keys. Paper excerpts and retrieved public text are sent to the
+configured LLM when enabled; `--no-llm` disables those calls. Raw public sources,
+extracted evidence, local reports and memory are stored locally.
+
+## Run
+
+```bash
+python discover.py --paper examples/forbearance.md --output results
+python discover.py --topic 'Political violence and government forbearance' --output results
+python discover.py --abstract 'Your abstract here' --title 'Your paper title' --output results
+python discover.py --paper paper.pdf --regions europe,north-america --output results
+```
+
+For a specific submission window, add ISO dates with `--deadline-after YYYY-MM-DD`
+and `--deadline-before YYYY-MM-DD`. The default lower bound is the current local
+date **at runtime**. Conference dates default to today through nine calendar months
+ahead; use `--horizon-months`, `--event-after`, and `--event-before` to change this.
+End-of-month horizons clamp to the destination month's last day. Submission and
+conference windows are evaluated independently.
+
+```bash
+python discover.py --paper examples/crime_networks.md \
+  --fields economics,computational-social-science \
+  --regions europe,north-america --horizon-months 9 \
+  --goal 'interdisciplinary networking' \
+  --researcher 'A researcher you want to reach' --output results/crime
+```
+
+`--researcher` may be repeated. Known names seed community searches; independently
+discovered names require a quote from a retrieved page. The connection is recorded
+and researcher/workshop follow-up queries are executed. A person's appearance on
+one public page does not imply attendance at a different event or future edition.
+
+Use `python discover.py --help` for all options. Installed entry points are
+`conference-discover` and `python -m conference_agent`.
+
+## Existing Excel scraper
+
+The original spreadsheet workflow is available from the repository root:
+
+```bash
+python -m pip install '.[legacy]'
 python run.py
+python run.py --include 'political economy, development' --exclude 'macro-finance'
 ```
 
-**Select specific scrapers:**
+It uses `scrapers/`, `classify.py`, `dedup.py` and `excel_writer.py`, and updates
+`conferences.xlsx`. Its model setting is read from `config.json`. The discovery
+agent uses `OPENAI_MODEL` in the environment or `.env`; both workflows can reuse
+an existing `OPENAI_API_KEY`. Add a Brave or Tavily search key to use live discovery.
+
+See [the original scraper documentation](docs/legacy_scraper.md) for its sources,
+Excel output, incremental scraping and scraper extension guide. The discovery
+agent's outputs and SQLite memory live in the directories described below.
+
+## Outputs
+
+| File | Contents |
+| --- | --- |
+| `report.md` | Ranked shortlist, 2–4 fit sentences per venue, evidence, constraints and submission strategy |
+| `candidates.csv` | One row per candidate or watchlist series; evidence and scoring criteria included as JSON columns |
+| `results.json` | Pydantic-validated run, candidates, source text, quotes, publication/retrieval/extraction times, issues and scores |
+| `watchlist.md`, `watchlist.csv` | Recurring series without a confirmed current call, kept separate from open opportunities |
+| `queries.json` | Queries planned/executed and their discovery families |
+| `researchers.json` | Cited researcher connections and user-supplied names |
+| `sources.json` | Retrieval manifest, content hashes, cache flags, publication metadata and raw-snapshot paths |
+| `conference_memory.json` | Export of persistent edition-specific conference memory |
+| `run.log` | Structured JSON-lines diagnostics, excluding credentials and API response bodies |
+
+Open verified calls come first. Unconfirmed deadlines, unknown dates, preferences
+mismatches and closed editions have separate sections. Unknown geography/dates
+remain visible with explicit constraints; confirmed mismatches are excluded from
+the recommended submission strategy. Unstated fees, funding and eligibility remain
+unknown. Publication metadata is labelled as page metadata; it is never replaced
+with a guessed publication date. Report evidence references are local `E1`, `E2`,
+etc., each with a direct source link and retrieval time.
+
+The main CSV includes watchlist rows once, distinguished by `status=WATCHLIST`.
+`watchlist.csv` is a convenience subset. CSV text that could execute as a spreadsheet
+formula is escaped. Scores are rounded to five-point increments and criterion
+scores to ten-point increments; the JSON records the weights and supporting evidence.
+
+## Verification rules
+
+| Status | Required evidence |
+| --- | --- |
+| `OPEN_VERIFIED` | Retrieved official source, explicit edition identity, an actual paper invitation/open signal, and a definitely future submission cutoff; no unresolved official date conflict or invite-only restriction |
+| `FUTURE_DEADLINE_UNCONFIRMED` | A future reported cutoff, or a same-day cutoff whose time/timezone cannot be established, with some required confirmation missing |
+| `DATE_UNKNOWN` | A retrieved candidate/CFP whose submission date cannot be established |
+| `WATCHLIST` | Evidence of a recurring relevant series without a confirmed current call; no projected future edition/deadline |
+| `CLOSED` | Observed edition has occurred, submission cutoff has definitely passed, or retrieved call explicitly closes submissions |
+
+Search snippets are leads only and cannot verify a call. A 2026 call never creates
+a 2027 call. An explicitly dated next-year call is valid even when its deadline is
+in the preceding year. Missing years and ambiguous numeric dates are not inferred;
+unrecognised formats stay unknown. Notification and registration milestones cannot
+supply submission deadlines. Notification dates are marked as estimates only when
+their source says so; no typical review interval is projected forward.
+
+Precise cutoffs require a stated time and an unambiguous timezone. UTC/GMT offsets,
+IANA zones, common explicit CET/CEST/EST/EDT/PST/PDT offsets, ET/PT date-aware zones
+and Anywhere on Earth are supported. CST/IST/BST remain ambiguous. Date-only
+deadlines use conservative timezone bounds: a same-day call stays unconfirmed
+until a definitely future cutoff can be established. Explicit extensions supersede
+the old date on that page; unresolved multiple tracks/deadlines block verification.
+
+Official authority uses recognised organiser domains with matching page identity,
+academic domains with a matching explicit organiser/host, or a same-edition original
+CFP linked by an already verified organiser. A university domain alone is
+insufficient. Unknown custom event domains remain unconfirmed. After checking a
+domain yourself, add it to `OFFICIAL_DOMAINS` or `--official-domains`. This is an
+explicit trust override and should be restricted to organisers you have reviewed.
+An LLM cannot grant official authority or override deterministic status checks.
+Named organisers/speakers in the structured candidate fields require official
+evidence. Unconfirmed named claims remain in the evidence ledger.
+
+Conflicting source claims are retained. An official deadline takes precedence
+over an aggregator. Conflicting official deadlines downgrade verification. Original
+and final source URLs, exact supporting text, publication metadata, extraction and
+retrieval times are preserved. Source caching defaults to one hour and is capped
+at six hours; cached retrieval timestamps are never rewritten. Use `--refresh`
+for a new search and source retrieval. Search caching defaults to 12 hours.
+
+## Research-value ranking
+
+- 35% intellectual/topic fit
+- 20% audience relevance, using verified scope and people where available
+- 20% academic quality and alignment with the research goal
+- 15% methodological fit
+- 10% location, stated cost/funding and timing
+
+The LLM judges only supplied paper information and verified/reported evidence,
+with indexed citations. Evidence-free audience/quality scores are capped. Documented
+discussants, review format and specialist feedback matter; prestige does not supply
+acceptance probabilities. Fit explanations and proposed framings are explicitly
+interpretive judgements, not source claims. No acceptance probability is estimated.
+
+Without LLM configuration, conservative labelled-field extraction and an explicit
+concept dictionary provide a usable fallback. Its scores have **low confidence**
+and natural-language CFPs can leave more fields unknown. The configured LLM handles
+semantic interpretation, aliases and research communities. This is especially
+useful for relevant institutional workshops whose titles do not repeat the paper's
+keywords. Semantic aliases still need a consistent edition and corroborating
+organiser/date/location information before merging.
+
+## Persistent conference memory
+
+Default state lives in `.conference-agent/`; reuse that directory on subsequent
+runs, or set `CONFERENCE_STATE_DIR` / `--state-dir`. SQLite stores edition-specific
+snapshots and an observation history. Previously observed sources are rechecked,
+and series names seed new current-horizon searches. `memory_changes` distinguishes
+newly verified calls, newly verified editions, and deadline/status changes. A
+historical observation can produce a series watchlist entry, with its historical
+edition labelled and dates cleared. Stored deadlines are never rolled forward.
+
+No recurring task is installed. Re-run on demand; weekly scheduling can be added
+after checking the source quality for your research communities. Demo memory is
+isolated under each demo output and cannot seed live discovery accidentally.
+
+## Search scope, access and cost controls
+
+Queries vary the central research question, topic, methods, contribution,
+neighbouring disciplines, specialist workshops, universities, researcher networks
+and recurring series. Community queries cover CEPR, EEA, EPCS, ECPR, EPSA, ESOC,
+ReCIPE, NBER, CESifo, IZA and HiCN. Names here are search targets, not asserted
+current open calls. Prior memory supplements those searches.
+
+Defaults: 36 initial queries, up to 8 official-source resolution queries and 6
+researcher queries, 5 hits per provider/query, and at most 40 source-retrieval
+attempts including failed pages and original-CFP follow-ups. `auto` can use two
+providers per query. The LLM makes additional paper/query/extraction/evaluation
+calls within that source budget. Reduce these limits for faster, cheaper runs.
+Coverage is bounded and is never presented as exhaustive.
+
+The crawler identifies itself, checks `robots.txt` for each origin/redirect,
+honours crawl delays and Retry-After, throttles per host, and retries transient
+failures with bounded backoff. It defers long rate-limit waits to a later run.
+Missing robots files (404/410) permit access; unreadable/restricted robots files
+leave a source unverified. Site-specific terms also apply: review them for your
+sources and use `BLOCKED_DOMAINS` / `--blocked-domains` for prohibited domains.
+Explicit automated-access prohibitions on retrieved pages are respected.
+
+The agent never logs into sites, solves CAPTCHAs, renders around anti-bot gates or
+bypasses a 401/403. Login pages, scanned PDFs, JavaScript-only sources and restricted
+CFPs remain unverified. Public source downloads are capped at 6 MB, paper inputs
+at 30 MB. Original public HTML/PDF/text is content-addressed under `sources/` in
+the state directory. Local/private network URLs and nonstandard ports are rejected.
+
+Exit codes: `0` completed (possibly partial; check `run_status` and `issues`),
+`2` input/configuration required, `3` every search request failed. Partial failures
+are reported alongside usable results. A result-free search does not establish
+that no suitable conference exists.
+
+## Offline demonstrations and tests
+
 ```bash
-# Only run the inomics scraper
-python run.py --scrapers inomics
-
-# Run specific scrapers (comma-separated)
-python run.py --scrapers inomics,misfit
+python discover.py --demo A --regions europe,north-america --output demos/topic_a
+python discover.py --demo B --regions europe,north-america --output demos/topic_b
+python discover.py --paper examples/forbearance.md --plan-only --output demos/query_plan
+python -m pytest -q
+ruff check conference_agent tests discover.py
+ruff format --check conference_agent tests discover.py
 ```
 
-**Scrape with topic filters:**
-```bash
-# Include specific topics
-python run.py --include "applied econ, political economy, development"
+`--demo` executes the complete search → retrieval → extraction → verification →
+ranking → memory → report pipeline through synthetic providers. All venues,
+people, URLs and deadlines are fictitious and prominently labelled. The `.example`
+links do not work. Fixture dates are generated relative to runtime so examples
+remain useful. The demos exercise open, unconfirmed, unknown, closed and watchlist
+outcomes without claiming internet access. Live provider and LLM integration is
+unit-tested with mocked HTTP/SDK responses; real authenticated calls require keys.
 
-# Exclude specific topics
-python run.py --exclude "macro-finance, economic theory"
+Tests cover outdated editions, date/timezone boundaries, registration/notification
+separation, conflicting official/third-party sources, prompt/claim grounding,
+deduplication, conference memory, public-source caching, robots/redirect restrictions,
+provider failures, paper/PDF parsing, no-credential behavior and report round-trips.
 
-# Combine both
-python run.py --include "labor economics, migration" --exclude "economic theory, asset pricing"
+## Architecture
 
-# Enable debug mode to see detailed reasoning for include/exclude decisions
-python run.py --include "applied econ" --exclude "finance" --debug
-```
+| Module | Responsibility |
+| --- | --- |
+| `paper_parser.py` | PDF/Markdown/TXT input and semantic/heuristic research profile |
+| `query_generator.py` | Varied query families and community/researcher follow-ups |
+| `search_provider.py` | Brave/Tavily adapters, provider protocol and cached searches |
+| `source_fetcher.py`, `network.py` | Respectful public retrieval, retries, throttling, robots and raw snapshots |
+| `source_verifier.py` | Grounded claims, organiser authority, edition/status checks and deduplication |
+| `deadline_extractor.py` | Explicit dates, milestone binding and conservative timezone comparisons |
+| `ranking.py` | Five weighted criteria, citations, framing and preferences |
+| `researchers.py` | Cited researcher connections and relevant community discovery |
+| `memory.py` | Persistent series/edition observations and new-call detection |
+| `report_generator.py` | Markdown/CSV/JSON shortlist, strategy and separate watchlist |
+| `cache.py`, `models.py`, `config.py`, `llm.py` | TTL storage, validated schemas, configuration and structured LLM calls |
+| `pipeline.py`, `discover.py` | Budgeted orchestration and CLI |
 
-When `--include` or `--exclude` flags are provided, the script uses a quick OpenAI relevance check before full extraction, saving API costs on irrelevant conferences. Use the `--debug` flag to see detailed reasons for why conferences are included or excluded, along with detected topics.
+Add another search service by implementing `SearchProvider.search(query, count)`
+and returning `SearchHit` objects, then register it in `configured_providers`.
+Search adapters are deliberately separate from source verification: a provider's
+answer or snippet can never directly create an `OPEN_VERIFIED` result.
 
-## Output
-
-The generated `conferences.xlsx` contains two sheets:
-
-| Sheet | Contents |
-|---|---|
-| **Conferences** | Active conferences sorted by closest submission deadline |
-| **Past Conferences** | 10 most recently expired conferences |
-
-Each entry includes: title, submission deadline, conference dates, location, keynote speakers, description, topics, and source URL.
-
-## Adding a new scraper
-
-Drop a new Python file in `scrapers/` with a `scrape()` function — it will be auto-discovered on the next run, no changes to `run.py` needed.
-
-```python
-# scrapers/my_source.py
-
-def scrape(session, known_urls=None):
-    """Return a list of conference dicts."""
-    known_urls = known_urls or set()
-    conferences = []
-    # ... your scraping logic ...
-    conferences.append({
-        "title": "Conference Name",
-        "conference_dates": "June 1-3, 2026",
-        "location": "Paris, France",
-        "url": "https://example.com/conf",
-        "source": "my_source",
-        "page_text": "Full text of the conference page...",
-    })
-    return conferences
-```
-
-Required dict keys: `title`, `url`, `source`, `page_text`. Optional: `conference_dates`, `location`. The `known_urls` set enables incremental scraping — skip detail fetches for URLs already in the Excel file.
-
-## Deduplication
-
-Conferences are deduplicated in two stages without any OpenAI calls:
-
-1. **Date + location matching** — conferences with the same start date and city/country are grouped together; the entry with richer detail is kept
-2. **Fuzzy title matching** — catches duplicates where dates or locations are missing, using token-level similarity
-
-This runs before OpenAI classification, so duplicate conferences across sources only cost one API call.
-
-## Troubleshooting
-
-If you encounter API key issues, run the diagnostic script:
-```bash
-python3 test_api_key.py
-```
-
-This will:
-- Check if your API key is properly set
-- Test the OpenAI client initialization
-- Make a test API call to verify everything works
-- Show detailed debugging information
-
-## Requirements
-
-- Python 3.8+
-- OpenAI API key
-- openpyxl
+Official API references used for the integrations:
+[Brave Web Search](https://api-dashboard.search.brave.com/app/documentation/web-search),
+[Tavily Search](https://docs.tavily.com/documentation/api-reference/endpoint/search),
+and [OpenAI Structured Outputs](https://developers.openai.com/api/docs/guides/structured-outputs?api-mode=responses).

@@ -1,0 +1,58 @@
+[
+  {
+    "url": "https://institute.demo.example/b/open/2027/",
+    "final_url": "https://institute.demo.example/b/open/2027/",
+    "raw_url": "https://institute.demo.example/b/open/2027/",
+    "title": "Fictitious Annual Workshop on Crime and Economic Networks 2027",
+    "retrieved_at": "2026-11-05T00:15:22.168670+01:00",
+    "extracted_at": "2026-11-05T00:15:22.168670+01:00",
+    "published_at": null,
+    "publication_date_kind": null,
+    "content_type": "text/html",
+    "sha256": "",
+    "from_cache": false,
+    "raw_path": null
+  },
+  {
+    "url": "https://listing.example/b/listing/2027/",
+    "final_url": "https://listing.example/b/listing/2027/",
+    "raw_url": "https://listing.example/b/listing/2027/",
+    "title": "Fictitious Crime and Economic Networks Conference 2027",
+    "retrieved_at": "2026-11-05T00:15:22.168670+01:00",
+    "extracted_at": "2026-11-05T00:15:22.168670+01:00",
+    "published_at": null,
+    "publication_date_kind": null,
+    "content_type": "text/html",
+    "sha256": "",
+    "from_cache": false,
+    "raw_path": null
+  },
+  {
+    "url": "https://institute.demo.example/b/unknown/2027/",
+    "final_url": "https://institute.demo.example/b/unknown/2027/",
+    "raw_url": "https://institute.demo.example/b/unknown/2027/",
+    "title": "Fictitious Crime and Economic Networks Methods Workshop 2027",
+    "retrieved_at": "2026-11-05T00:15:22.168670+01:00",
+    "extracted_at": "2026-11-05T00:15:22.168670+01:00",
+    "published_at": null,
+    "publication_date_kind": null,
+    "content_type": "text/html",
+    "sha256": "",
+    "from_cache": false,
+    "raw_path": null
+  },
+  {
+    "url": "https://institute.demo.example/b/archive/2025/",
+    "final_url": "https://institute.demo.example/b/archive/2025/",
+    "raw_url": "https://institute.demo.example/b/archive/2025/",
+    "title": "Fictitious Annual Crime and Economic Networks Research Meeting 2025",
+    "retrieved_at": "2026-11-05T00:15:22.168670+01:00",
+    "extracted_at": "2026-11-05T00:15:22.168670+01:00",
+    "published_at": null,
+    "publication_date_kind": null,
+    "content_type": "text/html",
+    "sha256": "",
+    "from_cache": false,
+    "raw_path": null
+  }
+]

@@ -1,0 +1,1707 @@
+{
+  "schema_version": "1.0",
+  "run_id": "87fb4c8c438a",
+  "started_at": "2026-11-05T00:15:22.074303+01:00",
+  "completed_at": "2026-11-04T23:15:22.113938Z",
+  "mode": "offline_demo",
+  "run_status": "complete",
+  "paper": {
+    "title": "Political violence, institutional forbearance, settlement expansion, difference-in-differences, West Bank.",
+    "abstract": "Political violence, institutional forbearance, settlement expansion, difference-in-differences, West Bank.",
+    "research_questions": [
+      "Political violence, institutional forbearance, settlement expansion, difference-in-differences, West Bank."
+    ],
+    "topics": [
+      "political violence",
+      "institutional forbearance",
+      "settlement expansion"
+    ],
+    "methods": [
+      "difference-in-differences",
+      "causal inference"
+    ],
+    "contributions": [],
+    "fields": [
+      "economics",
+      "political science"
+    ],
+    "communities": [
+      "political economy",
+      "conflict economics",
+      "institutional economics"
+    ],
+    "analysis_mode": "heuristic"
+  },
+  "preferences": {
+    "deadline_after": "2026-11-05",
+    "deadline_before": null,
+    "event_after": "2026-11-05",
+    "event_before": "2027-08-05",
+    "regions": [
+      "europe",
+      "north-america"
+    ],
+    "fields": [],
+    "goal": "specialist feedback",
+    "researchers": []
+  },
+  "providers": [
+    "synthetic_fixture"
+  ],
+  "queries": [
+    {
+      "family": "research_question",
+      "query": "political violence institutional forbearance \"call for papers\" 2026 2027"
+    },
+    {
+      "family": "discipline",
+      "query": "political economy conflict economics conference submissions 2026 2027"
+    },
+    {
+      "family": "specialist_workshop",
+      "query": "political violence institutional forbearance specialist research workshop call papers 2026 2027"
+    },
+    {
+      "family": "university",
+      "query": "political violence institutional forbearance workshop \"call for papers\" university 2026 2027"
+    },
+    {
+      "family": "researcher_discovery",
+      "query": "political violence institutional forbearance researchers workshop organisers programme"
+    },
+    {
+      "family": "recurring_series",
+      "query": "political violence institutional forbearance annual workshop conference previous editions"
+    },
+    {
+      "family": "methods",
+      "query": "difference-in-differences causal inference social science workshop CFP 2026 2027"
+    },
+    {
+      "family": "theory",
+      "query": "institutional forbearance settlement expansion institutions political economy workshop 2026 2027"
+    },
+    {
+      "family": "conference_memory",
+      "query": "fictitious annual conflict and institutions research meeting official call papers 2026 2027"
+    },
+    {
+      "family": "conference_memory",
+      "query": "fictitious conflict and institutions methods workshop official call papers 2026 2027"
+    },
+    {
+      "family": "conference_memory",
+      "query": "fictitious conflict and institutions conference official call papers 2026 2027"
+    },
+    {
+      "family": "conference_memory",
+      "query": "fictitious annual workshop on conflict and institutions official call papers 2026 2027"
+    },
+    {
+      "family": "research_community",
+      "query": "site:cepr.org CEPR political economy call papers 2026 2027"
+    },
+    {
+      "family": "research_community",
+      "query": "site:eeassoc.org EEA political economy call papers 2026 2027"
+    },
+    {
+      "family": "research_community",
+      "query": "EPCS political economy call papers 2026 2027"
+    },
+    {
+      "family": "research_community",
+      "query": "site:ecpr.eu ECPR political economy call papers 2026 2027"
+    },
+    {
+      "family": "research_community",
+      "query": "site:epsanet.org EPSA political economy call papers 2026 2027"
+    },
+    {
+      "family": "research_community",
+      "query": "ESOC Empirical Studies of Conflict political economy call papers 2026 2027"
+    },
+    {
+      "family": "research_community",
+      "query": "site:cepr.org ReCIPE political economy call papers 2026 2027"
+    },
+    {
+      "family": "research_community",
+      "query": "site:nber.org NBER political economy call papers 2026 2027"
+    },
+    {
+      "family": "research_community",
+      "query": "site:cesifo.org CESifo political economy call papers 2026 2027"
+    },
+    {
+      "family": "research_community",
+      "query": "site:iza.org IZA political economy call papers 2026 2027"
+    },
+    {
+      "family": "research_community",
+      "query": "HiCN Households in Conflict Network political economy call papers 2026 2027"
+    },
+    {
+      "family": "substantive_topic",
+      "query": "institutional forbearance workshop paper submission 2026 2027"
+    },
+    {
+      "family": "substantive_topic",
+      "query": "settlement expansion workshop paper submission 2026 2027"
+    },
+    {
+      "family": "methods",
+      "query": "difference-in-differences economics political science workshop call papers 2026 2027"
+    },
+    {
+      "family": "methods",
+      "query": "causal inference economics political science workshop call papers 2026 2027"
+    },
+    {
+      "family": "related_discipline",
+      "query": "political economy specialist workshop call papers 2026 2027"
+    },
+    {
+      "family": "related_discipline",
+      "query": "conflict economics specialist workshop call papers 2026 2027"
+    },
+    {
+      "family": "related_discipline",
+      "query": "institutional economics specialist workshop call papers 2026 2027"
+    },
+    {
+      "family": "geography",
+      "query": "political violence institutional forbearance research workshop europe 2026 2027"
+    },
+    {
+      "family": "geography",
+      "query": "political violence institutional forbearance research workshop north america 2026 2027"
+    },
+    {
+      "family": "official_source_resolution",
+      "query": "\"Fictitious Conflict and Institutions Conference 2027\" official call for papers"
+    },
+    {
+      "family": "researcher_network",
+      "query": "\"Ada Mentor\" workshop conference call papers 2026 2027"
+    },
+    {
+      "family": "researcher_network",
+      "query": "\"Bruno Scholar\" workshop conference call papers 2026 2027"
+    }
+  ],
+  "candidates": [
+    {
+      "id": "014851c586bfa158",
+      "series_key": "fictitious annual workshop on conflict and institutions",
+      "name": "Fictitious Annual Workshop on Conflict and Institutions 2027",
+      "edition_year": 2027,
+      "organiser": "Fictitious Research Institute",
+      "hosting_institution": "Fictitious Research Institute",
+      "event_start": "2027-03-05",
+      "event_end": "2027-03-05",
+      "location": "London, United Kingdom",
+      "region": "europe",
+      "deadline": {
+        "date": "2026-12-20",
+        "time": "23:59",
+        "timezone": "UTC",
+        "at": "2026-12-20T23:59:00Z",
+        "raw": "Submission deadline: 2026-12-20 23:59 UTC",
+        "source_url": "https://institute.demo.example/a/open/2027/",
+        "kind": "submission",
+        "warnings": []
+      },
+      "notification_date": null,
+      "notification_is_estimate": null,
+      "submission_type": "full paper",
+      "submission_url": "https://institute.demo.example/a/open/2027/submit",
+      "participation": "open",
+      "submission_fees": "none",
+      "travel_funding": "limited travel support available for doctoral researchers",
+      "eligibility": "all researchers",
+      "organisers": [
+        "Ada Mentor; Bruno Scholar"
+      ],
+      "speakers": [],
+      "topics": [
+        "political violence; institutional forbearance; settlement expansion; political economy; institutions"
+      ],
+      "methods": [
+        "difference-in-differences; causal inference"
+      ],
+      "audience": [
+        "economics and political science researchers working on conflict and institutions"
+      ],
+      "recurring": true,
+      "active_cfp": true,
+      "open_evidence": true,
+      "explicitly_closed": false,
+      "official_source_urls": [
+        "https://institute.demo.example/a/open/2027/"
+      ],
+      "source_urls": [
+        "https://institute.demo.example/a/open/2027/"
+      ],
+      "evidence": [
+        {
+          "field": "name",
+          "value": "Fictitious Annual Workshop on Conflict and Institutions 2027",
+          "quote": "Fictitious Annual Workshop on Conflict and Institutions 2027",
+          "source_url": "https://institute.demo.example/a/open/2027/",
+          "retrieved_at": "2026-11-05T00:15:22.074303+01:00",
+          "extracted_at": "2026-11-05T00:15:22.074303+01:00",
+          "published_at": null,
+          "official": true
+        },
+        {
+          "field": "edition_year",
+          "value": "2027",
+          "quote": "Fictitious Annual Workshop on Conflict and Institutions 2027",
+          "source_url": "https://institute.demo.example/a/open/2027/",
+          "retrieved_at": "2026-11-05T00:15:22.074303+01:00",
+          "extracted_at": "2026-11-05T00:15:22.074303+01:00",
+          "published_at": null,
+          "official": true
+        },
+        {
+          "field": "organiser",
+          "value": "Fictitious Research Institute",
+          "quote": "Organiser: Fictitious Research Institute",
+          "source_url": "https://institute.demo.example/a/open/2027/",
+          "retrieved_at": "2026-11-05T00:15:22.074303+01:00",
+          "extracted_at": "2026-11-05T00:15:22.074303+01:00",
+          "published_at": null,
+          "official": true
+        },
+        {
+          "field": "hosting_institution",
+          "value": "Fictitious Research Institute",
+          "quote": "Hosted by: Fictitious Research Institute",
+          "source_url": "https://institute.demo.example/a/open/2027/",
+          "retrieved_at": "2026-11-05T00:15:22.074303+01:00",
+          "extracted_at": "2026-11-05T00:15:22.074303+01:00",
+          "published_at": null,
+          "official": true
+        },
+        {
+          "field": "event_dates",
+          "value": "2027-03-05",
+          "quote": "Event dates: 2027-03-05",
+          "source_url": "https://institute.demo.example/a/open/2027/",
+          "retrieved_at": "2026-11-05T00:15:22.074303+01:00",
+          "extracted_at": "2026-11-05T00:15:22.074303+01:00",
+          "published_at": null,
+          "official": true
+        },
+        {
+          "field": "location",
+          "value": "London, United Kingdom",
+          "quote": "Location: London, United Kingdom",
+          "source_url": "https://institute.demo.example/a/open/2027/",
+          "retrieved_at": "2026-11-05T00:15:22.074303+01:00",
+          "extracted_at": "2026-11-05T00:15:22.074303+01:00",
+          "published_at": null,
+          "official": true
+        },
+        {
+          "field": "submission_type",
+          "value": "full paper",
+          "quote": "Submission type: full paper",
+          "source_url": "https://institute.demo.example/a/open/2027/",
+          "retrieved_at": "2026-11-05T00:15:22.074303+01:00",
+          "extracted_at": "2026-11-05T00:15:22.074303+01:00",
+          "published_at": null,
+          "official": true
+        },
+        {
+          "field": "submission_fees",
+          "value": "none",
+          "quote": "Submission fee: none",
+          "source_url": "https://institute.demo.example/a/open/2027/",
+          "retrieved_at": "2026-11-05T00:15:22.074303+01:00",
+          "extracted_at": "2026-11-05T00:15:22.074303+01:00",
+          "published_at": null,
+          "official": true
+        },
+        {
+          "field": "travel_funding",
+          "value": "limited travel support available for doctoral researchers",
+          "quote": "Travel funding: limited travel support available for doctoral researchers",
+          "source_url": "https://institute.demo.example/a/open/2027/",
+          "retrieved_at": "2026-11-05T00:15:22.074303+01:00",
+          "extracted_at": "2026-11-05T00:15:22.074303+01:00",
+          "published_at": null,
+          "official": true
+        },
+        {
+          "field": "eligibility",
+          "value": "all researchers",
+          "quote": "Eligibility: all researchers",
+          "source_url": "https://institute.demo.example/a/open/2027/",
+          "retrieved_at": "2026-11-05T00:15:22.074303+01:00",
+          "extracted_at": "2026-11-05T00:15:22.074303+01:00",
+          "published_at": null,
+          "official": true
+        },
+        {
+          "field": "organisers",
+          "value": "Ada Mentor; Bruno Scholar",
+          "quote": "Organisers: Ada Mentor; Bruno Scholar",
+          "source_url": "https://institute.demo.example/a/open/2027/",
+          "retrieved_at": "2026-11-05T00:15:22.074303+01:00",
+          "extracted_at": "2026-11-05T00:15:22.074303+01:00",
+          "published_at": null,
+          "official": true
+        },
+        {
+          "field": "topics",
+          "value": "political violence; institutional forbearance; settlement expansion; political economy; institutions",
+          "quote": "Topics: political violence; institutional forbearance; settlement expansion; political economy; institutions",
+          "source_url": "https://institute.demo.example/a/open/2027/",
+          "retrieved_at": "2026-11-05T00:15:22.074303+01:00",
+          "extracted_at": "2026-11-05T00:15:22.074303+01:00",
+          "published_at": null,
+          "official": true
+        },
+        {
+          "field": "methods",
+          "value": "difference-in-differences; causal inference",
+          "quote": "Methods: difference-in-differences; causal inference",
+          "source_url": "https://institute.demo.example/a/open/2027/",
+          "retrieved_at": "2026-11-05T00:15:22.074303+01:00",
+          "extracted_at": "2026-11-05T00:15:22.074303+01:00",
+          "published_at": null,
+          "official": true
+        },
+        {
+          "field": "audience",
+          "value": "economics and political science researchers working on conflict and institutions",
+          "quote": "Audience: economics and political science researchers working on conflict and institutions",
+          "source_url": "https://institute.demo.example/a/open/2027/",
+          "retrieved_at": "2026-11-05T00:15:22.074303+01:00",
+          "extracted_at": "2026-11-05T00:15:22.074303+01:00",
+          "published_at": null,
+          "official": true
+        },
+        {
+          "field": "recurring",
+          "value": "true",
+          "quote": "Fictitious Annual Workshop on Conflict and Institutions 2027",
+          "source_url": "https://institute.demo.example/a/open/2027/",
+          "retrieved_at": "2026-11-05T00:15:22.074303+01:00",
+          "extracted_at": "2026-11-05T00:15:22.074303+01:00",
+          "published_at": null,
+          "official": true
+        },
+        {
+          "field": "cfp",
+          "value": "true",
+          "quote": "Call for papers",
+          "source_url": "https://institute.demo.example/a/open/2027/",
+          "retrieved_at": "2026-11-05T00:15:22.074303+01:00",
+          "extracted_at": "2026-11-05T00:15:22.074303+01:00",
+          "published_at": null,
+          "official": true
+        },
+        {
+          "field": "cfp",
+          "value": "true",
+          "quote": "We invite submissions. Submissions are now open.",
+          "source_url": "https://institute.demo.example/a/open/2027/",
+          "retrieved_at": "2026-11-05T00:15:22.074303+01:00",
+          "extracted_at": "2026-11-05T00:15:22.074303+01:00",
+          "published_at": null,
+          "official": true
+        },
+        {
+          "field": "open",
+          "value": "true",
+          "quote": "We invite submissions. Submissions are now open.",
+          "source_url": "https://institute.demo.example/a/open/2027/",
+          "retrieved_at": "2026-11-05T00:15:22.074303+01:00",
+          "extracted_at": "2026-11-05T00:15:22.074303+01:00",
+          "published_at": null,
+          "official": true
+        },
+        {
+          "field": "quality",
+          "value": "This small workshop uses discussants and detailed feedback.",
+          "quote": "This small workshop uses discussants and detailed feedback.",
+          "source_url": "https://institute.demo.example/a/open/2027/",
+          "retrieved_at": "2026-11-05T00:15:22.074303+01:00",
+          "extracted_at": "2026-11-05T00:15:22.074303+01:00",
+          "published_at": null,
+          "official": true
+        },
+        {
+          "field": "participation",
+          "value": "open",
+          "quote": "Participation is open to all researchers.",
+          "source_url": "https://institute.demo.example/a/open/2027/",
+          "retrieved_at": "2026-11-05T00:15:22.074303+01:00",
+          "extracted_at": "2026-11-05T00:15:22.074303+01:00",
+          "published_at": null,
+          "official": true
+        },
+        {
+          "field": "open",
+          "value": "true",
+          "quote": "Submit your paper",
+          "source_url": "https://institute.demo.example/a/open/2027/",
+          "retrieved_at": "2026-11-05T00:15:22.074303+01:00",
+          "extracted_at": "2026-11-05T00:15:22.074303+01:00",
+          "published_at": null,
+          "official": true
+        },
+        {
+          "field": "submission_url",
+          "value": "https://institute.demo.example/a/open/2027/submit",
+          "quote": "Submit your paper",
+          "source_url": "https://institute.demo.example/a/open/2027/",
+          "retrieved_at": "2026-11-05T00:15:22.074303+01:00",
+          "extracted_at": "2026-11-05T00:15:22.074303+01:00",
+          "published_at": null,
+          "official": true
+        },
+        {
+          "field": "deadline",
+          "value": "2026-12-20",
+          "quote": "Submission deadline: 2026-12-20 23:59 UTC",
+          "source_url": "https://institute.demo.example/a/open/2027/",
+          "retrieved_at": "2026-11-05T00:15:22.074303+01:00",
+          "extracted_at": "2026-11-05T00:15:22.074303+01:00",
+          "published_at": null,
+          "official": true
+        }
+      ],
+      "status": "OPEN_VERIFIED",
+      "verification_notes": [
+        "Organiser domain explicitly trusted in configuration."
+      ],
+      "discrepancies": [],
+      "constraints": [],
+      "within_preferences": true,
+      "ranking": {
+        "approximate_score": 85,
+        "confidence": "low",
+        "mode": "heuristic",
+        "criteria": [
+          {
+            "name": "topic",
+            "weight": 0.35,
+            "score": 90,
+            "rationale": "Scope overlaps: political violence, institutional forbearance, settlement expansion, political economy",
+            "evidence_indices": [
+              0,
+              11
+            ]
+          },
+          {
+            "name": "audience",
+            "weight": 0.2,
+            "score": 80,
+            "rationale": "Audience relevance is inferred from documented scope; individual researcher participation is not assumed.",
+            "evidence_indices": [
+              10,
+              11,
+              13
+            ]
+          },
+          {
+            "name": "quality_and_goal",
+            "weight": 0.2,
+            "score": 80,
+            "rationale": "Documented discussion/review format supports the research goal.",
+            "evidence_indices": [
+              10,
+              18
+            ]
+          },
+          {
+            "name": "methods",
+            "weight": 0.15,
+            "score": 80,
+            "rationale": "Explicit method overlap: difference-in-differences, causal inference",
+            "evidence_indices": [
+              11,
+              12
+            ]
+          },
+          {
+            "name": "practical",
+            "weight": 0.1,
+            "score": 80,
+            "rationale": "Known region, timing and stated funding considered; unstated costs remain unknown.",
+            "evidence_indices": [
+              4,
+              5,
+              7,
+              8,
+              22
+            ]
+          }
+        ],
+        "fit_explanation": [
+          "The documented venue scope connects to political violence, institutional forbearance, settlement expansion, political economy.",
+          "The call explicitly mentions difference-in-differences, causal inference, matching the paper's methods.",
+          "The assessment prioritizes specialist feedback; its audience and quality scores are provisional where evidence is limited."
+        ],
+        "suggested_framing": "Emphasize political violence, institutional forbearance and explain the contribution of difference-in-differences, causal inference.",
+        "caveats": [
+          "Heuristic assessment; semantic evaluation requires OPENAI_API_KEY and OPENAI_MODEL.",
+          "Scores are approximate research-value judgements, not acceptance probabilities."
+        ]
+      },
+      "verified_at": "2026-11-05T00:15:22.074303+01:00",
+      "last_observed_edition": null
+    },
+    {
+      "id": "582d98472dbfcbfc",
+      "series_key": "fictitious conflict and institutions conference",
+      "name": "Fictitious Conflict and Institutions Conference 2027",
+      "edition_year": 2027,
+      "organiser": "Fictitious Research Institute",
+      "hosting_institution": "Fictitious Research Institute",
+      "event_start": "2027-03-19",
+      "event_end": "2027-03-19",
+      "location": "London, United Kingdom",
+      "region": "europe",
+      "deadline": {
+        "date": "2027-01-04",
+        "time": null,
+        "timezone": null,
+        "at": null,
+        "raw": "Submission deadline: 2027-01-04",
+        "source_url": "https://listing.example/a/listing/2027/",
+        "kind": "submission",
+        "warnings": []
+      },
+      "notification_date": null,
+      "notification_is_estimate": null,
+      "submission_type": "extended abstract",
+      "submission_url": null,
+      "participation": "unclear",
+      "submission_fees": null,
+      "travel_funding": null,
+      "eligibility": null,
+      "organisers": [],
+      "speakers": [],
+      "topics": [
+        "political violence; institutional forbearance; settlement expansion; political economy; institutions"
+      ],
+      "methods": [
+        "difference-in-differences; causal inference"
+      ],
+      "audience": [
+        "economics and political science researchers working on conflict and institutions"
+      ],
+      "recurring": false,
+      "active_cfp": true,
+      "open_evidence": false,
+      "explicitly_closed": false,
+      "official_source_urls": [],
+      "source_urls": [
+        "https://listing.example/a/listing/2027/"
+      ],
+      "evidence": [
+        {
+          "field": "name",
+          "value": "Fictitious Conflict and Institutions Conference 2027",
+          "quote": "Fictitious Conflict and Institutions Conference 2027",
+          "source_url": "https://listing.example/a/listing/2027/",
+          "retrieved_at": "2026-11-05T00:15:22.074303+01:00",
+          "extracted_at": "2026-11-05T00:15:22.074303+01:00",
+          "published_at": null,
+          "official": false
+        },
+        {
+          "field": "edition_year",
+          "value": "2027",
+          "quote": "Fictitious Conflict and Institutions Conference 2027",
+          "source_url": "https://listing.example/a/listing/2027/",
+          "retrieved_at": "2026-11-05T00:15:22.074303+01:00",
+          "extracted_at": "2026-11-05T00:15:22.074303+01:00",
+          "published_at": null,
+          "official": false
+        },
+        {
+          "field": "organiser",
+          "value": "Fictitious Research Institute",
+          "quote": "Organiser: Fictitious Research Institute",
+          "source_url": "https://listing.example/a/listing/2027/",
+          "retrieved_at": "2026-11-05T00:15:22.074303+01:00",
+          "extracted_at": "2026-11-05T00:15:22.074303+01:00",
+          "published_at": null,
+          "official": false
+        },
+        {
+          "field": "hosting_institution",
+          "value": "Fictitious Research Institute",
+          "quote": "Hosted by: Fictitious Research Institute",
+          "source_url": "https://listing.example/a/listing/2027/",
+          "retrieved_at": "2026-11-05T00:15:22.074303+01:00",
+          "extracted_at": "2026-11-05T00:15:22.074303+01:00",
+          "published_at": null,
+          "official": false
+        },
+        {
+          "field": "event_dates",
+          "value": "2027-03-19",
+          "quote": "Event dates: 2027-03-19",
+          "source_url": "https://listing.example/a/listing/2027/",
+          "retrieved_at": "2026-11-05T00:15:22.074303+01:00",
+          "extracted_at": "2026-11-05T00:15:22.074303+01:00",
+          "published_at": null,
+          "official": false
+        },
+        {
+          "field": "location",
+          "value": "London, United Kingdom",
+          "quote": "Location: London, United Kingdom",
+          "source_url": "https://listing.example/a/listing/2027/",
+          "retrieved_at": "2026-11-05T00:15:22.074303+01:00",
+          "extracted_at": "2026-11-05T00:15:22.074303+01:00",
+          "published_at": null,
+          "official": false
+        },
+        {
+          "field": "submission_type",
+          "value": "extended abstract",
+          "quote": "Submission type: extended abstract",
+          "source_url": "https://listing.example/a/listing/2027/",
+          "retrieved_at": "2026-11-05T00:15:22.074303+01:00",
+          "extracted_at": "2026-11-05T00:15:22.074303+01:00",
+          "published_at": null,
+          "official": false
+        },
+        {
+          "field": "topics",
+          "value": "political violence; institutional forbearance; settlement expansion; political economy; institutions",
+          "quote": "Topics: political violence; institutional forbearance; settlement expansion; political economy; institutions",
+          "source_url": "https://listing.example/a/listing/2027/",
+          "retrieved_at": "2026-11-05T00:15:22.074303+01:00",
+          "extracted_at": "2026-11-05T00:15:22.074303+01:00",
+          "published_at": null,
+          "official": false
+        },
+        {
+          "field": "methods",
+          "value": "difference-in-differences; causal inference",
+          "quote": "Methods: difference-in-differences; causal inference",
+          "source_url": "https://listing.example/a/listing/2027/",
+          "retrieved_at": "2026-11-05T00:15:22.074303+01:00",
+          "extracted_at": "2026-11-05T00:15:22.074303+01:00",
+          "published_at": null,
+          "official": false
+        },
+        {
+          "field": "audience",
+          "value": "economics and political science researchers working on conflict and institutions",
+          "quote": "Audience: economics and political science researchers working on conflict and institutions",
+          "source_url": "https://listing.example/a/listing/2027/",
+          "retrieved_at": "2026-11-05T00:15:22.074303+01:00",
+          "extracted_at": "2026-11-05T00:15:22.074303+01:00",
+          "published_at": null,
+          "official": false
+        },
+        {
+          "field": "cfp",
+          "value": "true",
+          "quote": "Call for papers",
+          "source_url": "https://listing.example/a/listing/2027/",
+          "retrieved_at": "2026-11-05T00:15:22.074303+01:00",
+          "extracted_at": "2026-11-05T00:15:22.074303+01:00",
+          "published_at": null,
+          "official": false
+        },
+        {
+          "field": "deadline",
+          "value": "2027-01-04",
+          "quote": "Submission deadline: 2027-01-04",
+          "source_url": "https://listing.example/a/listing/2027/",
+          "retrieved_at": "2026-11-05T00:15:22.074303+01:00",
+          "extracted_at": "2026-11-05T00:15:22.074303+01:00",
+          "published_at": null,
+          "official": false
+        }
+      ],
+      "status": "FUTURE_DEADLINE_UNCONFIRMED",
+      "verification_notes": [
+        "Official organiser authority could not be established from the retrieved page."
+      ],
+      "discrepancies": [],
+      "constraints": [],
+      "within_preferences": true,
+      "ranking": {
+        "approximate_score": 75,
+        "confidence": "low",
+        "mode": "heuristic",
+        "criteria": [
+          {
+            "name": "topic",
+            "weight": 0.35,
+            "score": 90,
+            "rationale": "Scope overlaps: political violence, institutional forbearance, settlement expansion, political economy",
+            "evidence_indices": [
+              0,
+              7
+            ]
+          },
+          {
+            "name": "audience",
+            "weight": 0.2,
+            "score": 80,
+            "rationale": "Audience relevance is inferred from documented scope; individual researcher participation is not assumed.",
+            "evidence_indices": [
+              7,
+              9
+            ]
+          },
+          {
+            "name": "quality_and_goal",
+            "weight": 0.2,
+            "score": 40,
+            "rationale": "Review and feedback quality are unknown; no prestige-based score was assigned.",
+            "evidence_indices": []
+          },
+          {
+            "name": "methods",
+            "weight": 0.15,
+            "score": 80,
+            "rationale": "Explicit method overlap: difference-in-differences, causal inference",
+            "evidence_indices": [
+              7,
+              8
+            ]
+          },
+          {
+            "name": "practical",
+            "weight": 0.1,
+            "score": 70,
+            "rationale": "Known region, timing and stated funding considered; unstated costs remain unknown.",
+            "evidence_indices": [
+              4,
+              5,
+              11
+            ]
+          }
+        ],
+        "fit_explanation": [
+          "The documented venue scope connects to political violence, institutional forbearance, settlement expansion, political economy.",
+          "The call explicitly mentions difference-in-differences, causal inference, matching the paper's methods.",
+          "The assessment prioritizes specialist feedback; its audience and quality scores are provisional where evidence is limited."
+        ],
+        "suggested_framing": "Emphasize political violence, institutional forbearance and explain the contribution of difference-in-differences, causal inference.",
+        "caveats": [
+          "Heuristic assessment; semantic evaluation requires OPENAI_API_KEY and OPENAI_MODEL.",
+          "Scores are approximate research-value judgements, not acceptance probabilities."
+        ]
+      },
+      "verified_at": "2026-11-05T00:15:22.074303+01:00",
+      "last_observed_edition": null
+    },
+    {
+      "id": "8be44f20205b2da8",
+      "series_key": "fictitious conflict and institutions methods workshop",
+      "name": "Fictitious Conflict and Institutions Methods Workshop 2027",
+      "edition_year": 2027,
+      "organiser": "Fictitious Research Institute",
+      "hosting_institution": "Fictitious Research Institute",
+      "event_start": "2027-04-04",
+      "event_end": "2027-04-04",
+      "location": "London, United Kingdom",
+      "region": "europe",
+      "deadline": {
+        "date": null,
+        "time": null,
+        "timezone": null,
+        "at": null,
+        "raw": "Submission deadline: to be announced",
+        "source_url": "https://institute.demo.example/a/unknown/2027/",
+        "kind": "submission",
+        "warnings": [
+          "Missing year, unrecognised date, or ambiguous numeric date; no year was inferred."
+        ]
+      },
+      "notification_date": null,
+      "notification_is_estimate": null,
+      "submission_type": null,
+      "submission_url": null,
+      "participation": "unclear",
+      "submission_fees": null,
+      "travel_funding": null,
+      "eligibility": null,
+      "organisers": [],
+      "speakers": [],
+      "topics": [
+        "political violence; institutional forbearance; settlement expansion; political economy; institutions"
+      ],
+      "methods": [
+        "difference-in-differences; causal inference"
+      ],
+      "audience": [
+        "economics and political science researchers working on conflict and institutions"
+      ],
+      "recurring": false,
+      "active_cfp": true,
+      "open_evidence": true,
+      "explicitly_closed": false,
+      "official_source_urls": [
+        "https://institute.demo.example/a/unknown/2027/"
+      ],
+      "source_urls": [
+        "https://institute.demo.example/a/unknown/2027/"
+      ],
+      "evidence": [
+        {
+          "field": "name",
+          "value": "Fictitious Conflict and Institutions Methods Workshop 2027",
+          "quote": "Fictitious Conflict and Institutions Methods Workshop 2027",
+          "source_url": "https://institute.demo.example/a/unknown/2027/",
+          "retrieved_at": "2026-11-05T00:15:22.074303+01:00",
+          "extracted_at": "2026-11-05T00:15:22.074303+01:00",
+          "published_at": null,
+          "official": true
+        },
+        {
+          "field": "edition_year",
+          "value": "2027",
+          "quote": "Fictitious Conflict and Institutions Methods Workshop 2027",
+          "source_url": "https://institute.demo.example/a/unknown/2027/",
+          "retrieved_at": "2026-11-05T00:15:22.074303+01:00",
+          "extracted_at": "2026-11-05T00:15:22.074303+01:00",
+          "published_at": null,
+          "official": true
+        },
+        {
+          "field": "organiser",
+          "value": "Fictitious Research Institute",
+          "quote": "Organiser: Fictitious Research Institute",
+          "source_url": "https://institute.demo.example/a/unknown/2027/",
+          "retrieved_at": "2026-11-05T00:15:22.074303+01:00",
+          "extracted_at": "2026-11-05T00:15:22.074303+01:00",
+          "published_at": null,
+          "official": true
+        },
+        {
+          "field": "hosting_institution",
+          "value": "Fictitious Research Institute",
+          "quote": "Hosted by: Fictitious Research Institute",
+          "source_url": "https://institute.demo.example/a/unknown/2027/",
+          "retrieved_at": "2026-11-05T00:15:22.074303+01:00",
+          "extracted_at": "2026-11-05T00:15:22.074303+01:00",
+          "published_at": null,
+          "official": true
+        },
+        {
+          "field": "event_dates",
+          "value": "2027-04-04",
+          "quote": "Event dates: 2027-04-04",
+          "source_url": "https://institute.demo.example/a/unknown/2027/",
+          "retrieved_at": "2026-11-05T00:15:22.074303+01:00",
+          "extracted_at": "2026-11-05T00:15:22.074303+01:00",
+          "published_at": null,
+          "official": true
+        },
+        {
+          "field": "location",
+          "value": "London, United Kingdom",
+          "quote": "Location: London, United Kingdom",
+          "source_url": "https://institute.demo.example/a/unknown/2027/",
+          "retrieved_at": "2026-11-05T00:15:22.074303+01:00",
+          "extracted_at": "2026-11-05T00:15:22.074303+01:00",
+          "published_at": null,
+          "official": true
+        },
+        {
+          "field": "topics",
+          "value": "political violence; institutional forbearance; settlement expansion; political economy; institutions",
+          "quote": "Topics: political violence; institutional forbearance; settlement expansion; political economy; institutions",
+          "source_url": "https://institute.demo.example/a/unknown/2027/",
+          "retrieved_at": "2026-11-05T00:15:22.074303+01:00",
+          "extracted_at": "2026-11-05T00:15:22.074303+01:00",
+          "published_at": null,
+          "official": true
+        },
+        {
+          "field": "methods",
+          "value": "difference-in-differences; causal inference",
+          "quote": "Methods: difference-in-differences; causal inference",
+          "source_url": "https://institute.demo.example/a/unknown/2027/",
+          "retrieved_at": "2026-11-05T00:15:22.074303+01:00",
+          "extracted_at": "2026-11-05T00:15:22.074303+01:00",
+          "published_at": null,
+          "official": true
+        },
+        {
+          "field": "audience",
+          "value": "economics and political science researchers working on conflict and institutions",
+          "quote": "Audience: economics and political science researchers working on conflict and institutions",
+          "source_url": "https://institute.demo.example/a/unknown/2027/",
+          "retrieved_at": "2026-11-05T00:15:22.074303+01:00",
+          "extracted_at": "2026-11-05T00:15:22.074303+01:00",
+          "published_at": null,
+          "official": true
+        },
+        {
+          "field": "cfp",
+          "value": "true",
+          "quote": "Call for papers",
+          "source_url": "https://institute.demo.example/a/unknown/2027/",
+          "retrieved_at": "2026-11-05T00:15:22.074303+01:00",
+          "extracted_at": "2026-11-05T00:15:22.074303+01:00",
+          "published_at": null,
+          "official": true
+        },
+        {
+          "field": "cfp",
+          "value": "true",
+          "quote": "We invite submissions.",
+          "source_url": "https://institute.demo.example/a/unknown/2027/",
+          "retrieved_at": "2026-11-05T00:15:22.074303+01:00",
+          "extracted_at": "2026-11-05T00:15:22.074303+01:00",
+          "published_at": null,
+          "official": true
+        },
+        {
+          "field": "open",
+          "value": "true",
+          "quote": "We invite submissions.",
+          "source_url": "https://institute.demo.example/a/unknown/2027/",
+          "retrieved_at": "2026-11-05T00:15:22.074303+01:00",
+          "extracted_at": "2026-11-05T00:15:22.074303+01:00",
+          "published_at": null,
+          "official": true
+        },
+        {
+          "field": "deadline",
+          "value": "unknown",
+          "quote": "Submission deadline: to be announced",
+          "source_url": "https://institute.demo.example/a/unknown/2027/",
+          "retrieved_at": "2026-11-05T00:15:22.074303+01:00",
+          "extracted_at": "2026-11-05T00:15:22.074303+01:00",
+          "published_at": null,
+          "official": true
+        }
+      ],
+      "status": "DATE_UNKNOWN",
+      "verification_notes": [
+        "Organiser domain explicitly trusted in configuration.",
+        "Missing year, unrecognised date, or ambiguous numeric date; no year was inferred."
+      ],
+      "discrepancies": [],
+      "constraints": [
+        "Submission window cannot be checked: deadline unknown."
+      ],
+      "within_preferences": true,
+      "ranking": {
+        "approximate_score": 75,
+        "confidence": "low",
+        "mode": "heuristic",
+        "criteria": [
+          {
+            "name": "topic",
+            "weight": 0.35,
+            "score": 90,
+            "rationale": "Scope overlaps: political violence, institutional forbearance, settlement expansion, political economy",
+            "evidence_indices": [
+              0,
+              6
+            ]
+          },
+          {
+            "name": "audience",
+            "weight": 0.2,
+            "score": 80,
+            "rationale": "Audience relevance is inferred from documented scope; individual researcher participation is not assumed.",
+            "evidence_indices": [
+              6,
+              8
+            ]
+          },
+          {
+            "name": "quality_and_goal",
+            "weight": 0.2,
+            "score": 40,
+            "rationale": "Review and feedback quality are unknown; no prestige-based score was assigned.",
+            "evidence_indices": []
+          },
+          {
+            "name": "methods",
+            "weight": 0.15,
+            "score": 80,
+            "rationale": "Explicit method overlap: difference-in-differences, causal inference",
+            "evidence_indices": [
+              6,
+              7
+            ]
+          },
+          {
+            "name": "practical",
+            "weight": 0.1,
+            "score": 70,
+            "rationale": "Submission window cannot be checked: deadline unknown.",
+            "evidence_indices": [
+              4,
+              5,
+              12
+            ]
+          }
+        ],
+        "fit_explanation": [
+          "The documented venue scope connects to political violence, institutional forbearance, settlement expansion, political economy.",
+          "The call explicitly mentions difference-in-differences, causal inference, matching the paper's methods.",
+          "The assessment prioritizes specialist feedback; its audience and quality scores are provisional where evidence is limited."
+        ],
+        "suggested_framing": "Emphasize political violence, institutional forbearance and explain the contribution of difference-in-differences, causal inference.",
+        "caveats": [
+          "Heuristic assessment; semantic evaluation requires OPENAI_API_KEY and OPENAI_MODEL.",
+          "Scores are approximate research-value judgements, not acceptance probabilities."
+        ]
+      },
+      "verified_at": "2026-11-05T00:15:22.074303+01:00",
+      "last_observed_edition": null
+    },
+    {
+      "id": "d2e4b836ee714acb",
+      "series_key": "fictitious annual conflict and institutions research meeting",
+      "name": "Fictitious Annual Conflict and Institutions Research Meeting 2025",
+      "edition_year": 2025,
+      "organiser": "Fictitious Research Institute",
+      "hosting_institution": "Fictitious Research Institute",
+      "event_start": "2025-06-15",
+      "event_end": "2025-06-15",
+      "location": "London, United Kingdom",
+      "region": "europe",
+      "deadline": {
+        "date": "2025-04-01",
+        "time": null,
+        "timezone": null,
+        "at": null,
+        "raw": "Submission deadline: 2025-04-01",
+        "source_url": "https://institute.demo.example/a/archive/2025/",
+        "kind": "submission",
+        "warnings": []
+      },
+      "notification_date": null,
+      "notification_is_estimate": null,
+      "submission_type": null,
+      "submission_url": null,
+      "participation": "unclear",
+      "submission_fees": null,
+      "travel_funding": null,
+      "eligibility": null,
+      "organisers": [],
+      "speakers": [],
+      "topics": [
+        "political violence; institutional forbearance; settlement expansion; political economy; institutions"
+      ],
+      "methods": [
+        "difference-in-differences; causal inference"
+      ],
+      "audience": [
+        "economics and political science researchers working on conflict and institutions"
+      ],
+      "recurring": true,
+      "active_cfp": true,
+      "open_evidence": false,
+      "explicitly_closed": true,
+      "official_source_urls": [
+        "https://institute.demo.example/a/archive/2025/"
+      ],
+      "source_urls": [
+        "https://institute.demo.example/a/archive/2025/"
+      ],
+      "evidence": [
+        {
+          "field": "name",
+          "value": "Fictitious Annual Conflict and Institutions Research Meeting 2025",
+          "quote": "Fictitious Annual Conflict and Institutions Research Meeting 2025",
+          "source_url": "https://institute.demo.example/a/archive/2025/",
+          "retrieved_at": "2026-11-05T00:15:22.074303+01:00",
+          "extracted_at": "2026-11-05T00:15:22.074303+01:00",
+          "published_at": null,
+          "official": true
+        },
+        {
+          "field": "edition_year",
+          "value": "2025",
+          "quote": "Fictitious Annual Conflict and Institutions Research Meeting 2025",
+          "source_url": "https://institute.demo.example/a/archive/2025/",
+          "retrieved_at": "2026-11-05T00:15:22.074303+01:00",
+          "extracted_at": "2026-11-05T00:15:22.074303+01:00",
+          "published_at": null,
+          "official": true
+        },
+        {
+          "field": "organiser",
+          "value": "Fictitious Research Institute",
+          "quote": "Organiser: Fictitious Research Institute",
+          "source_url": "https://institute.demo.example/a/archive/2025/",
+          "retrieved_at": "2026-11-05T00:15:22.074303+01:00",
+          "extracted_at": "2026-11-05T00:15:22.074303+01:00",
+          "published_at": null,
+          "official": true
+        },
+        {
+          "field": "hosting_institution",
+          "value": "Fictitious Research Institute",
+          "quote": "Hosted by: Fictitious Research Institute",
+          "source_url": "https://institute.demo.example/a/archive/2025/",
+          "retrieved_at": "2026-11-05T00:15:22.074303+01:00",
+          "extracted_at": "2026-11-05T00:15:22.074303+01:00",
+          "published_at": null,
+          "official": true
+        },
+        {
+          "field": "event_dates",
+          "value": "2025-06-15",
+          "quote": "Event dates: 2025-06-15",
+          "source_url": "https://institute.demo.example/a/archive/2025/",
+          "retrieved_at": "2026-11-05T00:15:22.074303+01:00",
+          "extracted_at": "2026-11-05T00:15:22.074303+01:00",
+          "published_at": null,
+          "official": true
+        },
+        {
+          "field": "location",
+          "value": "London, United Kingdom",
+          "quote": "Location: London, United Kingdom",
+          "source_url": "https://institute.demo.example/a/archive/2025/",
+          "retrieved_at": "2026-11-05T00:15:22.074303+01:00",
+          "extracted_at": "2026-11-05T00:15:22.074303+01:00",
+          "published_at": null,
+          "official": true
+        },
+        {
+          "field": "topics",
+          "value": "political violence; institutional forbearance; settlement expansion; political economy; institutions",
+          "quote": "Topics: political violence; institutional forbearance; settlement expansion; political economy; institutions",
+          "source_url": "https://institute.demo.example/a/archive/2025/",
+          "retrieved_at": "2026-11-05T00:15:22.074303+01:00",
+          "extracted_at": "2026-11-05T00:15:22.074303+01:00",
+          "published_at": null,
+          "official": true
+        },
+        {
+          "field": "methods",
+          "value": "difference-in-differences; causal inference",
+          "quote": "Methods: difference-in-differences; causal inference",
+          "source_url": "https://institute.demo.example/a/archive/2025/",
+          "retrieved_at": "2026-11-05T00:15:22.074303+01:00",
+          "extracted_at": "2026-11-05T00:15:22.074303+01:00",
+          "published_at": null,
+          "official": true
+        },
+        {
+          "field": "audience",
+          "value": "economics and political science researchers working on conflict and institutions",
+          "quote": "Audience: economics and political science researchers working on conflict and institutions",
+          "source_url": "https://institute.demo.example/a/archive/2025/",
+          "retrieved_at": "2026-11-05T00:15:22.074303+01:00",
+          "extracted_at": "2026-11-05T00:15:22.074303+01:00",
+          "published_at": null,
+          "official": true
+        },
+        {
+          "field": "recurring",
+          "value": "true",
+          "quote": "Fictitious Annual Conflict and Institutions Research Meeting 2025",
+          "source_url": "https://institute.demo.example/a/archive/2025/",
+          "retrieved_at": "2026-11-05T00:15:22.074303+01:00",
+          "extracted_at": "2026-11-05T00:15:22.074303+01:00",
+          "published_at": null,
+          "official": true
+        },
+        {
+          "field": "cfp",
+          "value": "true",
+          "quote": "Call for papers",
+          "source_url": "https://institute.demo.example/a/archive/2025/",
+          "retrieved_at": "2026-11-05T00:15:22.074303+01:00",
+          "extracted_at": "2026-11-05T00:15:22.074303+01:00",
+          "published_at": null,
+          "official": true
+        },
+        {
+          "field": "closed",
+          "value": "true",
+          "quote": "Submissions are closed.",
+          "source_url": "https://institute.demo.example/a/archive/2025/",
+          "retrieved_at": "2026-11-05T00:15:22.074303+01:00",
+          "extracted_at": "2026-11-05T00:15:22.074303+01:00",
+          "published_at": null,
+          "official": true
+        },
+        {
+          "field": "recurring",
+          "value": "true",
+          "quote": "Previous editions are available in our annual meeting archive.",
+          "source_url": "https://institute.demo.example/a/archive/2025/",
+          "retrieved_at": "2026-11-05T00:15:22.074303+01:00",
+          "extracted_at": "2026-11-05T00:15:22.074303+01:00",
+          "published_at": null,
+          "official": true
+        },
+        {
+          "field": "deadline",
+          "value": "2025-04-01",
+          "quote": "Submission deadline: 2025-04-01",
+          "source_url": "https://institute.demo.example/a/archive/2025/",
+          "retrieved_at": "2026-11-05T00:15:22.074303+01:00",
+          "extracted_at": "2026-11-05T00:15:22.074303+01:00",
+          "published_at": null,
+          "official": true
+        }
+      ],
+      "status": "CLOSED",
+      "verification_notes": [
+        "Organiser domain explicitly trusted in configuration.",
+        "Retrieved call explicitly closes submissions (official source)."
+      ],
+      "discrepancies": [],
+      "constraints": [
+        "Submission deadline is before the requested submission window.",
+        "Event dates are outside the requested conference horizon."
+      ],
+      "within_preferences": false,
+      "ranking": {
+        "approximate_score": 70,
+        "confidence": "low",
+        "mode": "heuristic",
+        "criteria": [
+          {
+            "name": "topic",
+            "weight": 0.35,
+            "score": 90,
+            "rationale": "Scope overlaps: political violence, institutional forbearance, settlement expansion, political economy",
+            "evidence_indices": [
+              0,
+              6
+            ]
+          },
+          {
+            "name": "audience",
+            "weight": 0.2,
+            "score": 80,
+            "rationale": "Audience relevance is inferred from documented scope; individual researcher participation is not assumed.",
+            "evidence_indices": [
+              6,
+              8
+            ]
+          },
+          {
+            "name": "quality_and_goal",
+            "weight": 0.2,
+            "score": 40,
+            "rationale": "Review and feedback quality are unknown; no prestige-based score was assigned.",
+            "evidence_indices": []
+          },
+          {
+            "name": "methods",
+            "weight": 0.15,
+            "score": 80,
+            "rationale": "Explicit method overlap: difference-in-differences, causal inference",
+            "evidence_indices": [
+              6,
+              7
+            ]
+          },
+          {
+            "name": "practical",
+            "weight": 0.1,
+            "score": 20,
+            "rationale": "Submission deadline is before the requested submission window.; Event dates are outside the requested conference horizon.",
+            "evidence_indices": [
+              4,
+              5,
+              13
+            ]
+          }
+        ],
+        "fit_explanation": [
+          "The documented venue scope connects to political violence, institutional forbearance, settlement expansion, political economy.",
+          "The call explicitly mentions difference-in-differences, causal inference, matching the paper's methods.",
+          "The assessment prioritizes specialist feedback; its audience and quality scores are provisional where evidence is limited."
+        ],
+        "suggested_framing": "Emphasize political violence, institutional forbearance and explain the contribution of difference-in-differences, causal inference.",
+        "caveats": [
+          "Heuristic assessment; semantic evaluation requires OPENAI_API_KEY and OPENAI_MODEL.",
+          "Scores are approximate research-value judgements, not acceptance probabilities."
+        ]
+      },
+      "verified_at": "2026-11-05T00:15:22.074303+01:00",
+      "last_observed_edition": null
+    }
+  ],
+  "watchlist": [
+    {
+      "id": "1f24b3781ded5ab1",
+      "series_key": "fictitious annual conflict and institutions research meeting",
+      "name": "Fictitious Annual Conflict and Institutions Research Meeting",
+      "edition_year": null,
+      "organiser": "Fictitious Research Institute",
+      "hosting_institution": "Fictitious Research Institute",
+      "event_start": null,
+      "event_end": null,
+      "location": "London, United Kingdom",
+      "region": "europe",
+      "deadline": null,
+      "notification_date": null,
+      "notification_is_estimate": null,
+      "submission_type": null,
+      "submission_url": null,
+      "participation": "unclear",
+      "submission_fees": null,
+      "travel_funding": null,
+      "eligibility": null,
+      "organisers": [],
+      "speakers": [],
+      "topics": [
+        "political violence; institutional forbearance; settlement expansion; political economy; institutions"
+      ],
+      "methods": [
+        "difference-in-differences; causal inference"
+      ],
+      "audience": [
+        "economics and political science researchers working on conflict and institutions"
+      ],
+      "recurring": true,
+      "active_cfp": false,
+      "open_evidence": false,
+      "explicitly_closed": false,
+      "official_source_urls": [
+        "https://institute.demo.example/a/archive/2025/"
+      ],
+      "source_urls": [
+        "https://institute.demo.example/a/archive/2025/"
+      ],
+      "evidence": [
+        {
+          "field": "name",
+          "value": "Fictitious Annual Conflict and Institutions Research Meeting 2025",
+          "quote": "Fictitious Annual Conflict and Institutions Research Meeting 2025",
+          "source_url": "https://institute.demo.example/a/archive/2025/",
+          "retrieved_at": "2026-11-05T00:15:22.074303+01:00",
+          "extracted_at": "2026-11-05T00:15:22.074303+01:00",
+          "published_at": null,
+          "official": true
+        },
+        {
+          "field": "edition_year",
+          "value": "2025",
+          "quote": "Fictitious Annual Conflict and Institutions Research Meeting 2025",
+          "source_url": "https://institute.demo.example/a/archive/2025/",
+          "retrieved_at": "2026-11-05T00:15:22.074303+01:00",
+          "extracted_at": "2026-11-05T00:15:22.074303+01:00",
+          "published_at": null,
+          "official": true
+        },
+        {
+          "field": "organiser",
+          "value": "Fictitious Research Institute",
+          "quote": "Organiser: Fictitious Research Institute",
+          "source_url": "https://institute.demo.example/a/archive/2025/",
+          "retrieved_at": "2026-11-05T00:15:22.074303+01:00",
+          "extracted_at": "2026-11-05T00:15:22.074303+01:00",
+          "published_at": null,
+          "official": true
+        },
+        {
+          "field": "hosting_institution",
+          "value": "Fictitious Research Institute",
+          "quote": "Hosted by: Fictitious Research Institute",
+          "source_url": "https://institute.demo.example/a/archive/2025/",
+          "retrieved_at": "2026-11-05T00:15:22.074303+01:00",
+          "extracted_at": "2026-11-05T00:15:22.074303+01:00",
+          "published_at": null,
+          "official": true
+        },
+        {
+          "field": "event_dates",
+          "value": "2025-06-15",
+          "quote": "Event dates: 2025-06-15",
+          "source_url": "https://institute.demo.example/a/archive/2025/",
+          "retrieved_at": "2026-11-05T00:15:22.074303+01:00",
+          "extracted_at": "2026-11-05T00:15:22.074303+01:00",
+          "published_at": null,
+          "official": true
+        },
+        {
+          "field": "location",
+          "value": "London, United Kingdom",
+          "quote": "Location: London, United Kingdom",
+          "source_url": "https://institute.demo.example/a/archive/2025/",
+          "retrieved_at": "2026-11-05T00:15:22.074303+01:00",
+          "extracted_at": "2026-11-05T00:15:22.074303+01:00",
+          "published_at": null,
+          "official": true
+        },
+        {
+          "field": "topics",
+          "value": "political violence; institutional forbearance; settlement expansion; political economy; institutions",
+          "quote": "Topics: political violence; institutional forbearance; settlement expansion; political economy; institutions",
+          "source_url": "https://institute.demo.example/a/archive/2025/",
+          "retrieved_at": "2026-11-05T00:15:22.074303+01:00",
+          "extracted_at": "2026-11-05T00:15:22.074303+01:00",
+          "published_at": null,
+          "official": true
+        },
+        {
+          "field": "methods",
+          "value": "difference-in-differences; causal inference",
+          "quote": "Methods: difference-in-differences; causal inference",
+          "source_url": "https://institute.demo.example/a/archive/2025/",
+          "retrieved_at": "2026-11-05T00:15:22.074303+01:00",
+          "extracted_at": "2026-11-05T00:15:22.074303+01:00",
+          "published_at": null,
+          "official": true
+        },
+        {
+          "field": "audience",
+          "value": "economics and political science researchers working on conflict and institutions",
+          "quote": "Audience: economics and political science researchers working on conflict and institutions",
+          "source_url": "https://institute.demo.example/a/archive/2025/",
+          "retrieved_at": "2026-11-05T00:15:22.074303+01:00",
+          "extracted_at": "2026-11-05T00:15:22.074303+01:00",
+          "published_at": null,
+          "official": true
+        },
+        {
+          "field": "recurring",
+          "value": "true",
+          "quote": "Fictitious Annual Conflict and Institutions Research Meeting 2025",
+          "source_url": "https://institute.demo.example/a/archive/2025/",
+          "retrieved_at": "2026-11-05T00:15:22.074303+01:00",
+          "extracted_at": "2026-11-05T00:15:22.074303+01:00",
+          "published_at": null,
+          "official": true
+        },
+        {
+          "field": "cfp",
+          "value": "true",
+          "quote": "Call for papers",
+          "source_url": "https://institute.demo.example/a/archive/2025/",
+          "retrieved_at": "2026-11-05T00:15:22.074303+01:00",
+          "extracted_at": "2026-11-05T00:15:22.074303+01:00",
+          "published_at": null,
+          "official": true
+        },
+        {
+          "field": "closed",
+          "value": "true",
+          "quote": "Submissions are closed.",
+          "source_url": "https://institute.demo.example/a/archive/2025/",
+          "retrieved_at": "2026-11-05T00:15:22.074303+01:00",
+          "extracted_at": "2026-11-05T00:15:22.074303+01:00",
+          "published_at": null,
+          "official": true
+        },
+        {
+          "field": "recurring",
+          "value": "true",
+          "quote": "Previous editions are available in our annual meeting archive.",
+          "source_url": "https://institute.demo.example/a/archive/2025/",
+          "retrieved_at": "2026-11-05T00:15:22.074303+01:00",
+          "extracted_at": "2026-11-05T00:15:22.074303+01:00",
+          "published_at": null,
+          "official": true
+        },
+        {
+          "field": "deadline",
+          "value": "2025-04-01",
+          "quote": "Submission deadline: 2025-04-01",
+          "source_url": "https://institute.demo.example/a/archive/2025/",
+          "retrieved_at": "2026-11-05T00:15:22.074303+01:00",
+          "extracted_at": "2026-11-05T00:15:22.074303+01:00",
+          "published_at": null,
+          "official": true
+        }
+      ],
+      "status": "WATCHLIST",
+      "verification_notes": [
+        "Organiser domain explicitly trusted in configuration.",
+        "Retrieved call explicitly closes submissions (official source).",
+        "Series watchlist only. Last observed edition: 2025. No current open CFP established; historical dates were cleared, not projected forward."
+      ],
+      "discrepancies": [],
+      "constraints": [
+        "Submission window cannot be checked: deadline unknown.",
+        "Conference horizon cannot be checked: event dates unknown."
+      ],
+      "within_preferences": true,
+      "ranking": {
+        "approximate_score": 75,
+        "confidence": "low",
+        "mode": "heuristic",
+        "criteria": [
+          {
+            "name": "topic",
+            "weight": 0.35,
+            "score": 90,
+            "rationale": "Scope overlaps: political violence, institutional forbearance, settlement expansion, political economy",
+            "evidence_indices": [
+              0,
+              6
+            ]
+          },
+          {
+            "name": "audience",
+            "weight": 0.2,
+            "score": 80,
+            "rationale": "Audience relevance is inferred from documented scope; individual researcher participation is not assumed.",
+            "evidence_indices": [
+              6,
+              8
+            ]
+          },
+          {
+            "name": "quality_and_goal",
+            "weight": 0.2,
+            "score": 40,
+            "rationale": "Review and feedback quality are unknown; no prestige-based score was assigned.",
+            "evidence_indices": []
+          },
+          {
+            "name": "methods",
+            "weight": 0.15,
+            "score": 80,
+            "rationale": "Explicit method overlap: difference-in-differences, causal inference",
+            "evidence_indices": [
+              6,
+              7
+            ]
+          },
+          {
+            "name": "practical",
+            "weight": 0.1,
+            "score": 70,
+            "rationale": "Submission window cannot be checked: deadline unknown.; Conference horizon cannot be checked: event dates unknown.",
+            "evidence_indices": [
+              4,
+              5,
+              13
+            ]
+          }
+        ],
+        "fit_explanation": [
+          "The documented venue scope connects to political violence, institutional forbearance, settlement expansion, political economy.",
+          "The call explicitly mentions difference-in-differences, causal inference, matching the paper's methods.",
+          "The assessment prioritizes specialist feedback; its audience and quality scores are provisional where evidence is limited."
+        ],
+        "suggested_framing": "Emphasize political violence, institutional forbearance and explain the contribution of difference-in-differences, causal inference.",
+        "caveats": [
+          "Heuristic assessment; semantic evaluation requires OPENAI_API_KEY and OPENAI_MODEL.",
+          "Scores are approximate research-value judgements, not acceptance probabilities."
+        ]
+      },
+      "verified_at": "2026-11-05T00:15:22.074303+01:00",
+      "last_observed_edition": 2025
+    }
+  ],
+  "researchers": [
+    {
+      "name": "Ada Mentor",
+      "connection": "Named researcher/organiser on a page with related research scope; connection is provisional.",
+      "source_url": "https://institute.demo.example/a/open/2027/",
+      "quote": "Organisers: Ada Mentor; Bruno Scholar",
+      "supplied_by_user": false
+    },
+    {
+      "name": "Bruno Scholar",
+      "connection": "Named researcher/organiser on a page with related research scope; connection is provisional.",
+      "source_url": "https://institute.demo.example/a/open/2027/",
+      "quote": "Organisers: Ada Mentor; Bruno Scholar",
+      "supplied_by_user": false
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://institute.demo.example/a/open/2027/",
+      "final_url": "https://institute.demo.example/a/open/2027/",
+      "raw_url": "https://institute.demo.example/a/open/2027/",
+      "title": "Fictitious Annual Workshop on Conflict and Institutions 2027",
+      "text": "Fictitious Annual Workshop on Conflict and Institutions 2027\nOrganiser: Fictitious Research Institute\nHosted by: Fictitious Research Institute\nLocation: London, United Kingdom\nTopics: political violence; institutional forbearance; settlement expansion; political economy; institutions\nMethods: difference-in-differences; causal inference\nAudience: economics and political science researchers working on conflict and institutions\nCall for papers\nWe invite submissions. Submissions are now open.\nSubmission deadline: 2026-12-20 23:59 UTC\nEvent dates: 2027-03-05\nSubmission type: full paper\nThis small workshop uses discussants and detailed feedback.\nParticipation is open to all researchers.\nTravel funding: limited travel support available for doctoral researchers\nSubmission fee: none\nEligibility: all researchers\nOrganisers: Ada Mentor; Bruno Scholar\nSubmit your paper\n",
+      "links": [
+        {
+          "url": "https://institute.demo.example/a/open/2027/submit",
+          "text": "Submit your paper",
+          "raw_url": null
+        }
+      ],
+      "retrieved_at": "2026-11-05T00:15:22.074303+01:00",
+      "extracted_at": "2026-11-05T00:15:22.074303+01:00",
+      "published_at": null,
+      "publication_date_kind": null,
+      "content_type": "text/html",
+      "sha256": "",
+      "from_cache": false,
+      "raw_path": null
+    },
+    {
+      "url": "https://listing.example/a/listing/2027/",
+      "final_url": "https://listing.example/a/listing/2027/",
+      "raw_url": "https://listing.example/a/listing/2027/",
+      "title": "Fictitious Conflict and Institutions Conference 2027",
+      "text": "Fictitious Conflict and Institutions Conference 2027\nOrganiser: Fictitious Research Institute\nHosted by: Fictitious Research Institute\nLocation: London, United Kingdom\nTopics: political violence; institutional forbearance; settlement expansion; political economy; institutions\nMethods: difference-in-differences; causal inference\nAudience: economics and political science researchers working on conflict and institutions\nCall for papers\nSubmission deadline: 2027-01-04\nEvent dates: 2027-03-19\nSubmission type: extended abstract\n",
+      "links": [],
+      "retrieved_at": "2026-11-05T00:15:22.074303+01:00",
+      "extracted_at": "2026-11-05T00:15:22.074303+01:00",
+      "published_at": null,
+      "publication_date_kind": null,
+      "content_type": "text/html",
+      "sha256": "",
+      "from_cache": false,
+      "raw_path": null
+    },
+    {
+      "url": "https://institute.demo.example/a/unknown/2027/",
+      "final_url": "https://institute.demo.example/a/unknown/2027/",
+      "raw_url": "https://institute.demo.example/a/unknown/2027/",
+      "title": "Fictitious Conflict and Institutions Methods Workshop 2027",
+      "text": "Fictitious Conflict and Institutions Methods Workshop 2027\nOrganiser: Fictitious Research Institute\nHosted by: Fictitious Research Institute\nLocation: London, United Kingdom\nTopics: political violence; institutional forbearance; settlement expansion; political economy; institutions\nMethods: difference-in-differences; causal inference\nAudience: economics and political science researchers working on conflict and institutions\nCall for papers\nWe invite submissions.\nEvent dates: 2027-04-04\nSubmission deadline: to be announced\n",
+      "links": [],
+      "retrieved_at": "2026-11-05T00:15:22.074303+01:00",
+      "extracted_at": "2026-11-05T00:15:22.074303+01:00",
+      "published_at": null,
+      "publication_date_kind": null,
+      "content_type": "text/html",
+      "sha256": "",
+      "from_cache": false,
+      "raw_path": null
+    },
+    {
+      "url": "https://institute.demo.example/a/archive/2025/",
+      "final_url": "https://institute.demo.example/a/archive/2025/",
+      "raw_url": "https://institute.demo.example/a/archive/2025/",
+      "title": "Fictitious Annual Conflict and Institutions Research Meeting 2025",
+      "text": "Fictitious Annual Conflict and Institutions Research Meeting 2025\nOrganiser: Fictitious Research Institute\nHosted by: Fictitious Research Institute\nLocation: London, United Kingdom\nTopics: political violence; institutional forbearance; settlement expansion; political economy; institutions\nMethods: difference-in-differences; causal inference\nAudience: economics and political science researchers working on conflict and institutions\nCall for papers\nSubmissions are closed.\nSubmission deadline: 2025-04-01\nEvent dates: 2025-06-15\nPrevious editions are available in our annual meeting archive.\n",
+      "links": [],
+      "retrieved_at": "2026-11-05T00:15:22.074303+01:00",
+      "extracted_at": "2026-11-05T00:15:22.074303+01:00",
+      "published_at": null,
+      "publication_date_kind": null,
+      "content_type": "text/html",
+      "sha256": "",
+      "from_cache": false,
+      "raw_path": null
+    }
+  ],
+  "memory_changes": [],
+  "issues": [
+    "Semantic LLM evaluation was unavailable/disabled; extraction and ranking use conservative heuristics with low score confidence.",
+    "Search and retrieval budgets limit coverage; absence from this report does not establish that a series has no open call."
+  ],
+  "statistics": {
+    "queries": 35,
+    "search_requests": 35,
+    "search_successes": 35,
+    "unique_search_urls": 4,
+    "source_attempts": 4,
+    "sources_retrieved": 4,
+    "candidates": 4,
+    "watchlist": 1,
+    "open_verified": 1
+  }
+}

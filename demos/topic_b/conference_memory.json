@@ -1,0 +1,1438 @@
+[
+  {
+    "series_id": "4ff4ef06cc1af229bf8b",
+    "edition": "2027",
+    "first_seen": "2026-11-04T23:15:22.205755+00:00",
+    "last_seen": "2026-11-04T23:15:22.205755+00:00",
+    "event": {
+      "id": "0519f8e71e2a1b99",
+      "series_key": "fictitious annual workshop on crime and economic networks",
+      "name": "Fictitious Annual Workshop on Crime and Economic Networks 2027",
+      "edition_year": 2027,
+      "organiser": "Fictitious Research Institute",
+      "hosting_institution": "Fictitious Research Institute",
+      "event_start": "2027-03-05",
+      "event_end": "2027-03-05",
+      "location": "London, United Kingdom",
+      "region": "europe",
+      "deadline": {
+        "date": "2026-12-20",
+        "time": "23:59",
+        "timezone": "UTC",
+        "at": "2026-12-20T23:59:00Z",
+        "raw": "Submission deadline: 2026-12-20 23:59 UTC",
+        "source_url": "https://institute.demo.example/b/open/2027/",
+        "kind": "submission",
+        "warnings": []
+      },
+      "notification_date": null,
+      "notification_is_estimate": null,
+      "submission_type": "full paper",
+      "submission_url": "https://institute.demo.example/b/open/2027/submit",
+      "participation": "open",
+      "submission_fees": "none",
+      "travel_funding": "limited travel support available for doctoral researchers",
+      "eligibility": "all researchers",
+      "organisers": [
+        "Ada Mentor; Bruno Scholar"
+      ],
+      "speakers": [],
+      "topics": [
+        "organized crime; business ownership networks; economic outcomes; economics of crime; computational social science"
+      ],
+      "methods": [
+        "temporal graph neural networks; network analysis; prediction"
+      ],
+      "audience": [
+        "economics and political science researchers working on crime and economic networks"
+      ],
+      "recurring": true,
+      "active_cfp": true,
+      "open_evidence": true,
+      "explicitly_closed": false,
+      "official_source_urls": [
+        "https://institute.demo.example/b/open/2027/"
+      ],
+      "source_urls": [
+        "https://institute.demo.example/b/open/2027/"
+      ],
+      "evidence": [
+        {
+          "field": "name",
+          "value": "Fictitious Annual Workshop on Crime and Economic Networks 2027",
+          "quote": "Fictitious Annual Workshop on Crime and Economic Networks 2027",
+          "source_url": "https://institute.demo.example/b/open/2027/",
+          "retrieved_at": "2026-11-05T00:15:22.168670+01:00",
+          "extracted_at": "2026-11-05T00:15:22.168670+01:00",
+          "published_at": null,
+          "official": true
+        },
+        {
+          "field": "edition_year",
+          "value": "2027",
+          "quote": "Fictitious Annual Workshop on Crime and Economic Networks 2027",
+          "source_url": "https://institute.demo.example/b/open/2027/",
+          "retrieved_at": "2026-11-05T00:15:22.168670+01:00",
+          "extracted_at": "2026-11-05T00:15:22.168670+01:00",
+          "published_at": null,
+          "official": true
+        },
+        {
+          "field": "organiser",
+          "value": "Fictitious Research Institute",
+          "quote": "Organiser: Fictitious Research Institute",
+          "source_url": "https://institute.demo.example/b/open/2027/",
+          "retrieved_at": "2026-11-05T00:15:22.168670+01:00",
+          "extracted_at": "2026-11-05T00:15:22.168670+01:00",
+          "published_at": null,
+          "official": true
+        },
+        {
+          "field": "hosting_institution",
+          "value": "Fictitious Research Institute",
+          "quote": "Hosted by: Fictitious Research Institute",
+          "source_url": "https://institute.demo.example/b/open/2027/",
+          "retrieved_at": "2026-11-05T00:15:22.168670+01:00",
+          "extracted_at": "2026-11-05T00:15:22.168670+01:00",
+          "published_at": null,
+          "official": true
+        },
+        {
+          "field": "event_dates",
+          "value": "2027-03-05",
+          "quote": "Event dates: 2027-03-05",
+          "source_url": "https://institute.demo.example/b/open/2027/",
+          "retrieved_at": "2026-11-05T00:15:22.168670+01:00",
+          "extracted_at": "2026-11-05T00:15:22.168670+01:00",
+          "published_at": null,
+          "official": true
+        },
+        {
+          "field": "location",
+          "value": "London, United Kingdom",
+          "quote": "Location: London, United Kingdom",
+          "source_url": "https://institute.demo.example/b/open/2027/",
+          "retrieved_at": "2026-11-05T00:15:22.168670+01:00",
+          "extracted_at": "2026-11-05T00:15:22.168670+01:00",
+          "published_at": null,
+          "official": true
+        },
+        {
+          "field": "submission_type",
+          "value": "full paper",
+          "quote": "Submission type: full paper",
+          "source_url": "https://institute.demo.example/b/open/2027/",
+          "retrieved_at": "2026-11-05T00:15:22.168670+01:00",
+          "extracted_at": "2026-11-05T00:15:22.168670+01:00",
+          "published_at": null,
+          "official": true
+        },
+        {
+          "field": "submission_fees",
+          "value": "none",
+          "quote": "Submission fee: none",
+          "source_url": "https://institute.demo.example/b/open/2027/",
+          "retrieved_at": "2026-11-05T00:15:22.168670+01:00",
+          "extracted_at": "2026-11-05T00:15:22.168670+01:00",
+          "published_at": null,
+          "official": true
+        },
+        {
+          "field": "travel_funding",
+          "value": "limited travel support available for doctoral researchers",
+          "quote": "Travel funding: limited travel support available for doctoral researchers",
+          "source_url": "https://institute.demo.example/b/open/2027/",
+          "retrieved_at": "2026-11-05T00:15:22.168670+01:00",
+          "extracted_at": "2026-11-05T00:15:22.168670+01:00",
+          "published_at": null,
+          "official": true
+        },
+        {
+          "field": "eligibility",
+          "value": "all researchers",
+          "quote": "Eligibility: all researchers",
+          "source_url": "https://institute.demo.example/b/open/2027/",
+          "retrieved_at": "2026-11-05T00:15:22.168670+01:00",
+          "extracted_at": "2026-11-05T00:15:22.168670+01:00",
+          "published_at": null,
+          "official": true
+        },
+        {
+          "field": "organisers",
+          "value": "Ada Mentor; Bruno Scholar",
+          "quote": "Organisers: Ada Mentor; Bruno Scholar",
+          "source_url": "https://institute.demo.example/b/open/2027/",
+          "retrieved_at": "2026-11-05T00:15:22.168670+01:00",
+          "extracted_at": "2026-11-05T00:15:22.168670+01:00",
+          "published_at": null,
+          "official": true
+        },
+        {
+          "field": "topics",
+          "value": "organized crime; business ownership networks; economic outcomes; economics of crime; computational social science",
+          "quote": "Topics: organized crime; business ownership networks; economic outcomes; economics of crime; computational social science",
+          "source_url": "https://institute.demo.example/b/open/2027/",
+          "retrieved_at": "2026-11-05T00:15:22.168670+01:00",
+          "extracted_at": "2026-11-05T00:15:22.168670+01:00",
+          "published_at": null,
+          "official": true
+        },
+        {
+          "field": "methods",
+          "value": "temporal graph neural networks; network analysis; prediction",
+          "quote": "Methods: temporal graph neural networks; network analysis; prediction",
+          "source_url": "https://institute.demo.example/b/open/2027/",
+          "retrieved_at": "2026-11-05T00:15:22.168670+01:00",
+          "extracted_at": "2026-11-05T00:15:22.168670+01:00",
+          "published_at": null,
+          "official": true
+        },
+        {
+          "field": "audience",
+          "value": "economics and political science researchers working on crime and economic networks",
+          "quote": "Audience: economics and political science researchers working on crime and economic networks",
+          "source_url": "https://institute.demo.example/b/open/2027/",
+          "retrieved_at": "2026-11-05T00:15:22.168670+01:00",
+          "extracted_at": "2026-11-05T00:15:22.168670+01:00",
+          "published_at": null,
+          "official": true
+        },
+        {
+          "field": "recurring",
+          "value": "true",
+          "quote": "Fictitious Annual Workshop on Crime and Economic Networks 2027",
+          "source_url": "https://institute.demo.example/b/open/2027/",
+          "retrieved_at": "2026-11-05T00:15:22.168670+01:00",
+          "extracted_at": "2026-11-05T00:15:22.168670+01:00",
+          "published_at": null,
+          "official": true
+        },
+        {
+          "field": "cfp",
+          "value": "true",
+          "quote": "Call for papers",
+          "source_url": "https://institute.demo.example/b/open/2027/",
+          "retrieved_at": "2026-11-05T00:15:22.168670+01:00",
+          "extracted_at": "2026-11-05T00:15:22.168670+01:00",
+          "published_at": null,
+          "official": true
+        },
+        {
+          "field": "cfp",
+          "value": "true",
+          "quote": "We invite submissions. Submissions are now open.",
+          "source_url": "https://institute.demo.example/b/open/2027/",
+          "retrieved_at": "2026-11-05T00:15:22.168670+01:00",
+          "extracted_at": "2026-11-05T00:15:22.168670+01:00",
+          "published_at": null,
+          "official": true
+        },
+        {
+          "field": "open",
+          "value": "true",
+          "quote": "We invite submissions. Submissions are now open.",
+          "source_url": "https://institute.demo.example/b/open/2027/",
+          "retrieved_at": "2026-11-05T00:15:22.168670+01:00",
+          "extracted_at": "2026-11-05T00:15:22.168670+01:00",
+          "published_at": null,
+          "official": true
+        },
+        {
+          "field": "quality",
+          "value": "This small workshop uses discussants and detailed feedback.",
+          "quote": "This small workshop uses discussants and detailed feedback.",
+          "source_url": "https://institute.demo.example/b/open/2027/",
+          "retrieved_at": "2026-11-05T00:15:22.168670+01:00",
+          "extracted_at": "2026-11-05T00:15:22.168670+01:00",
+          "published_at": null,
+          "official": true
+        },
+        {
+          "field": "participation",
+          "value": "open",
+          "quote": "Participation is open to all researchers.",
+          "source_url": "https://institute.demo.example/b/open/2027/",
+          "retrieved_at": "2026-11-05T00:15:22.168670+01:00",
+          "extracted_at": "2026-11-05T00:15:22.168670+01:00",
+          "published_at": null,
+          "official": true
+        },
+        {
+          "field": "open",
+          "value": "true",
+          "quote": "Submit your paper",
+          "source_url": "https://institute.demo.example/b/open/2027/",
+          "retrieved_at": "2026-11-05T00:15:22.168670+01:00",
+          "extracted_at": "2026-11-05T00:15:22.168670+01:00",
+          "published_at": null,
+          "official": true
+        },
+        {
+          "field": "submission_url",
+          "value": "https://institute.demo.example/b/open/2027/submit",
+          "quote": "Submit your paper",
+          "source_url": "https://institute.demo.example/b/open/2027/",
+          "retrieved_at": "2026-11-05T00:15:22.168670+01:00",
+          "extracted_at": "2026-11-05T00:15:22.168670+01:00",
+          "published_at": null,
+          "official": true
+        },
+        {
+          "field": "deadline",
+          "value": "2026-12-20",
+          "quote": "Submission deadline: 2026-12-20 23:59 UTC",
+          "source_url": "https://institute.demo.example/b/open/2027/",
+          "retrieved_at": "2026-11-05T00:15:22.168670+01:00",
+          "extracted_at": "2026-11-05T00:15:22.168670+01:00",
+          "published_at": null,
+          "official": true
+        }
+      ],
+      "status": "OPEN_VERIFIED",
+      "verification_notes": [
+        "Organiser domain explicitly trusted in configuration."
+      ],
+      "discrepancies": [],
+      "constraints": [],
+      "within_preferences": true,
+      "ranking": {
+        "approximate_score": 85,
+        "confidence": "low",
+        "mode": "heuristic",
+        "criteria": [
+          {
+            "name": "topic",
+            "weight": 0.35,
+            "score": 90,
+            "rationale": "Scope overlaps: organized crime, business ownership networks, economic outcomes, machine learning, economics of crime, economic networks, computational social science",
+            "evidence_indices": [
+              0,
+              11
+            ]
+          },
+          {
+            "name": "audience",
+            "weight": 0.2,
+            "score": 80,
+            "rationale": "Audience relevance is inferred from documented scope; individual researcher participation is not assumed.",
+            "evidence_indices": [
+              10,
+              11,
+              13
+            ]
+          },
+          {
+            "name": "quality_and_goal",
+            "weight": 0.2,
+            "score": 80,
+            "rationale": "Documented discussion/review format supports the research goal.",
+            "evidence_indices": [
+              10,
+              18
+            ]
+          },
+          {
+            "name": "methods",
+            "weight": 0.15,
+            "score": 90,
+            "rationale": "Explicit method overlap: temporal graph neural networks, graph neural networks, network analysis, prediction",
+            "evidence_indices": [
+              11,
+              12
+            ]
+          },
+          {
+            "name": "practical",
+            "weight": 0.1,
+            "score": 80,
+            "rationale": "Known region, timing and stated funding considered; unstated costs remain unknown.",
+            "evidence_indices": [
+              4,
+              5,
+              7,
+              8,
+              22
+            ]
+          }
+        ],
+        "fit_explanation": [
+          "The documented venue scope connects to organized crime, business ownership networks, economic outcomes, machine learning, economics of crime, economic networks, computational social science.",
+          "The call explicitly mentions temporal graph neural networks, graph neural networks, network analysis, prediction, matching the paper's methods.",
+          "The assessment prioritizes specialist feedback; its audience and quality scores are provisional where evidence is limited."
+        ],
+        "suggested_framing": "Emphasize organized crime, business ownership networks and explain the contribution of temporal graph neural networks, graph neural networks.",
+        "caveats": [
+          "Heuristic assessment; semantic evaluation requires OPENAI_API_KEY and OPENAI_MODEL.",
+          "Scores are approximate research-value judgements, not acceptance probabilities."
+        ]
+      },
+      "verified_at": "2026-11-05T00:15:22.168670+01:00",
+      "last_observed_edition": null
+    }
+  },
+  {
+    "series_id": "fb18e7c20f1fa0286767",
+    "edition": "2027",
+    "first_seen": "2026-11-04T23:15:22.205755+00:00",
+    "last_seen": "2026-11-04T23:15:22.205755+00:00",
+    "event": {
+      "id": "5202f16ef9846de8",
+      "series_key": "fictitious crime and economic networks conference",
+      "name": "Fictitious Crime and Economic Networks Conference 2027",
+      "edition_year": 2027,
+      "organiser": "Fictitious Research Institute",
+      "hosting_institution": "Fictitious Research Institute",
+      "event_start": "2027-03-19",
+      "event_end": "2027-03-19",
+      "location": "London, United Kingdom",
+      "region": "europe",
+      "deadline": {
+        "date": "2027-01-04",
+        "time": null,
+        "timezone": null,
+        "at": null,
+        "raw": "Submission deadline: 2027-01-04",
+        "source_url": "https://listing.example/b/listing/2027/",
+        "kind": "submission",
+        "warnings": []
+      },
+      "notification_date": null,
+      "notification_is_estimate": null,
+      "submission_type": "extended abstract",
+      "submission_url": null,
+      "participation": "unclear",
+      "submission_fees": null,
+      "travel_funding": null,
+      "eligibility": null,
+      "organisers": [],
+      "speakers": [],
+      "topics": [
+        "organized crime; business ownership networks; economic outcomes; economics of crime; computational social science"
+      ],
+      "methods": [
+        "temporal graph neural networks; network analysis; prediction"
+      ],
+      "audience": [
+        "economics and political science researchers working on crime and economic networks"
+      ],
+      "recurring": false,
+      "active_cfp": true,
+      "open_evidence": false,
+      "explicitly_closed": false,
+      "official_source_urls": [],
+      "source_urls": [
+        "https://listing.example/b/listing/2027/"
+      ],
+      "evidence": [
+        {
+          "field": "name",
+          "value": "Fictitious Crime and Economic Networks Conference 2027",
+          "quote": "Fictitious Crime and Economic Networks Conference 2027",
+          "source_url": "https://listing.example/b/listing/2027/",
+          "retrieved_at": "2026-11-05T00:15:22.168670+01:00",
+          "extracted_at": "2026-11-05T00:15:22.168670+01:00",
+          "published_at": null,
+          "official": false
+        },
+        {
+          "field": "edition_year",
+          "value": "2027",
+          "quote": "Fictitious Crime and Economic Networks Conference 2027",
+          "source_url": "https://listing.example/b/listing/2027/",
+          "retrieved_at": "2026-11-05T00:15:22.168670+01:00",
+          "extracted_at": "2026-11-05T00:15:22.168670+01:00",
+          "published_at": null,
+          "official": false
+        },
+        {
+          "field": "organiser",
+          "value": "Fictitious Research Institute",
+          "quote": "Organiser: Fictitious Research Institute",
+          "source_url": "https://listing.example/b/listing/2027/",
+          "retrieved_at": "2026-11-05T00:15:22.168670+01:00",
+          "extracted_at": "2026-11-05T00:15:22.168670+01:00",
+          "published_at": null,
+          "official": false
+        },
+        {
+          "field": "hosting_institution",
+          "value": "Fictitious Research Institute",
+          "quote": "Hosted by: Fictitious Research Institute",
+          "source_url": "https://listing.example/b/listing/2027/",
+          "retrieved_at": "2026-11-05T00:15:22.168670+01:00",
+          "extracted_at": "2026-11-05T00:15:22.168670+01:00",
+          "published_at": null,
+          "official": false
+        },
+        {
+          "field": "event_dates",
+          "value": "2027-03-19",
+          "quote": "Event dates: 2027-03-19",
+          "source_url": "https://listing.example/b/listing/2027/",
+          "retrieved_at": "2026-11-05T00:15:22.168670+01:00",
+          "extracted_at": "2026-11-05T00:15:22.168670+01:00",
+          "published_at": null,
+          "official": false
+        },
+        {
+          "field": "location",
+          "value": "London, United Kingdom",
+          "quote": "Location: London, United Kingdom",
+          "source_url": "https://listing.example/b/listing/2027/",
+          "retrieved_at": "2026-11-05T00:15:22.168670+01:00",
+          "extracted_at": "2026-11-05T00:15:22.168670+01:00",
+          "published_at": null,
+          "official": false
+        },
+        {
+          "field": "submission_type",
+          "value": "extended abstract",
+          "quote": "Submission type: extended abstract",
+          "source_url": "https://listing.example/b/listing/2027/",
+          "retrieved_at": "2026-11-05T00:15:22.168670+01:00",
+          "extracted_at": "2026-11-05T00:15:22.168670+01:00",
+          "published_at": null,
+          "official": false
+        },
+        {
+          "field": "topics",
+          "value": "organized crime; business ownership networks; economic outcomes; economics of crime; computational social science",
+          "quote": "Topics: organized crime; business ownership networks; economic outcomes; economics of crime; computational social science",
+          "source_url": "https://listing.example/b/listing/2027/",
+          "retrieved_at": "2026-11-05T00:15:22.168670+01:00",
+          "extracted_at": "2026-11-05T00:15:22.168670+01:00",
+          "published_at": null,
+          "official": false
+        },
+        {
+          "field": "methods",
+          "value": "temporal graph neural networks; network analysis; prediction",
+          "quote": "Methods: temporal graph neural networks; network analysis; prediction",
+          "source_url": "https://listing.example/b/listing/2027/",
+          "retrieved_at": "2026-11-05T00:15:22.168670+01:00",
+          "extracted_at": "2026-11-05T00:15:22.168670+01:00",
+          "published_at": null,
+          "official": false
+        },
+        {
+          "field": "audience",
+          "value": "economics and political science researchers working on crime and economic networks",
+          "quote": "Audience: economics and political science researchers working on crime and economic networks",
+          "source_url": "https://listing.example/b/listing/2027/",
+          "retrieved_at": "2026-11-05T00:15:22.168670+01:00",
+          "extracted_at": "2026-11-05T00:15:22.168670+01:00",
+          "published_at": null,
+          "official": false
+        },
+        {
+          "field": "cfp",
+          "value": "true",
+          "quote": "Call for papers",
+          "source_url": "https://listing.example/b/listing/2027/",
+          "retrieved_at": "2026-11-05T00:15:22.168670+01:00",
+          "extracted_at": "2026-11-05T00:15:22.168670+01:00",
+          "published_at": null,
+          "official": false
+        },
+        {
+          "field": "deadline",
+          "value": "2027-01-04",
+          "quote": "Submission deadline: 2027-01-04",
+          "source_url": "https://listing.example/b/listing/2027/",
+          "retrieved_at": "2026-11-05T00:15:22.168670+01:00",
+          "extracted_at": "2026-11-05T00:15:22.168670+01:00",
+          "published_at": null,
+          "official": false
+        }
+      ],
+      "status": "FUTURE_DEADLINE_UNCONFIRMED",
+      "verification_notes": [
+        "Official organiser authority could not be established from the retrieved page."
+      ],
+      "discrepancies": [],
+      "constraints": [],
+      "within_preferences": true,
+      "ranking": {
+        "approximate_score": 75,
+        "confidence": "low",
+        "mode": "heuristic",
+        "criteria": [
+          {
+            "name": "topic",
+            "weight": 0.35,
+            "score": 90,
+            "rationale": "Scope overlaps: organized crime, business ownership networks, economic outcomes, machine learning, economics of crime, economic networks, computational social science",
+            "evidence_indices": [
+              0,
+              7
+            ]
+          },
+          {
+            "name": "audience",
+            "weight": 0.2,
+            "score": 80,
+            "rationale": "Audience relevance is inferred from documented scope; individual researcher participation is not assumed.",
+            "evidence_indices": [
+              7,
+              9
+            ]
+          },
+          {
+            "name": "quality_and_goal",
+            "weight": 0.2,
+            "score": 40,
+            "rationale": "Review and feedback quality are unknown; no prestige-based score was assigned.",
+            "evidence_indices": []
+          },
+          {
+            "name": "methods",
+            "weight": 0.15,
+            "score": 90,
+            "rationale": "Explicit method overlap: temporal graph neural networks, graph neural networks, network analysis, prediction",
+            "evidence_indices": [
+              7,
+              8
+            ]
+          },
+          {
+            "name": "practical",
+            "weight": 0.1,
+            "score": 70,
+            "rationale": "Known region, timing and stated funding considered; unstated costs remain unknown.",
+            "evidence_indices": [
+              4,
+              5,
+              11
+            ]
+          }
+        ],
+        "fit_explanation": [
+          "The documented venue scope connects to organized crime, business ownership networks, economic outcomes, machine learning, economics of crime, economic networks, computational social science.",
+          "The call explicitly mentions temporal graph neural networks, graph neural networks, network analysis, prediction, matching the paper's methods.",
+          "The assessment prioritizes specialist feedback; its audience and quality scores are provisional where evidence is limited."
+        ],
+        "suggested_framing": "Emphasize organized crime, business ownership networks and explain the contribution of temporal graph neural networks, graph neural networks.",
+        "caveats": [
+          "Heuristic assessment; semantic evaluation requires OPENAI_API_KEY and OPENAI_MODEL.",
+          "Scores are approximate research-value judgements, not acceptance probabilities."
+        ]
+      },
+      "verified_at": "2026-11-05T00:15:22.168670+01:00",
+      "last_observed_edition": null
+    }
+  },
+  {
+    "series_id": "fc7e2314aad115c15c46",
+    "edition": "2027",
+    "first_seen": "2026-11-04T23:15:22.205755+00:00",
+    "last_seen": "2026-11-04T23:15:22.205755+00:00",
+    "event": {
+      "id": "4fcf8663e926ade9",
+      "series_key": "fictitious crime and economic networks methods workshop",
+      "name": "Fictitious Crime and Economic Networks Methods Workshop 2027",
+      "edition_year": 2027,
+      "organiser": "Fictitious Research Institute",
+      "hosting_institution": "Fictitious Research Institute",
+      "event_start": "2027-04-04",
+      "event_end": "2027-04-04",
+      "location": "London, United Kingdom",
+      "region": "europe",
+      "deadline": {
+        "date": null,
+        "time": null,
+        "timezone": null,
+        "at": null,
+        "raw": "Submission deadline: to be announced",
+        "source_url": "https://institute.demo.example/b/unknown/2027/",
+        "kind": "submission",
+        "warnings": [
+          "Missing year, unrecognised date, or ambiguous numeric date; no year was inferred."
+        ]
+      },
+      "notification_date": null,
+      "notification_is_estimate": null,
+      "submission_type": null,
+      "submission_url": null,
+      "participation": "unclear",
+      "submission_fees": null,
+      "travel_funding": null,
+      "eligibility": null,
+      "organisers": [],
+      "speakers": [],
+      "topics": [
+        "organized crime; business ownership networks; economic outcomes; economics of crime; computational social science"
+      ],
+      "methods": [
+        "temporal graph neural networks; network analysis; prediction"
+      ],
+      "audience": [
+        "economics and political science researchers working on crime and economic networks"
+      ],
+      "recurring": false,
+      "active_cfp": true,
+      "open_evidence": true,
+      "explicitly_closed": false,
+      "official_source_urls": [
+        "https://institute.demo.example/b/unknown/2027/"
+      ],
+      "source_urls": [
+        "https://institute.demo.example/b/unknown/2027/"
+      ],
+      "evidence": [
+        {
+          "field": "name",
+          "value": "Fictitious Crime and Economic Networks Methods Workshop 2027",
+          "quote": "Fictitious Crime and Economic Networks Methods Workshop 2027",
+          "source_url": "https://institute.demo.example/b/unknown/2027/",
+          "retrieved_at": "2026-11-05T00:15:22.168670+01:00",
+          "extracted_at": "2026-11-05T00:15:22.168670+01:00",
+          "published_at": null,
+          "official": true
+        },
+        {
+          "field": "edition_year",
+          "value": "2027",
+          "quote": "Fictitious Crime and Economic Networks Methods Workshop 2027",
+          "source_url": "https://institute.demo.example/b/unknown/2027/",
+          "retrieved_at": "2026-11-05T00:15:22.168670+01:00",
+          "extracted_at": "2026-11-05T00:15:22.168670+01:00",
+          "published_at": null,
+          "official": true
+        },
+        {
+          "field": "organiser",
+          "value": "Fictitious Research Institute",
+          "quote": "Organiser: Fictitious Research Institute",
+          "source_url": "https://institute.demo.example/b/unknown/2027/",
+          "retrieved_at": "2026-11-05T00:15:22.168670+01:00",
+          "extracted_at": "2026-11-05T00:15:22.168670+01:00",
+          "published_at": null,
+          "official": true
+        },
+        {
+          "field": "hosting_institution",
+          "value": "Fictitious Research Institute",
+          "quote": "Hosted by: Fictitious Research Institute",
+          "source_url": "https://institute.demo.example/b/unknown/2027/",
+          "retrieved_at": "2026-11-05T00:15:22.168670+01:00",
+          "extracted_at": "2026-11-05T00:15:22.168670+01:00",
+          "published_at": null,
+          "official": true
+        },
+        {
+          "field": "event_dates",
+          "value": "2027-04-04",
+          "quote": "Event dates: 2027-04-04",
+          "source_url": "https://institute.demo.example/b/unknown/2027/",
+          "retrieved_at": "2026-11-05T00:15:22.168670+01:00",
+          "extracted_at": "2026-11-05T00:15:22.168670+01:00",
+          "published_at": null,
+          "official": true
+        },
+        {
+          "field": "location",
+          "value": "London, United Kingdom",
+          "quote": "Location: London, United Kingdom",
+          "source_url": "https://institute.demo.example/b/unknown/2027/",
+          "retrieved_at": "2026-11-05T00:15:22.168670+01:00",
+          "extracted_at": "2026-11-05T00:15:22.168670+01:00",
+          "published_at": null,
+          "official": true
+        },
+        {
+          "field": "topics",
+          "value": "organized crime; business ownership networks; economic outcomes; economics of crime; computational social science",
+          "quote": "Topics: organized crime; business ownership networks; economic outcomes; economics of crime; computational social science",
+          "source_url": "https://institute.demo.example/b/unknown/2027/",
+          "retrieved_at": "2026-11-05T00:15:22.168670+01:00",
+          "extracted_at": "2026-11-05T00:15:22.168670+01:00",
+          "published_at": null,
+          "official": true
+        },
+        {
+          "field": "methods",
+          "value": "temporal graph neural networks; network analysis; prediction",
+          "quote": "Methods: temporal graph neural networks; network analysis; prediction",
+          "source_url": "https://institute.demo.example/b/unknown/2027/",
+          "retrieved_at": "2026-11-05T00:15:22.168670+01:00",
+          "extracted_at": "2026-11-05T00:15:22.168670+01:00",
+          "published_at": null,
+          "official": true
+        },
+        {
+          "field": "audience",
+          "value": "economics and political science researchers working on crime and economic networks",
+          "quote": "Audience: economics and political science researchers working on crime and economic networks",
+          "source_url": "https://institute.demo.example/b/unknown/2027/",
+          "retrieved_at": "2026-11-05T00:15:22.168670+01:00",
+          "extracted_at": "2026-11-05T00:15:22.168670+01:00",
+          "published_at": null,
+          "official": true
+        },
+        {
+          "field": "cfp",
+          "value": "true",
+          "quote": "Call for papers",
+          "source_url": "https://institute.demo.example/b/unknown/2027/",
+          "retrieved_at": "2026-11-05T00:15:22.168670+01:00",
+          "extracted_at": "2026-11-05T00:15:22.168670+01:00",
+          "published_at": null,
+          "official": true
+        },
+        {
+          "field": "cfp",
+          "value": "true",
+          "quote": "We invite submissions.",
+          "source_url": "https://institute.demo.example/b/unknown/2027/",
+          "retrieved_at": "2026-11-05T00:15:22.168670+01:00",
+          "extracted_at": "2026-11-05T00:15:22.168670+01:00",
+          "published_at": null,
+          "official": true
+        },
+        {
+          "field": "open",
+          "value": "true",
+          "quote": "We invite submissions.",
+          "source_url": "https://institute.demo.example/b/unknown/2027/",
+          "retrieved_at": "2026-11-05T00:15:22.168670+01:00",
+          "extracted_at": "2026-11-05T00:15:22.168670+01:00",
+          "published_at": null,
+          "official": true
+        },
+        {
+          "field": "deadline",
+          "value": "unknown",
+          "quote": "Submission deadline: to be announced",
+          "source_url": "https://institute.demo.example/b/unknown/2027/",
+          "retrieved_at": "2026-11-05T00:15:22.168670+01:00",
+          "extracted_at": "2026-11-05T00:15:22.168670+01:00",
+          "published_at": null,
+          "official": true
+        }
+      ],
+      "status": "DATE_UNKNOWN",
+      "verification_notes": [
+        "Organiser domain explicitly trusted in configuration.",
+        "Missing year, unrecognised date, or ambiguous numeric date; no year was inferred."
+      ],
+      "discrepancies": [],
+      "constraints": [
+        "Submission window cannot be checked: deadline unknown."
+      ],
+      "within_preferences": true,
+      "ranking": {
+        "approximate_score": 75,
+        "confidence": "low",
+        "mode": "heuristic",
+        "criteria": [
+          {
+            "name": "topic",
+            "weight": 0.35,
+            "score": 90,
+            "rationale": "Scope overlaps: organized crime, business ownership networks, economic outcomes, machine learning, economics of crime, economic networks, computational social science",
+            "evidence_indices": [
+              0,
+              6
+            ]
+          },
+          {
+            "name": "audience",
+            "weight": 0.2,
+            "score": 80,
+            "rationale": "Audience relevance is inferred from documented scope; individual researcher participation is not assumed.",
+            "evidence_indices": [
+              6,
+              8
+            ]
+          },
+          {
+            "name": "quality_and_goal",
+            "weight": 0.2,
+            "score": 40,
+            "rationale": "Review and feedback quality are unknown; no prestige-based score was assigned.",
+            "evidence_indices": []
+          },
+          {
+            "name": "methods",
+            "weight": 0.15,
+            "score": 90,
+            "rationale": "Explicit method overlap: temporal graph neural networks, graph neural networks, network analysis, prediction",
+            "evidence_indices": [
+              6,
+              7
+            ]
+          },
+          {
+            "name": "practical",
+            "weight": 0.1,
+            "score": 70,
+            "rationale": "Submission window cannot be checked: deadline unknown.",
+            "evidence_indices": [
+              4,
+              5,
+              12
+            ]
+          }
+        ],
+        "fit_explanation": [
+          "The documented venue scope connects to organized crime, business ownership networks, economic outcomes, machine learning, economics of crime, economic networks, computational social science.",
+          "The call explicitly mentions temporal graph neural networks, graph neural networks, network analysis, prediction, matching the paper's methods.",
+          "The assessment prioritizes specialist feedback; its audience and quality scores are provisional where evidence is limited."
+        ],
+        "suggested_framing": "Emphasize organized crime, business ownership networks and explain the contribution of temporal graph neural networks, graph neural networks.",
+        "caveats": [
+          "Heuristic assessment; semantic evaluation requires OPENAI_API_KEY and OPENAI_MODEL.",
+          "Scores are approximate research-value judgements, not acceptance probabilities."
+        ]
+      },
+      "verified_at": "2026-11-05T00:15:22.168670+01:00",
+      "last_observed_edition": null
+    }
+  },
+  {
+    "series_id": "d7009cd5a876c6faf43f",
+    "edition": "2025",
+    "first_seen": "2026-11-04T23:15:22.205755+00:00",
+    "last_seen": "2026-11-04T23:15:22.205755+00:00",
+    "event": {
+      "id": "53cb862f689da016",
+      "series_key": "fictitious annual crime and economic networks research meeting",
+      "name": "Fictitious Annual Crime and Economic Networks Research Meeting 2025",
+      "edition_year": 2025,
+      "organiser": "Fictitious Research Institute",
+      "hosting_institution": "Fictitious Research Institute",
+      "event_start": "2025-06-15",
+      "event_end": "2025-06-15",
+      "location": "London, United Kingdom",
+      "region": "europe",
+      "deadline": {
+        "date": "2025-04-01",
+        "time": null,
+        "timezone": null,
+        "at": null,
+        "raw": "Submission deadline: 2025-04-01",
+        "source_url": "https://institute.demo.example/b/archive/2025/",
+        "kind": "submission",
+        "warnings": []
+      },
+      "notification_date": null,
+      "notification_is_estimate": null,
+      "submission_type": null,
+      "submission_url": null,
+      "participation": "unclear",
+      "submission_fees": null,
+      "travel_funding": null,
+      "eligibility": null,
+      "organisers": [],
+      "speakers": [],
+      "topics": [
+        "organized crime; business ownership networks; economic outcomes; economics of crime; computational social science"
+      ],
+      "methods": [
+        "temporal graph neural networks; network analysis; prediction"
+      ],
+      "audience": [
+        "economics and political science researchers working on crime and economic networks"
+      ],
+      "recurring": true,
+      "active_cfp": true,
+      "open_evidence": false,
+      "explicitly_closed": true,
+      "official_source_urls": [
+        "https://institute.demo.example/b/archive/2025/"
+      ],
+      "source_urls": [
+        "https://institute.demo.example/b/archive/2025/"
+      ],
+      "evidence": [
+        {
+          "field": "name",
+          "value": "Fictitious Annual Crime and Economic Networks Research Meeting 2025",
+          "quote": "Fictitious Annual Crime and Economic Networks Research Meeting 2025",
+          "source_url": "https://institute.demo.example/b/archive/2025/",
+          "retrieved_at": "2026-11-05T00:15:22.168670+01:00",
+          "extracted_at": "2026-11-05T00:15:22.168670+01:00",
+          "published_at": null,
+          "official": true
+        },
+        {
+          "field": "edition_year",
+          "value": "2025",
+          "quote": "Fictitious Annual Crime and Economic Networks Research Meeting 2025",
+          "source_url": "https://institute.demo.example/b/archive/2025/",
+          "retrieved_at": "2026-11-05T00:15:22.168670+01:00",
+          "extracted_at": "2026-11-05T00:15:22.168670+01:00",
+          "published_at": null,
+          "official": true
+        },
+        {
+          "field": "organiser",
+          "value": "Fictitious Research Institute",
+          "quote": "Organiser: Fictitious Research Institute",
+          "source_url": "https://institute.demo.example/b/archive/2025/",
+          "retrieved_at": "2026-11-05T00:15:22.168670+01:00",
+          "extracted_at": "2026-11-05T00:15:22.168670+01:00",
+          "published_at": null,
+          "official": true
+        },
+        {
+          "field": "hosting_institution",
+          "value": "Fictitious Research Institute",
+          "quote": "Hosted by: Fictitious Research Institute",
+          "source_url": "https://institute.demo.example/b/archive/2025/",
+          "retrieved_at": "2026-11-05T00:15:22.168670+01:00",
+          "extracted_at": "2026-11-05T00:15:22.168670+01:00",
+          "published_at": null,
+          "official": true
+        },
+        {
+          "field": "event_dates",
+          "value": "2025-06-15",
+          "quote": "Event dates: 2025-06-15",
+          "source_url": "https://institute.demo.example/b/archive/2025/",
+          "retrieved_at": "2026-11-05T00:15:22.168670+01:00",
+          "extracted_at": "2026-11-05T00:15:22.168670+01:00",
+          "published_at": null,
+          "official": true
+        },
+        {
+          "field": "location",
+          "value": "London, United Kingdom",
+          "quote": "Location: London, United Kingdom",
+          "source_url": "https://institute.demo.example/b/archive/2025/",
+          "retrieved_at": "2026-11-05T00:15:22.168670+01:00",
+          "extracted_at": "2026-11-05T00:15:22.168670+01:00",
+          "published_at": null,
+          "official": true
+        },
+        {
+          "field": "topics",
+          "value": "organized crime; business ownership networks; economic outcomes; economics of crime; computational social science",
+          "quote": "Topics: organized crime; business ownership networks; economic outcomes; economics of crime; computational social science",
+          "source_url": "https://institute.demo.example/b/archive/2025/",
+          "retrieved_at": "2026-11-05T00:15:22.168670+01:00",
+          "extracted_at": "2026-11-05T00:15:22.168670+01:00",
+          "published_at": null,
+          "official": true
+        },
+        {
+          "field": "methods",
+          "value": "temporal graph neural networks; network analysis; prediction",
+          "quote": "Methods: temporal graph neural networks; network analysis; prediction",
+          "source_url": "https://institute.demo.example/b/archive/2025/",
+          "retrieved_at": "2026-11-05T00:15:22.168670+01:00",
+          "extracted_at": "2026-11-05T00:15:22.168670+01:00",
+          "published_at": null,
+          "official": true
+        },
+        {
+          "field": "audience",
+          "value": "economics and political science researchers working on crime and economic networks",
+          "quote": "Audience: economics and political science researchers working on crime and economic networks",
+          "source_url": "https://institute.demo.example/b/archive/2025/",
+          "retrieved_at": "2026-11-05T00:15:22.168670+01:00",
+          "extracted_at": "2026-11-05T00:15:22.168670+01:00",
+          "published_at": null,
+          "official": true
+        },
+        {
+          "field": "recurring",
+          "value": "true",
+          "quote": "Fictitious Annual Crime and Economic Networks Research Meeting 2025",
+          "source_url": "https://institute.demo.example/b/archive/2025/",
+          "retrieved_at": "2026-11-05T00:15:22.168670+01:00",
+          "extracted_at": "2026-11-05T00:15:22.168670+01:00",
+          "published_at": null,
+          "official": true
+        },
+        {
+          "field": "cfp",
+          "value": "true",
+          "quote": "Call for papers",
+          "source_url": "https://institute.demo.example/b/archive/2025/",
+          "retrieved_at": "2026-11-05T00:15:22.168670+01:00",
+          "extracted_at": "2026-11-05T00:15:22.168670+01:00",
+          "published_at": null,
+          "official": true
+        },
+        {
+          "field": "closed",
+          "value": "true",
+          "quote": "Submissions are closed.",
+          "source_url": "https://institute.demo.example/b/archive/2025/",
+          "retrieved_at": "2026-11-05T00:15:22.168670+01:00",
+          "extracted_at": "2026-11-05T00:15:22.168670+01:00",
+          "published_at": null,
+          "official": true
+        },
+        {
+          "field": "recurring",
+          "value": "true",
+          "quote": "Previous editions are available in our annual meeting archive.",
+          "source_url": "https://institute.demo.example/b/archive/2025/",
+          "retrieved_at": "2026-11-05T00:15:22.168670+01:00",
+          "extracted_at": "2026-11-05T00:15:22.168670+01:00",
+          "published_at": null,
+          "official": true
+        },
+        {
+          "field": "deadline",
+          "value": "2025-04-01",
+          "quote": "Submission deadline: 2025-04-01",
+          "source_url": "https://institute.demo.example/b/archive/2025/",
+          "retrieved_at": "2026-11-05T00:15:22.168670+01:00",
+          "extracted_at": "2026-11-05T00:15:22.168670+01:00",
+          "published_at": null,
+          "official": true
+        }
+      ],
+      "status": "CLOSED",
+      "verification_notes": [
+        "Organiser domain explicitly trusted in configuration.",
+        "Retrieved call explicitly closes submissions (official source)."
+      ],
+      "discrepancies": [],
+      "constraints": [
+        "Submission deadline is before the requested submission window.",
+        "Event dates are outside the requested conference horizon."
+      ],
+      "within_preferences": false,
+      "ranking": {
+        "approximate_score": 70,
+        "confidence": "low",
+        "mode": "heuristic",
+        "criteria": [
+          {
+            "name": "topic",
+            "weight": 0.35,
+            "score": 90,
+            "rationale": "Scope overlaps: organized crime, business ownership networks, economic outcomes, machine learning, economics of crime, economic networks, computational social science",
+            "evidence_indices": [
+              0,
+              6
+            ]
+          },
+          {
+            "name": "audience",
+            "weight": 0.2,
+            "score": 80,
+            "rationale": "Audience relevance is inferred from documented scope; individual researcher participation is not assumed.",
+            "evidence_indices": [
+              6,
+              8
+            ]
+          },
+          {
+            "name": "quality_and_goal",
+            "weight": 0.2,
+            "score": 40,
+            "rationale": "Review and feedback quality are unknown; no prestige-based score was assigned.",
+            "evidence_indices": []
+          },
+          {
+            "name": "methods",
+            "weight": 0.15,
+            "score": 90,
+            "rationale": "Explicit method overlap: temporal graph neural networks, graph neural networks, network analysis, prediction",
+            "evidence_indices": [
+              6,
+              7
+            ]
+          },
+          {
+            "name": "practical",
+            "weight": 0.1,
+            "score": 20,
+            "rationale": "Submission deadline is before the requested submission window.; Event dates are outside the requested conference horizon.",
+            "evidence_indices": [
+              4,
+              5,
+              13
+            ]
+          }
+        ],
+        "fit_explanation": [
+          "The documented venue scope connects to organized crime, business ownership networks, economic outcomes, machine learning, economics of crime, economic networks, computational social science.",
+          "The call explicitly mentions temporal graph neural networks, graph neural networks, network analysis, prediction, matching the paper's methods.",
+          "The assessment prioritizes specialist feedback; its audience and quality scores are provisional where evidence is limited."
+        ],
+        "suggested_framing": "Emphasize organized crime, business ownership networks and explain the contribution of temporal graph neural networks, graph neural networks.",
+        "caveats": [
+          "Heuristic assessment; semantic evaluation requires OPENAI_API_KEY and OPENAI_MODEL.",
+          "Scores are approximate research-value judgements, not acceptance probabilities."
+        ]
+      },
+      "verified_at": "2026-11-05T00:15:22.168670+01:00",
+      "last_observed_edition": null
+    }
+  },
+  {
+    "series_id": "d7009cd5a876c6faf43f",
+    "edition": "series",
+    "first_seen": "2026-11-04T23:15:22.205755+00:00",
+    "last_seen": "2026-11-04T23:15:22.205755+00:00",
+    "event": {
+      "id": "c5ca643e86494914",
+      "series_key": "fictitious annual crime and economic networks research meeting",
+      "name": "Fictitious Annual Crime and Economic Networks Research Meeting",
+      "edition_year": null,
+      "organiser": "Fictitious Research Institute",
+      "hosting_institution": "Fictitious Research Institute",
+      "event_start": null,
+      "event_end": null,
+      "location": "London, United Kingdom",
+      "region": "europe",
+      "deadline": null,
+      "notification_date": null,
+      "notification_is_estimate": null,
+      "submission_type": null,
+      "submission_url": null,
+      "participation": "unclear",
+      "submission_fees": null,
+      "travel_funding": null,
+      "eligibility": null,
+      "organisers": [],
+      "speakers": [],
+      "topics": [
+        "organized crime; business ownership networks; economic outcomes; economics of crime; computational social science"
+      ],
+      "methods": [
+        "temporal graph neural networks; network analysis; prediction"
+      ],
+      "audience": [
+        "economics and political science researchers working on crime and economic networks"
+      ],
+      "recurring": true,
+      "active_cfp": false,
+      "open_evidence": false,
+      "explicitly_closed": false,
+      "official_source_urls": [
+        "https://institute.demo.example/b/archive/2025/"
+      ],
+      "source_urls": [
+        "https://institute.demo.example/b/archive/2025/"
+      ],
+      "evidence": [
+        {
+          "field": "name",
+          "value": "Fictitious Annual Crime and Economic Networks Research Meeting 2025",
+          "quote": "Fictitious Annual Crime and Economic Networks Research Meeting 2025",
+          "source_url": "https://institute.demo.example/b/archive/2025/",
+          "retrieved_at": "2026-11-05T00:15:22.168670+01:00",
+          "extracted_at": "2026-11-05T00:15:22.168670+01:00",
+          "published_at": null,
+          "official": true
+        },
+        {
+          "field": "edition_year",
+          "value": "2025",
+          "quote": "Fictitious Annual Crime and Economic Networks Research Meeting 2025",
+          "source_url": "https://institute.demo.example/b/archive/2025/",
+          "retrieved_at": "2026-11-05T00:15:22.168670+01:00",
+          "extracted_at": "2026-11-05T00:15:22.168670+01:00",
+          "published_at": null,
+          "official": true
+        },
+        {
+          "field": "organiser",
+          "value": "Fictitious Research Institute",
+          "quote": "Organiser: Fictitious Research Institute",
+          "source_url": "https://institute.demo.example/b/archive/2025/",
+          "retrieved_at": "2026-11-05T00:15:22.168670+01:00",
+          "extracted_at": "2026-11-05T00:15:22.168670+01:00",
+          "published_at": null,
+          "official": true
+        },
+        {
+          "field": "hosting_institution",
+          "value": "Fictitious Research Institute",
+          "quote": "Hosted by: Fictitious Research Institute",
+          "source_url": "https://institute.demo.example/b/archive/2025/",
+          "retrieved_at": "2026-11-05T00:15:22.168670+01:00",
+          "extracted_at": "2026-11-05T00:15:22.168670+01:00",
+          "published_at": null,
+          "official": true
+        },
+        {
+          "field": "event_dates",
+          "value": "2025-06-15",
+          "quote": "Event dates: 2025-06-15",
+          "source_url": "https://institute.demo.example/b/archive/2025/",
+          "retrieved_at": "2026-11-05T00:15:22.168670+01:00",
+          "extracted_at": "2026-11-05T00:15:22.168670+01:00",
+          "published_at": null,
+          "official": true
+        },
+        {
+          "field": "location",
+          "value": "London, United Kingdom",
+          "quote": "Location: London, United Kingdom",
+          "source_url": "https://institute.demo.example/b/archive/2025/",
+          "retrieved_at": "2026-11-05T00:15:22.168670+01:00",
+          "extracted_at": "2026-11-05T00:15:22.168670+01:00",
+          "published_at": null,
+          "official": true
+        },
+        {
+          "field": "topics",
+          "value": "organized crime; business ownership networks; economic outcomes; economics of crime; computational social science",
+          "quote": "Topics: organized crime; business ownership networks; economic outcomes; economics of crime; computational social science",
+          "source_url": "https://institute.demo.example/b/archive/2025/",
+          "retrieved_at": "2026-11-05T00:15:22.168670+01:00",
+          "extracted_at": "2026-11-05T00:15:22.168670+01:00",
+          "published_at": null,
+          "official": true
+        },
+        {
+          "field": "methods",
+          "value": "temporal graph neural networks; network analysis; prediction",
+          "quote": "Methods: temporal graph neural networks; network analysis; prediction",
+          "source_url": "https://institute.demo.example/b/archive/2025/",
+          "retrieved_at": "2026-11-05T00:15:22.168670+01:00",
+          "extracted_at": "2026-11-05T00:15:22.168670+01:00",
+          "published_at": null,
+          "official": true
+        },
+        {
+          "field": "audience",
+          "value": "economics and political science researchers working on crime and economic networks",
+          "quote": "Audience: economics and political science researchers working on crime and economic networks",
+          "source_url": "https://institute.demo.example/b/archive/2025/",
+          "retrieved_at": "2026-11-05T00:15:22.168670+01:00",
+          "extracted_at": "2026-11-05T00:15:22.168670+01:00",
+          "published_at": null,
+          "official": true
+        },
+        {
+          "field": "recurring",
+          "value": "true",
+          "quote": "Fictitious Annual Crime and Economic Networks Research Meeting 2025",
+          "source_url": "https://institute.demo.example/b/archive/2025/",
+          "retrieved_at": "2026-11-05T00:15:22.168670+01:00",
+          "extracted_at": "2026-11-05T00:15:22.168670+01:00",
+          "published_at": null,
+          "official": true
+        },
+        {
+          "field": "cfp",
+          "value": "true",
+          "quote": "Call for papers",
+          "source_url": "https://institute.demo.example/b/archive/2025/",
+          "retrieved_at": "2026-11-05T00:15:22.168670+01:00",
+          "extracted_at": "2026-11-05T00:15:22.168670+01:00",
+          "published_at": null,
+          "official": true
+        },
+        {
+          "field": "closed",
+          "value": "true",
+          "quote": "Submissions are closed.",
+          "source_url": "https://institute.demo.example/b/archive/2025/",
+          "retrieved_at": "2026-11-05T00:15:22.168670+01:00",
+          "extracted_at": "2026-11-05T00:15:22.168670+01:00",
+          "published_at": null,
+          "official": true
+        },
+        {
+          "field": "recurring",
+          "value": "true",
+          "quote": "Previous editions are available in our annual meeting archive.",
+          "source_url": "https://institute.demo.example/b/archive/2025/",
+          "retrieved_at": "2026-11-05T00:15:22.168670+01:00",
+          "extracted_at": "2026-11-05T00:15:22.168670+01:00",
+          "published_at": null,
+          "official": true
+        },
+        {
+          "field": "deadline",
+          "value": "2025-04-01",
+          "quote": "Submission deadline: 2025-04-01",
+          "source_url": "https://institute.demo.example/b/archive/2025/",
+          "retrieved_at": "2026-11-05T00:15:22.168670+01:00",
+          "extracted_at": "2026-11-05T00:15:22.168670+01:00",
+          "published_at": null,
+          "official": true
+        }
+      ],
+      "status": "WATCHLIST",
+      "verification_notes": [
+        "Organiser domain explicitly trusted in configuration.",
+        "Retrieved call explicitly closes submissions (official source).",
+        "Series watchlist only. Last observed edition: 2025. No current open CFP established; historical dates were cleared, not projected forward."
+      ],
+      "discrepancies": [],
+      "constraints": [
+        "Submission window cannot be checked: deadline unknown.",
+        "Conference horizon cannot be checked: event dates unknown."
+      ],
+      "within_preferences": true,
+      "ranking": {
+        "approximate_score": 75,
+        "confidence": "low",
+        "mode": "heuristic",
+        "criteria": [
+          {
+            "name": "topic",
+            "weight": 0.35,
+            "score": 90,
+            "rationale": "Scope overlaps: organized crime, business ownership networks, economic outcomes, machine learning, economics of crime, economic networks, computational social science",
+            "evidence_indices": [
+              0,
+              6
+            ]
+          },
+          {
+            "name": "audience",
+            "weight": 0.2,
+            "score": 80,
+            "rationale": "Audience relevance is inferred from documented scope; individual researcher participation is not assumed.",
+            "evidence_indices": [
+              6,
+              8
+            ]
+          },
+          {
+            "name": "quality_and_goal",
+            "weight": 0.2,
+            "score": 40,
+            "rationale": "Review and feedback quality are unknown; no prestige-based score was assigned.",
+            "evidence_indices": []
+          },
+          {
+            "name": "methods",
+            "weight": 0.15,
+            "score": 90,
+            "rationale": "Explicit method overlap: temporal graph neural networks, graph neural networks, network analysis, prediction",
+            "evidence_indices": [
+              6,
+              7
+            ]
+          },
+          {
+            "name": "practical",
+            "weight": 0.1,
+            "score": 70,
+            "rationale": "Submission window cannot be checked: deadline unknown.; Conference horizon cannot be checked: event dates unknown.",
+            "evidence_indices": [
+              4,
+              5,
+              13
+            ]
+          }
+        ],
+        "fit_explanation": [
+          "The documented venue scope connects to organized crime, business ownership networks, economic outcomes, machine learning, economics of crime, economic networks, computational social science.",
+          "The call explicitly mentions temporal graph neural networks, graph neural networks, network analysis, prediction, matching the paper's methods.",
+          "The assessment prioritizes specialist feedback; its audience and quality scores are provisional where evidence is limited."
+        ],
+        "suggested_framing": "Emphasize organized crime, business ownership networks and explain the contribution of temporal graph neural networks, graph neural networks.",
+        "caveats": [
+          "Heuristic assessment; semantic evaluation requires OPENAI_API_KEY and OPENAI_MODEL.",
+          "Scores are approximate research-value judgements, not acceptance probabilities."
+        ]
+      },
+      "verified_at": "2026-11-05T00:15:22.168670+01:00",
+      "last_observed_edition": 2025
+    }
+  }
+]

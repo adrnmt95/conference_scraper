@@ -1,0 +1,196 @@
+{
+  "schema_version": "1.0",
+  "run_id": "20261105T001616",
+  "started_at": "2026-11-05T00:16:16.571901+01:00",
+  "completed_at": "2026-11-04T23:16:16.597017Z",
+  "mode": "configuration_required",
+  "run_status": "configuration_required",
+  "paper": {
+    "title": "Organized Crime Infiltration in Legal Firms and Ownership Networks",
+    "abstract": "This illustrative project studies organized crime infiltration in legal firms using\ntime-varying business ownership networks. It asks whether temporal graph neural\nnetworks can predict infiltration and how infiltration relates to economic outcomes.\nThe methodological contribution combines temporal network representation learning,\nprediction, and economic interpretation. Relevant audiences include economics of\ncrime, economic networks, computational social science, and machine learning in the\nsocial sciences. Predictive performance and causal economic effects are distinct\nresearch questions. This example describes a research topic; it makes no claim\nabout empirical findings.",
+    "research_questions": [
+      "Organized Crime Infiltration in Legal Firms and Ownership Networks"
+    ],
+    "topics": [
+      "organized crime",
+      "business ownership networks",
+      "economic outcomes",
+      "machine learning"
+    ],
+    "methods": [
+      "temporal graph neural networks",
+      "graph neural networks",
+      "network analysis",
+      "causal inference",
+      "prediction"
+    ],
+    "contributions": [],
+    "fields": [
+      "economics",
+      "political science"
+    ],
+    "communities": [
+      "economics of crime",
+      "political economy",
+      "law and economics",
+      "economic networks",
+      "computational social science",
+      "machine learning in social sciences"
+    ],
+    "analysis_mode": "heuristic"
+  },
+  "preferences": {
+    "deadline_after": "2026-11-05",
+    "deadline_before": null,
+    "event_after": "2026-11-05",
+    "event_before": "2027-08-05",
+    "regions": [
+      "europe",
+      "north-america"
+    ],
+    "fields": [],
+    "goal": "specialist feedback",
+    "researchers": []
+  },
+  "providers": [],
+  "queries": [
+    {
+      "family": "research_question",
+      "query": "organized crime business ownership networks \"call for papers\" 2026 2027"
+    },
+    {
+      "family": "discipline",
+      "query": "economics of crime political economy conference submissions 2026 2027"
+    },
+    {
+      "family": "specialist_workshop",
+      "query": "organized crime business ownership networks specialist research workshop call papers 2026 2027"
+    },
+    {
+      "family": "university",
+      "query": "organized crime business ownership networks workshop \"call for papers\" university 2026 2027"
+    },
+    {
+      "family": "researcher_discovery",
+      "query": "organized crime business ownership networks researchers workshop organisers programme"
+    },
+    {
+      "family": "recurring_series",
+      "query": "organized crime business ownership networks annual workshop conference previous editions"
+    },
+    {
+      "family": "methods",
+      "query": "temporal graph neural networks graph neural networks social science workshop CFP 2026 2027"
+    },
+    {
+      "family": "theory",
+      "query": "economic outcomes machine learning institutions political economy workshop 2026 2027"
+    },
+    {
+      "family": "research_community",
+      "query": "site:cepr.org CEPR economics of crime call papers 2026 2027"
+    },
+    {
+      "family": "research_community",
+      "query": "site:eeassoc.org EEA economics of crime call papers 2026 2027"
+    },
+    {
+      "family": "research_community",
+      "query": "EPCS economics of crime call papers 2026 2027"
+    },
+    {
+      "family": "research_community",
+      "query": "site:ecpr.eu ECPR economics of crime call papers 2026 2027"
+    },
+    {
+      "family": "research_community",
+      "query": "site:epsanet.org EPSA economics of crime call papers 2026 2027"
+    },
+    {
+      "family": "research_community",
+      "query": "ESOC Empirical Studies of Conflict economics of crime call papers 2026 2027"
+    },
+    {
+      "family": "research_community",
+      "query": "site:cepr.org ReCIPE economics of crime call papers 2026 2027"
+    },
+    {
+      "family": "research_community",
+      "query": "site:nber.org NBER economics of crime call papers 2026 2027"
+    },
+    {
+      "family": "research_community",
+      "query": "site:cesifo.org CESifo economics of crime call papers 2026 2027"
+    },
+    {
+      "family": "research_community",
+      "query": "site:iza.org IZA economics of crime call papers 2026 2027"
+    },
+    {
+      "family": "research_community",
+      "query": "HiCN Households in Conflict Network economics of crime call papers 2026 2027"
+    },
+    {
+      "family": "substantive_topic",
+      "query": "business ownership networks workshop paper submission 2026 2027"
+    },
+    {
+      "family": "substantive_topic",
+      "query": "economic outcomes workshop paper submission 2026 2027"
+    },
+    {
+      "family": "substantive_topic",
+      "query": "machine learning workshop paper submission 2026 2027"
+    },
+    {
+      "family": "methods",
+      "query": "temporal graph neural networks economics political science workshop call papers 2026 2027"
+    },
+    {
+      "family": "methods",
+      "query": "graph neural networks economics political science workshop call papers 2026 2027"
+    },
+    {
+      "family": "methods",
+      "query": "network analysis economics political science workshop call papers 2026 2027"
+    },
+    {
+      "family": "related_discipline",
+      "query": "economics of crime specialist workshop call papers 2026 2027"
+    },
+    {
+      "family": "related_discipline",
+      "query": "political economy specialist workshop call papers 2026 2027"
+    },
+    {
+      "family": "related_discipline",
+      "query": "law and economics specialist workshop call papers 2026 2027"
+    },
+    {
+      "family": "related_discipline",
+      "query": "economic networks specialist workshop call papers 2026 2027"
+    },
+    {
+      "family": "related_discipline",
+      "query": "computational social science specialist workshop call papers 2026 2027"
+    },
+    {
+      "family": "geography",
+      "query": "organized crime business ownership networks research workshop europe 2026 2027"
+    },
+    {
+      "family": "geography",
+      "query": "organized crime business ownership networks research workshop north america 2026 2027"
+    }
+  ],
+  "candidates": [],
+  "watchlist": [],
+  "researchers": [],
+  "sources": [],
+  "memory_changes": [],
+  "issues": [
+    "No live search provider configured. Set BRAVE_SEARCH_API_KEY or TAVILY_API_KEY in .env. No internet discovery was performed and no conference results were invented.",
+    "Set both OPENAI_API_KEY and OPENAI_MODEL to enable semantic paper analysis, structured extraction and evaluation."
+  ],
+  "statistics": {}
+}
