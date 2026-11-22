@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block title %}{{ job.title }} · Conference finder{% endblock %}
+{% block content %}
+<section class="hero compact">
+  <p class="eyebrow">{% if job.state == 'failed' %}Run failed{% elif job.state == 'queued' %}Waiting{% else %}Searching{% endif %}</p>
+  <h1>{{ job.title }}</h1>
+</section>
+
+{% if job.state == 'failed' %}
+  <div class="card">
+    <p>The run stopped before it could produce results.</p>
+    <pre class="error">{{ job.error }}</pre>
+    <p class="hint">Configuration problems (a missing key, for example) are fixed in <code>.env</code>. Then start the run again.</p>
+    <a class="button" href="{{ url_for('index') }}">Back</a>
+  </div>
+{% else %}
+  <div class="card progress" id="progress" data-status-url="{{ url_for('run_status', run_id=job.id) }}" data-started="{{ elapsed }}">
+    <div class="spinner" aria-hidden="true"></div>
+    <div class="progress-body">
+      <p class="phase" id="phase">
+        {% if job.state == 'queued' %}Waiting for {{ ahead }} earlier run{{ '' if ahead == 1 else 's' }} to finish
+        {% elif progress.pages %}Reading and checking pages
+        {% elif progress.searches %}Searching the web
+        {% else %}Reading your paper{% endif %}
+      </p>
+      <div class="bar"><span id="bar" style="width: {{ (progress.pages / progress.max_pages * 100) | round | int }}%"></span></div>
+      <p class="counts">
+        <span id="searches">{{ progress.searches }}</span> searches ·
+        <span id="pages">{{ progress.pages }}</span> of up to {{ progress.max_pages }} pages checked ·
+        <span id="elapsed">0:00</span>
+      </p>
+    </div>
+  </div>
+  <p class="hint center">Usually 3–10 minutes. You can close this tab; the run keeps going and appears under previous runs.</p>
+{% endif %}
+{% endblock %}

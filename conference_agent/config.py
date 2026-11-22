@@ -26,6 +26,8 @@ class Settings:
     state_dir: Path = Path(".conference-agent")
     request_interval: float = 1.2
     timeout: float = 25
+    # Separate from the page-download timeout: reasoning models on long inputs often need over a minute.
+    llm_timeout: float = 120
     search_cache_seconds: float = 43200
     source_cache_seconds: float = 3600
     blocked_domains: tuple[str, ...] = ()
@@ -46,6 +48,7 @@ class Settings:
                 state_dir=Path(os.getenv("CONFERENCE_STATE_DIR", ".conference-agent")),
                 request_interval=float(os.getenv("REQUEST_INTERVAL_SECONDS", "1.2")),
                 timeout=float(os.getenv("HTTP_TIMEOUT_SECONDS", "25")),
+                llm_timeout=float(os.getenv("LLM_TIMEOUT_SECONDS", "120")),
                 search_cache_seconds=float(os.getenv("SEARCH_CACHE_HOURS", "12")) * 3600,
                 source_cache_seconds=float(os.getenv("SOURCE_CACHE_HOURS", "1")) * 3600,
                 blocked_domains=tuple(split_csv(os.getenv("BLOCKED_DOMAINS", ""))),
@@ -61,6 +64,7 @@ class Settings:
             for value in [
                 result.request_interval,
                 result.timeout,
+                result.llm_timeout,
                 result.search_cache_seconds,
                 result.source_cache_seconds,
             ]
@@ -70,4 +74,6 @@ class Settings:
             raise ConfigurationError("Intervals and cache lifetimes cannot be negative.")
         if not 0 < result.timeout <= 300:
             raise ConfigurationError("HTTP_TIMEOUT_SECONDS must be between 0 and 300.")
+        if not 0 < result.llm_timeout <= 600:
+            raise ConfigurationError("LLM_TIMEOUT_SECONDS must be between 0 and 600.")
         return result

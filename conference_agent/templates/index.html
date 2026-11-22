@@ -1,0 +1,113 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="hero">
+  <h1>Where should this paper go next?</h1>
+  <p class="lede">Upload a paper. The agent searches for calls for papers, checks deadlines against the official pages, and ranks each venue by how well it fits.</p>
+  <div class="config">
+    {% if config.search %}
+      <span class="chip ok">Search · {{ config.search }}</span>
+    {% else %}
+      <span class="chip warn">No search key — add <code>TAVILY_API_KEY</code> to <code>.env</code></span>
+    {% endif %}
+    {% if config.model %}
+      <span class="chip ok">OpenAI · {{ config.model }}</span>
+    {% elif config.has_openai_key %}
+      <span class="chip warn">OpenAI off — set <code>OPENAI_MODEL</code> in <code>.env</code></span>
+    {% else %}
+      <span class="chip warn">OpenAI off — keyword matching only</span>
+    {% endif %}
+  </div>
+</section>
+
+{% if error %}<div class="alert">{{ error }}</div>{% endif %}
+
+<form class="card form" action="{{ url_for('start_run') }}" method="post" enctype="multipart/form-data">
+  <input type="hidden" name="token" value="{{ token }}">
+
+  <label class="drop" id="drop">
+    <input type="file" name="paper" id="paper" accept=".pdf,.md,.txt" required>
+    <span class="drop-icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M12 17v-6"/><path d="m9.5 13.5 2.5-2.5 2.5 2.5"/></svg>
+    </span>
+    <span class="drop-text" id="drop-text"><strong>Choose a paper</strong> or drop it here</span>
+    <span class="drop-hint">PDF, Markdown or text · up to {{ max_mb }} MB · stays on this computer</span>
+  </label>
+
+  <div class="field">
+    <label for="title">Title <span class="optional">optional</span></label>
+    <input type="text" id="title" name="title" maxlength="300" placeholder="Leave empty to read it from the paper">
+    <p class="hint">Titles read from PDFs are sometimes cut off. Typing it here gives better searches.</p>
+  </div>
+
+  <details class="more">
+    <summary>More options</summary>
+    <div class="grid">
+      <fieldset class="field">
+        <legend>Regions</legend>
+        <div class="checks">
+          {% for value, label in regions.items() %}
+          <label class="check"><input type="checkbox" name="regions" value="{{ value }}"> {{ label }}</label>
+          {% endfor %}
+        </div>
+        <p class="hint">None ticked means anywhere.</p>
+      </fieldset>
+      <div class="field">
+        <label for="horizon">Conferences in the next</label>
+        <div class="suffix-input"><input type="number" id="horizon" name="horizon" min="1" max="60" value="9"><span>months</span></div>
+      </div>
+      <div class="field">
+        <label for="goal">What you want from presenting</label>
+        <input type="text" id="goal" name="goal" maxlength="200" placeholder="specialist feedback">
+      </div>
+      <div class="field">
+        <label for="fields">Fields <span class="optional">comma separated</span></label>
+        <input type="text" id="fields" name="fields" maxlength="300" placeholder="economics, political science">
+      </div>
+      <div class="field span">
+        <label for="researchers">Researchers you'd like to reach <span class="optional">one per line</span></label>
+        <textarea id="researchers" name="researchers" rows="3"></textarea>
+      </div>
+    </div>
+  </details>
+
+  <div class="actions">
+    <button type="submit" class="button primary">Find conferences</button>
+    <span class="hint">Takes a few minutes. Runs go one at a time.</span>
+  </div>
+</form>
+
+{% if pending or runs %}
+<section class="history">
+  <h2>Previous runs</h2>
+  <ul class="runs">
+    {% for job in pending %}
+    <li>
+      <a href="{{ url_for('run_page', run_id=job.id) }}">
+        <span class="run-title">{{ job.title }}</span>
+        <span class="run-meta">
+          {% if job.state == 'failed' %}<span class="pill closed">Failed</span>
+          {% elif job.state == 'running' %}<span class="pill confirm">Running</span>
+          {% else %}<span class="pill unknown">Queued</span>{% endif %}
+        </span>
+      </a>
+    </li>
+    {% endfor %}
+    {% for run in runs %}
+    <li>
+      <a href="{{ url_for('run_page', run_id=run.id) }}">
+        <span class="run-title">{{ run.title }}</span>
+        <span class="run-meta">
+          {% if run.mode == 'live' %}
+            {% if run.open %}<span class="pill open">{{ run.open }} open</span>{% endif %}
+            <span class="muted">{{ run.candidates }} found</span>
+          {% elif run.mode == 'offline_demo' %}<span class="muted">demo</span>
+          {% else %}<span class="muted">not searched</span>{% endif %}
+          <span class="muted">· {{ nice_date(run.completed.date()) }}</span>
+        </span>
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+{% endif %}
+{% endblock %}

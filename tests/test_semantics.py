@@ -1,10 +1,11 @@
 from datetime import date
 from types import SimpleNamespace
 
+import pytest
 from pydantic import BaseModel
 
 from conference_agent.cache import Cache
-from conference_agent.config import Settings
+from conference_agent.config import ConfigurationError, Settings
 from conference_agent.demo import TOPICS
 from conference_agent.llm import LLM
 from conference_agent.memory import ConferenceMemory
@@ -269,3 +270,33 @@ def test_original_cfp_already_retrieved_can_be_endorsed(tmp_path, now, make_sour
     assert result.statistics["source_attempts"] == 2
     cache.close()
     memory.close()
+
+
+def test_llm_timeout_is_separate_from_download_timeout(tmp_path, monkeypatch):
+    monkeypatch.setenv("HTTP_TIMEOUT_SECONDS", "25")
+    monkeypatch.setenv("LLM_TIMEOUT_SECONDS", "150")
+    settings = Settings.load(tmp_path / "missing.env")
+    assert (settings.timeout, settings.llm_timeout) == (25, 150)
+    monkeypatch.delenv("LLM_TIMEOUT_SECONDS")
+    assert Settings.load(tmp_path / "missing.env").llm_timeout == 120
+
+    captured = {}
+
+    class FakeClient:
+        def __init__(self, **kwargs):
+            captured.update(kwargs)
+
+        def close(self):
+            pass
+
+    monkeypatch.setattr("conference_agent.llm.OpenAI", FakeClient)
+    cache = Cache(tmp_path)
+    LLM(settings, cache).close()
+    assert captured["timeout"] == 150
+    cache.close()
+
+
+def test_llm_timeout_must_be_bounded(tmp_path, monkeypatch):
+    monkeypatch.setenv("LLM_TIMEOUT_SECONDS", "0")
+    with pytest.raises(ConfigurationError, match="LLM_TIMEOUT_SECONDS"):
+        Settings.load(tmp_path / "missing.env")

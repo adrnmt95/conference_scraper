@@ -98,6 +98,25 @@ one public page does not imply attendance at a different event or future edition
 Use `python discover.py --help` for all options. Installed entry points are
 `conference-discover` and `python -m conference_agent`.
 
+## Local website
+
+A small website does the same thing without the command line: upload a paper, wait,
+and browse the ranked results.
+
+```bash
+python -m pip install '.[web]'     # once: installs Flask
+.venv/bin/python serve.py           # opens http://127.0.0.1:8765 in your browser
+```
+
+Start it from the project folder so it finds `.env`. The page shows whether a search
+key and OpenAI model are configured, but never their values. Uploaded papers are saved
+to `papers/` and each run's output goes to `results/<title>-<timestamp>/`, the same
+files the command line writes. Runs started from the command line also appear in the
+list of previous runs. Runs go one at a time, because they share the conference memory.
+
+By default the site only accepts connections from this computer. `--port` changes
+the port and `--no-browser` stops it opening a tab. Stop it with Ctrl+C.
+
 ## Old Excel scraper
 
 The previous spreadsheet scraper (INOMICS and The Economic Misfit → `conferences.xlsx`)
@@ -241,7 +260,7 @@ Explicit automated-access prohibitions on retrieved pages are respected.
 The agent never logs into sites, solves CAPTCHAs, renders around anti-bot gates or
 bypasses a 401/403. Login pages, scanned PDFs, JavaScript-only sources and restricted
 CFPs remain unverified. Public source downloads are capped at 6 MB, paper inputs
-at 30 MB. Original public HTML/PDF/text is content-addressed under `sources/` in
+at 50 MB. Original public HTML/PDF/text is content-addressed under `sources/` in
 the state directory. Local/private network URLs and nonstandard ports are rejected.
 
 Exit codes: `0` completed (possibly partial; check `run_status` and `issues`),

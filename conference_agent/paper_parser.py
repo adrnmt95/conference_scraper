@@ -8,6 +8,8 @@ from pydantic import BaseModel, ConfigDict
 
 from .models import PaperProfile
 
+MAX_PAPER_BYTES = 50 * 1024 * 1024
+
 if TYPE_CHECKING:
     from .llm import LLM
 
@@ -57,8 +59,8 @@ class SemanticProfile(BaseModel):
 
 
 def read_paper(path: Path) -> str:
-    if path.stat().st_size > 30 * 1024 * 1024:
-        raise ValueError("Paper exceeds the 30 MB input limit.")
+    if path.stat().st_size > MAX_PAPER_BYTES:
+        raise ValueError(f"Paper exceeds the {MAX_PAPER_BYTES // 1048576} MB input limit.")
     if path.suffix.lower() == ".pdf":
         from pypdf import PdfReader
 

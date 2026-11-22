@@ -1,0 +1,175 @@
+{% extends "base.html" %}
+{% block title %}{{ result.paper.title }} · Conference finder{% endblock %}
+{% block topbar_action %}<a class="button small" href="{{ url_for('index') }}">New search</a>{% endblock %}
+
+{% macro candidate_card(c) %}
+{% set label, tone = STATUS_LABELS[c.status] %}
+{% set official = (c.official_source_urls | first) | safe_url %}
+{% set source = official or ((c.source_urls | first) | safe_url) %}
+{% set submit = c.submission_url | safe_url %}
+{% set dl = deadline_info(c, today) %}
+<article class="card venue">
+  <div class="venue-head">
+    <div>
+      <h3>{% if source %}<a href="{{ source }}" target="_blank" rel="noopener noreferrer">{{ c.name }}</a>{% else %}{{ c.name }}{% endif %}</h3>
+      <p class="venue-sub">
+        <span class="pill {{ tone }}">{{ label }}</span>
+        {% if c.organiser %}<span class="muted">{{ c.organiser }}</span>{% elif source %}<span class="muted">{{ source | host }}</span>{% endif %}
+      </p>
+    </div>
+    {% if c.ranking %}
+    <div class="score" title="Approximate fit for your paper, out of 100. Confidence reflects how much evidence was found.">
+      <span class="score-num">{{ c.ranking.approximate_score }}</span>
+      <span class="score-label">fit · {{ c.ranking.confidence }}</span>
+    </div>
+    {% endif %}
+  </div>
+
+  <dl class="facts">
+    <div><dt>Deadline</dt><dd>
+      {% if dl %}{{ dl.date }} <span class="muted">· {{ dl.when }} · {{ dl.detail }}</span>
+      {% elif c.status == 'WATCHLIST' %}<span class="muted">No current call{% if c.last_observed_edition %} · last seen {{ c.last_observed_edition }}{% endif %}</span>
+      {% else %}<span class="muted">Unknown</span>{% endif %}
+    </dd></div>
+    {% if c.event_start %}<div><dt>Event</dt><dd>{{ date_range(c.event_start, c.event_end) }}</dd></div>{% endif %}
+    {% if c.location %}<div><dt>Where</dt><dd>{{ c.location }}</dd></div>{% endif %}
+    {% if c.submission_type %}<div><dt>Submit</dt><dd>{{ c.submission_type }}</dd></div>{% endif %}
+  </dl>
+
+  {% if c.ranking and c.ranking.fit_explanation %}
+  <p class="fit">{{ c.ranking.fit_explanation | join(' ') }}</p>
+  {% endif %}
+  {% if c.ranking and c.ranking.suggested_framing %}
+  <p class="framing"><span>Framing</span> {{ c.ranking.suggested_framing }}</p>
+  {% endif %}
+
+  {% if official or submit %}
+  <div class="links">
+    {% if official %}<a class="button small" href="{{ official }}" target="_blank" rel="noopener noreferrer">Official call ↗</a>{% endif %}
+    {% if submit %}<a class="button small" href="{{ submit }}" target="_blank" rel="noopener noreferrer">Submission page ↗</a>{% endif %}
+  </div>
+  {% endif %}
+
+  <details class="evidence">
+    <summary>Score breakdown and evidence</summary>
+    {% if c.ranking %}
+    <table class="criteria">
+      <tbody>
+      {% for k in c.ranking.criteria %}
+        <tr>
+          <th>{{ CRITERION_LABELS.get(k.name, k.name) }} <span class="muted">{{ (k.weight * 100) | round | int }}%</span></th>
+          <td class="meter"><span style="width: {{ k.score }}%"></span></td>
+          <td class="num">{{ k.score }}</td>
+          <td class="why">{{ k.rationale }}</td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+    {% endif %}
+    {% set notes = c.constraints + c.discrepancies + c.verification_notes + (c.ranking.caveats if c.ranking else []) %}
+    {% if notes %}
+    <ul class="notes">{% for n in notes %}<li>{{ n }}</li>{% endfor %}</ul>
+    {% endif %}
+    {% if c.evidence %}
+    <ol class="quotes">
+      {% for e in c.evidence %}
+      {% set eu = e.source_url | safe_url %}
+      <li>
+        <span class="quote-field">{{ e.field | replace('_', ' ') }}{% if not e.official %} · unconfirmed source{% endif %}</span>
+        <q>{{ e.quote | truncate(400) }}</q>
+        {% if eu %}<a href="{{ eu }}" target="_blank" rel="noopener noreferrer">{{ eu | host }}</a>{% endif %}
+      </li>
+      {% endfor %}
+    </ol>
+    {% endif %}
+  </details>
+</article>
+{% endmacro %}
+
+{% block content %}
+<section class="hero compact">
+  <p class="eyebrow">{{ nice_date(run_date) }}{% if result.preferences.regions %} · {{ result.preferences.regions | map('replace', '-', ' ') | map('title') | join(', ') }}{% endif %} · events until {{ nice_date(result.preferences.event_before) }}</p>
+  <h1>{{ result.paper.title }}</h1>
+  {% set open_n = result.candidates | selectattr('status', 'equalto', 'OPEN_VERIFIED') | list | length %}
+  {% set confirm_n = result.candidates | selectattr('status', 'equalto', 'FUTURE_DEADLINE_UNCONFIRMED') | list | length %}
+  <div class="stats">
+    <div><strong>{{ open_n }}</strong><span>open calls</span></div>
+    <div><strong>{{ confirm_n }}</strong><span>to confirm</span></div>
+    <div><strong>{{ result.candidates | length }}</strong><span>venues found</span></div>
+    <div><strong>{{ result.statistics.get('sources_retrieved', 0) }}</strong><span>pages read</span></div>
+  </div>
+</section>
+
+{% set age = (today - run_date).days %}
+{% if age > 3 and result.mode != 'offline_demo' %}
+  <div class="alert info">These results are {{ age }} days old. Deadlines and statuses may have changed, so run the paper again for a fresh check.</div>
+{% endif %}
+{% if result.mode == 'offline_demo' %}
+  <div class="alert info">Offline demonstration: every venue, person and deadline below is fictitious.</div>
+{% elif result.mode == 'configuration_required' %}
+  <div class="alert">No web search was done, so there are no conferences to show. {{ notes | first }}</div>
+{% elif result.run_status == 'search_failed' %}
+  <div class="alert">Every search request failed. Check your search key and connection, then try again.</div>
+{% endif %}
+{% if result.paper.analysis_mode == 'heuristic' and result.mode == 'live' %}
+  <div class="alert info">The paper was read with keyword matching because OpenAI is off, so scores are low-confidence. Set <code>OPENAI_MODEL</code> in <code>.env</code> for better results.</div>
+{% endif %}
+
+<details class="card profile">
+  <summary>How the paper was read <span class="muted">· {{ 'OpenAI' if result.paper.analysis_mode == 'llm' else 'keyword matching' }}</span></summary>
+  <dl class="profile-list">
+    {% for label, values in [('Topics', result.paper.topics), ('Methods', result.paper.methods), ('Communities', result.paper.communities), ('Fields', result.paper.fields)] %}
+      {% if values %}<div><dt>{{ label }}</dt><dd>{% for v in values %}<span class="tag">{{ v }}</span>{% endfor %}</dd></div>{% endif %}
+    {% endfor %}
+    {% if result.paper.research_questions %}<div><dt>Question</dt><dd>{{ result.paper.research_questions | first }}</dd></div>{% endif %}
+  </dl>
+</details>
+
+{% for s in sections %}
+<section class="group">
+  {% if s.open %}
+    <div class="group-head"><h2>{{ s.title }} <span class="count">{{ s.venues | length }}</span></h2><p class="muted">{{ s.note }}</p></div>
+    {% for c in s.venues %}{{ candidate_card(c) }}{% endfor %}
+  {% else %}
+    <details class="group-fold">
+      <summary><h2>{{ s.title }} <span class="count">{{ s.venues | length }}</span></h2><span class="muted">{{ s.note }}</span></summary>
+      {% for c in s.venues %}{{ candidate_card(c) }}{% endfor %}
+    </details>
+  {% endif %}
+</section>
+{% else %}
+  {% if result.mode == 'live' %}
+  <div class="card empty">
+    <p>No relevant calls were found in this run.</p>
+    <p class="hint">Searches cover a limited budget, so this doesn't mean none exist. Try a fuller title, other fields, or a longer time window.</p>
+  </div>
+  {% endif %}
+{% endfor %}
+
+{% if result.researchers %}
+<details class="card fold">
+  <summary>Researchers connected to these venues <span class="count">{{ result.researchers | length }}</span></summary>
+  <ul class="people">
+    {% for p in result.researchers %}
+    {% set pu = p.source_url | safe_url %}
+    <li><strong>{{ p.name }}</strong> <span class="muted">{{ p.connection }}</span>{% if pu %} <a href="{{ pu }}" target="_blank" rel="noopener noreferrer">{{ pu | host }}</a>{% endif %}</li>
+    {% endfor %}
+  </ul>
+</details>
+{% endif %}
+
+{% if notes or unverified %}
+<details class="card fold">
+  <summary>Run notes <span class="count">{{ notes | length + (1 if unverified else 0) }}</span></summary>
+  <ul class="notes">
+    {% for n in notes %}<li>{{ n }}</li>{% endfor %}
+    {% if unverified %}<li>{{ unverified | length }} page{{ '' if unverified | length == 1 else 's' }} could not be read or checked (blocked, login-only, or unavailable).</li>{% endif %}
+  </ul>
+</details>
+{% endif %}
+
+<footer class="downloads">
+  {% for name in downloads %}<a href="{{ url_for('download', run_id=run_id, name=name) }}">{{ name }}</a>{% endfor %}
+  <span class="muted">Saved in results/{{ run_id }}</span>
+</footer>
+{% endblock %}

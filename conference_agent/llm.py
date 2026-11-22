@@ -20,7 +20,7 @@ class LLM:
     def __init__(self, settings: Settings, cache: Cache):
         self.model = settings.openai_model
         self.cache = cache
-        self.client = OpenAI(api_key=settings.openai_key, timeout=settings.timeout, max_retries=2)
+        self.client = OpenAI(api_key=settings.openai_key, timeout=settings.llm_timeout, max_retries=2)
         self.failures: list[str] = []
         self.interval = settings.request_interval
         self.next_allowed = 0.0
