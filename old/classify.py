@@ -8,8 +8,10 @@ from dotenv import load_dotenv
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 
-# Load environment variables from .env if it exists, otherwise rely on shell env
+# Load environment variables from .env if it exists, otherwise rely on shell env.
+# The repository-root .env (shared with the discovery agent) is used as a fallback.
 load_dotenv(os.path.join(SCRIPT_DIR, ".env"), override=False)
+load_dotenv(os.path.join(SCRIPT_DIR, "..", ".env"), override=False)
 
 # Lazy-initialized client
 _client = None

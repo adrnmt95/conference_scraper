@@ -1,4 +1,6 @@
-> Original spreadsheet-scraper documentation. Run the commands below from the repository root.
+> Original spreadsheet scraper, superseded by the discovery agent (`discover.py` in the
+> repository root). It now lives in `old/`: run the commands below from this folder
+> (`cd old && python run.py`). It reads `OPENAI_API_KEY` from the repository-root `.env`.
 
 # Conference Scraper
 
@@ -28,11 +30,9 @@ Deduplication before classification means conferences appearing on both sites on
 ## Project structure
 
 ```
-conferences/
+old/
 ├── run.py                  # main entry point (orchestrator)
 ├── config.json             # settings (OpenAI model)
-├── .env                    # API keys (not tracked in git)
-├── .gitignore              # excludes .env, .xlsx, and .DS_Store
 ├── scrapers/
 │   ├── __init__.py
 │   ├── misfit.py           # scraper for theeconomicmisfit.com
@@ -42,8 +42,7 @@ conferences/
 ├── excel_writer.py         # Excel read/write logic
 ├── test_api_key.py         # diagnostic script to test OpenAI API setup
 ├── conferences.xlsx        # output file (not tracked in git)
-└── old/                    # legacy single-source scripts
-    └── scrape_conferences.py
+└── scrape_conferences.py   # earlier single-source script
 ```
 
 ## Setup

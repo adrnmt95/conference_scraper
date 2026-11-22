@@ -1,8 +1,17 @@
-# Conference Discovery and Scraper
+# Conference Discovery
 
-This repository includes the paper-driven discovery agent (`discover.py`) and the
-original conference-to-Excel scraper (`run.py`). The discovery workflow verifies
-official calls and ranks their value for a specific research paper.
+This repository contains the paper-driven discovery agent (`discover.py`): give it a
+paper and it finds, verifies and ranks calls for papers worth submitting it to. The
+original conference-to-Excel scraper has been retired to [`old/`](old/).
+
+| Path | Contents |
+| --- | --- |
+| `discover.py`, `conference_agent/` | The discovery agent (CLI and package) |
+| `papers/` | Your own papers to run the agent on; contents are not committed to git |
+| `examples/` | Two sample paper descriptions for trying the agent |
+| `demos/` | Saved output of the offline demonstration runs |
+| `tests/` | Test suite |
+| `old/` | The previous Excel scraper, kept for reference |
 
 A reusable Python agent for economics, political science and computational social
 science. It discovers academic calls, retrieves original sources, applies conservative
@@ -49,12 +58,22 @@ extracted evidence, local reports and memory are stored locally.
 
 ## Run
 
+Put your paper (PDF, Markdown or TXT) in `papers/` and point the agent at it. If you
+have no paper file, describe it with `--topic` or `--abstract` instead.
+
 ```bash
+python discover.py --paper papers/my_paper.pdf --output results/my_paper
 python discover.py --paper examples/forbearance.md --output results
 python discover.py --topic 'Political violence and government forbearance' --output results
 python discover.py --abstract 'Your abstract here' --title 'Your paper title' --output results
-python discover.py --paper paper.pdf --regions europe,north-america --output results
+python discover.py --paper papers/my_paper.pdf --regions europe,north-america --output results/my_paper
 ```
+
+Titles are read heuristically from the first page of a PDF. If the title in the
+report looks cut off, pass the full one with `--title`.
+
+Files in `papers/` other than its README are ignored by git, so unpublished drafts
+stay on your machine.
 
 For a specific submission window, add ISO dates with `--deadline-after YYYY-MM-DD`
 and `--deadline-before YYYY-MM-DD`. The default lower bound is the current local
@@ -79,24 +98,18 @@ one public page does not imply attendance at a different event or future edition
 Use `python discover.py --help` for all options. Installed entry points are
 `conference-discover` and `python -m conference_agent`.
 
-## Existing Excel scraper
+## Old Excel scraper
 
-The original spreadsheet workflow is available from the repository root:
+The previous spreadsheet scraper (INOMICS and The Economic Misfit → `conferences.xlsx`)
+now lives in [`old/`](old/) and is no longer developed. It still runs from that folder:
 
 ```bash
 python -m pip install '.[legacy]'
-python run.py
-python run.py --include 'political economy, development' --exclude 'macro-finance'
+cd old && python run.py --include 'political economy, development' --exclude 'macro-finance'
 ```
 
-It uses `scrapers/`, `classify.py`, `dedup.py` and `excel_writer.py`, and updates
-`conferences.xlsx`. Its model setting is read from `config.json`. The discovery
-agent uses `OPENAI_MODEL` in the environment or `.env`; both workflows can reuse
-an existing `OPENAI_API_KEY`. Add a Brave or Tavily search key to use live discovery.
-
-See [the original scraper documentation](docs/legacy_scraper.md) for its sources,
-Excel output, incremental scraping and scraper extension guide. The discovery
-agent's outputs and SQLite memory live in the directories described below.
+It reads `OPENAI_API_KEY` from the root `.env` and its model from `old/config.json`.
+See [old/legacy_scraper.md](old/legacy_scraper.md) for its full documentation.
 
 ## Outputs
 

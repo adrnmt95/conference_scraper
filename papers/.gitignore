@@ -1,0 +1,4 @@
+# Keep drafts local: only this ignore file and the README are tracked by git.
+*
+!.gitignore
+!README.md
